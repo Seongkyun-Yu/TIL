@@ -1,3 +1,9 @@
+# Custom
+*.pem
+hello.*
+index.php
+hidden/
+
 # Logs
 logs
 *.log
