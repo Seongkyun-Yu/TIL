@@ -23,3 +23,7 @@ git add README.md
 git commit -m "subjects"
 ```
 
+## 'git push 별명 권한' 통해서 git-hub 업로드하기
+```shell
+git push origin master
+```
