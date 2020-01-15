@@ -27,3 +27,14 @@ git commit -m "subjects"
 ```shell
 git push origin master
 ```
+
+## 'git clone'을 통해 다른사람 git 가져오기
+```shell
+git clone @address
+```
+git과 연동돼 있는 폴더에서 반드시 벗어나서 복사할것
+
+## 'git pull origin master'를 통해 다른사람 git 업데이트하기
+```shell
+git pull origin master
+```
