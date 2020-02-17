@@ -1,4 +1,5 @@
 # TIL
+![pangStudy](./image/pangStudy.jpg)
 Today I Learned...
 <br><br><br>
 
