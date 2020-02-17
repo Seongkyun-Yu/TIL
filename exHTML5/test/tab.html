@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>탭 UI</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/jquery.min.js" defer></script>
+    <script src="./js/tab.js" defer></script>
+    <style>
+        .board{
+            padding: 0;
+        }
+        
+        .board section ul, .board ul+a{
+            display: none;
+        }
+
+        .section-act ul, .section-act ul+a{
+            display: block !important;
+        }
+
+        .tab-list{
+            list-style: none;
+            padding-left: 0;
+            margin: 0;
+            display: flex;
+            flex-flow: row nowrap;
+            margin-bottom: 20px;
+        }
+
+        .tab-list [role="tab"]{
+            cursor: pointer;
+            border: 1px solid #aaa;
+            color: #888;
+            background: #ccc linear-gradient(180deg, #bbb, #eee);
+            border-radius: 5px 5px 0 0;
+            padding: 8px 10px;
+        }
+
+        .tab-list [aria-selected="true"]{
+            background: #fff; 
+            border-color: orangered orangered white orangered;
+            color: orangered;
+        }
+    </style>
+</head>
+<body style="margin: 50px 0 0 100px">
+    <div class="board" hidden>
+        <section class="notice board-act">
+            <h2 class="notice-heading tab">
+                <a href="#" role="button">공지사항</a>
+            </h2>
+            <ul class="notice-list clearfix">
+                <li class="icon-dot-circled">
+                    <a href="#">HTMML의 모든 것을 알려주마 샘플 활용법</a>
+                    <time datetime="2020-01-29T12:06:28">2020.01.29</time>
+                </li>
+                <li class="icon-dot-circled">
+                    <a href="#">W3C 사이트 리뉴얼 및 공지사항</a>
+                    <time datetime="2020-01-29T12:06:28">2020.01.29</time>
+                </li>
+                <li class="icon-dot-circled">
+                    <a href="#">KWCAG 2.1 소식</a>
+                    <time datetime="2020-01-29T12:06:28">2020.01.29</time>
+                </li>
+                <li class="icon-dot-circled">
+                    <a href="#">서버 점검으로 인한 사이트 이용안내입니다.</a>
+                    <time datetime="2020-01-29T12:06:28">2020.01.29</time>
+                </li>
+                <li class="icon-dot-circled">
+                    <a href="#">여러분들이 생각하는 웹 접근성에 대해 이야기를 나누어 봅시다</a>
+                    <time datetime="2020-01-29T12:06:28">2020.01.29</time>
+                </li>
+            </ul>
+            <a class="notice-more" href="#" title="공지사항" target="_blank"><span class="icon-plus"></span>더보기</a>
+        </section>
+
+        <section class="pds">
+            <h2 class="pds-heading tab">
+                <a href="#" role="button">자료실</a>
+            </h2>
+            <ul class="pds-list clearfix">
+                <li class="icon-dot-circled">
+                    <a href="#">디자인 사이트 링크 모음</a>
+                    <time datetime="2020-01-29T12:06:28">2020.01.29</time>
+                </li>
+                <li class="icon-dot-circled">
+                    <a href="#">웹 접근성 관련 자료 모음</a>
+                    <time datetime="2020-01-29T12:06:28">2020.01.29</time>
+                </li>
+                <li class="icon-dot-circled">
+                    <a href="#">예제 샘플 응용해보기</a>
+                    <time datetime="2020-01-29T12:06:28">2020.01.29</time>
+                </li>
+                <li class="icon-dot-circled">
+                    <a href="#">웹 접근성 향상을위한 국가 표준 기술 가이드라인</a>
+                    <time datetime="2020-01-29T12:06:28">2020.01.29</time>
+                </li>
+                <li class="icon-dot-circled">
+                    <a href="#">로얄티 프리 이미지 자료</a>
+                    <time datetime="2020-01-29T12:06:28">2020.01.29</time>
+                </li>
+            </ul>
+            <a class="pds-more" href="#" title="자료실" target="_blank"><span class="icon-plus"></span>더보기</a>
+        </section>
+    </div>
+
+
+
+
+    <div class="board">
+        <ul class="tab-list" role="tablist">
+            <li role="tab" id="tab1" aria-controls="tabpanel1" aria-selected="true" tabindex="0">공지사항</li>
+            <li role="tab" id="tab2" aria-controls="tabpanel2" aria-selected="false" tabindex="0">자료실</li>
+        </ul>
+        <div role="tabpanel" class="section-act" id="tabpanel1" aria-labelledby="tab1">
+            <h2 class="a11y-hidden">공지사항</h2>
+            <ul class="notice-list">
+                <li class="icon-dot-circled">
+                    <a href="#">HTMML의 모든 것을 알려주마 샘플 활용법</a>
+                    <time datetime="2020-01-29T12:06:28">2020.01.29</time>
+                </li>
+                <li class="icon-dot-circled">
+                    <a href="#">W3C 사이트 리뉴얼 및 공지사항</a>
+                    <time datetime="2020-01-29T12:06:28">2020.01.29</time>
+                </li>
+                <li class="icon-dot-circled">
+                    <a href="#">KWCAG 2.1 소식</a>
+                    <time datetime="2020-01-29T12:06:28">2020.01.29</time>
+                </li>
+                <li class="icon-dot-circled">
+                    <a href="#">서버 점검으로 인한 사이트 이용안내입니다.</a>
+                    <time datetime="2020-01-29T12:06:28">2020.01.29</time>
+                </li>
+                <li class="icon-dot-circled">
+                    <a href="#">여러분들이 생각하는 웹 접근성에 대해 이야기</a>
+                    <time datetime="2020-01-29T12:06:28">2020.01.29</time>
+                </li>
+            </ul>
+            <a href="#" class="notice-more" title="공지사항" target="_blank">
+                <span class="icon-plus"></span>더보기
+            </a>
+        </div>
+        <div role="tabpanel" id="tabpanel2" aria-labelledby="tab2">
+            <h2 class="a11y-hidden">공지사항</h2>
+            <ul class="pds-list">
+                <li class="icon-dot-circled">
+                    <a href="#">디자인 사이트 링크 모음</a>
+                    <time datetime="2020-01-29T12:06:28">2020.01.29</time>
+                </li>
+                <li class="icon-dot-circled">
+                    <a href="#">웹 접근성 관련 자료 모음</a>
+                    <time datetime="2020-01-29T12:06:28">2020.01.29</time>
+                </li>
+                <li class="icon-dot-circled">
+                    <a href="#">예제 샘플 응용해보기</a>
+                    <time datetime="2020-01-29T12:06:28">2020.01.29</time>
+                </li>
+                <li class="icon-dot-circled">
+                    <a href="#">웹 접근성 향상을위한 국가 표준 기술 가이드라인</a>
+                    <time datetime="2020-01-29T12:06:28">2020.01.29</time>
+                </li>
+                <li class="icon-dot-circled">
+                    <a href="#">로얄티 프리 이미지 자료</a>
+                    <time datetime="2020-01-29T12:06:28">2020.01.29</time>
+                </li>
+            </ul>
+            <a href="#" class="pds-more" title="자료실" target="_blank">
+                <span class="icon-plus"></span>더보기
+            </a>
+        </div>
+    </div>
+
+
+    <!-- <div class="tab">
+        <button class="notice-btn"></button>
+        <button class="pds-btn"></button>
+        <section class="notice">
+            <h2 class="a11y-hidden">공지사항</h2>
+            <ul class="notice-cont">
+                <li><a>HTML의 모든 것을 알려주마 샘플 활용법</a><time datetime="2018-05-31">2018.05.31</time></li>
+                <li><a>W3C 사이트 리뉴얼 및 공지사항</a><time datetime="2018-05-31">2018.05.31</time></li>
+                <li><a>KWCAG 2.1 소식</a><time datetime="2018-05-31">2018.05.31</time></li>
+                <li><a>서버 점검으로 인한 사이트 이용안내입니다.</a><time datetime="2018-05-31">2018.05.31</time></li>
+                <li><a>여러분들이 생각하는 웹 접근성에 대해 이야기</a><time datetime="2018-05-31">2018.05.31</time></li>
+            </ul>
+            <a href="#" class="more-view">더보기</a>
+        </section>
+        <section class="pds">
+            <h2 class="a11y-hidden">자료실</h2>
+            <ul class=pds-cont">
+                <li><a>디자인 사이트 링크 모음</a><time datetime="2018-05-31">2018.05.31</time></li>
+                <li><a>웹 접근성 관련 자료 모음</a><time datetime="2018-05-31">2018.05.31</time></li>
+                <li><a>예제 샘플 응용해보기</a><time datetime="2018-05-31">2018.05.31</time></li>
+                <li><a>웹 접근성 향상을위한 국가 표준 기술 가이드라인</a><time datetime="2018-05-31">2018.05.31</time></li>
+                <li><a>로얄티 프리 이미지 자료</a><time datetime="2018-05-31">2018.05.31</time></li>
+            </ul>
+            <a href="#" class="more-view">더보기</a>
+        </section>
+    </div> -->
+    
+</body>
+</html>

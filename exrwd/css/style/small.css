@@ -1,0 +1,155 @@
+body{
+  /* background-color: pink; */
+  font-size: 1.4rem;
+}
+.appHeader, .appMain, .appFooter{
+  width: 100%;
+}
+/* 헤더 */
+.appHeader{
+  display: flex;
+  flex-flow: row wrap;
+  background-color: #38302e;
+  padding-bottom: 1em;
+}
+.brand, .memberOnly, .searchForm, .appMain, .appFooter{
+  width: 100%;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.memberOnly{
+  order: -1;
+  background-color: rgb(152, 133, 116);
+  color: #fff;
+}
+input[name="search"]{
+  width: calc(100% - 45px);
+}
+.buttonSearch{
+  vertical-align: middle;
+  width: 35px;
+  height: 35px;
+  line-height: 30px;
+  text-align: center;
+  padding: 0;
+  border: 0;
+  font-size: 0.8em;
+  position: relative;
+  background-color: transparent;
+}
+.buttonSearch::before{
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: url(./../images/btn_search.png);
+  background-size: contain;
+}
+/* 내비게이션 */
+.appNavigation{
+  position: relative;
+}
+/* 메인 메뉴 제어 버튼 */
+.buttonBurger{
+  width: 35px;
+  height: 35px;
+  position: absolute;
+  top: 60px;
+  right: 20px;
+  overflow: hidden;
+  cursor: pointer;
+}
+.buttonNone{
+  border: 0;
+  background: transparent;
+  padding: 0;
+}
+.round{
+  border-radius: 20px;
+}
+.positionTop{
+  top: 0;
+}
+.positionMiddle{
+  top: 50%;
+  transform: translateY(-50%);
+}
+.positionBottom{
+  top: 100%;
+  transform: translateY(-100%);
+}
+/* .menu--isAct 클래스가 버튼의 부모요소에 추가 되었을 때 */
+.menu--isAct .positionTop{
+  top: 50%;
+  transform: translateY(-50%) rotate(45deg);
+}
+.menu--isAct .positionMiddle{
+  top: 50%;
+  transform: translate(-105%, -50%);
+}
+.menu--isAct .positionBottom{
+  top: 50%;
+  transform: translateY(-50%) rotate(-45deg) ;
+}
+.burgerBar{
+  position: absolute;
+  left:0;
+  background: #fff;
+  width: 100%;
+  height: 20%;
+  /* transition: all .2s; */
+}
+/* 메인 메뉴 */
+.menu__list{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 70%;
+  height: 100vh;
+  transform:translate(-100%);
+  background: hsla(0, 0%, 0%, 0.75);
+  color: #fff;
+  padding: 2rem;
+  /* transition: transform .2s ease-in-out; */
+}
+.menu__item{
+  margin: 1rem 0;
+}
+.menu__link{
+  font-size: 1.6rem;
+  font-weight: 900;
+  display: inline-block;
+  padding: .5rem 1rem;
+}
+.menu__subMenu{
+  display: none;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+.menu__subMenu li{
+  margin: 1rem 0;
+}
+.menu__subMenu a{
+  display: block;
+  padding: .5rem 1rem;
+}
+.menu--isAct .menu__list{
+  transform: none;
+}
+.menu__item--menuAct .menu__subMenu{
+  display: block;
+} 
+/* 메인 콘텐츠 */
+.appMain{
+  padding-bottom: 2em;
+}
+.book, .news, .board, .favorite, .twitter{
+  width: 100%;
+}
+
+/* 푸터 */
+.address span{
+  display: block;
+}

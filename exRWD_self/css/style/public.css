@@ -1,0 +1,197 @@
+/* 공통 스타일 */
+/* 링크 스타일 */
+a{
+  text-decoration: none;
+  color: inherit;
+}
+/* 박스 모델 초기화 */
+body, body *, body *::before, body *::after{
+  box-sizing: border-box;
+}
+/* 공통 레이아웃 */
+.container, .appMain{
+  display: flex;
+  flex-flow: row wrap;
+}
+/* 로고 */
+.brand a{
+  display: block;
+}
+.brand *{
+  padding: 0;
+}
+/* 멤버 서비스 */
+.memberOnly{
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-end;
+}
+.memberOnly li{
+  display: flex;
+  align-items: center;
+  padding: 5px 0;
+}
+.memberOnly li:last-child{
+  margin-right: -0.715em;
+}
+.memberOnly a{
+  padding: 0.5em 0.715em;
+}
+/* 검색 폼 */
+input[name="search"]{
+  border: 1px solid #aaa;
+  border-radius: 5px;
+  height: 35px;
+  margin-right: 5px;
+  padding-left: 1em;
+  vertical-align: middle;
+}
+
+.appMain [class*="__title"]{
+  font-size: 2.1rem;
+  padding: 10px 0 10px 70px;
+  /* background-image: url(../images/sprite_main.png);
+  background-repeat: no-repeat; */
+  
+}
+.appMain [class*="__enTitle"]{
+  display: block;
+}
+
+.iframeContainer{
+  position: relative;
+  width: 100%;
+  height: 0;
+  background-color: red;
+}
+
+.iframe16To9 {
+  padding-top: 56.25%;
+}
+
+.iframeContainer iframe{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.news__date{
+  float: right;
+}
+
+/* 게시판 부분 */
+
+.board{
+  position: relative;
+}
+
+.board__list{
+  list-style: none;
+  padding: 0;
+}
+.board__list li{
+  padding-bottom: 2rem;
+}
+.board__list li a{
+  display: inline-block;
+  width: calc(100% - 110px);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  background-color: red;
+}
+.board__list li time{
+  display: inline-block;
+  width: 100px;
+  text-align: right;
+}
+.board__more{
+  position: absolute;
+  top: 2rem;
+  right: 0;
+}
+
+/* 인기사이트 */
+.favorite__list{
+  list-style: none;
+  padding: 0;
+}
+.favorite__list li{
+  counter-increment: number;
+  padding: 16px 0;
+}
+.favorite__list li::before{
+  content: counter(number);
+  background: orange;
+  padding: 0.8em 1em;
+  border-radius: 50%;
+  color: white;
+  display: inline-block;
+}
+
+/* 트위터 */
+.twitter{
+  position: relative;
+}
+.twitter__container{
+  width: 78%;
+}
+.twitter [class*="__userInfo"] dd{
+  display: inline-block;
+  margin-left: 0;
+}
+.twitter__userProfile{
+  width: 20%;
+  position: absolute;
+  margin: 0;
+  padding: 0.5rem;
+  right: 0;
+  top: 15%;
+}
+.twitter__userProfile img{
+  padding: 0.5rem;
+}
+.circlePhoto{
+  border: 1px solid #333;
+  border-radius: 50%;
+}
+.twitter__date{
+  display: block;
+  text-align: right;
+}
+
+
+.sprite{
+  background: url(../images/sprite_main.png) no-repeat;
+}
+.spriteBook{
+  background-position: 0 0;
+}
+.spriteNews{
+  background-position: 0 -230px;
+}
+.spriteBoard{
+  background-position: 0 -340px;
+}
+.spriteTwitter{
+  background-position: 0 -460px;
+}
+.spriteFavorite{
+  background-position: 0 -570px;
+}
+.themeGreen{
+  color: green;
+}
+.themeYellow{
+  color: yellow;
+}
+.themeBrown{
+  color: #988574;
+}
+.themeOrange{
+  color: orange;
+}
+.themeSkyblue{
+  color: blue;
+}

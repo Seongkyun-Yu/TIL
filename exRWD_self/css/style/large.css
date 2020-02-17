@@ -1,0 +1,122 @@
+body{
+  background-color: skyblue;
+  font-size: 1.6rem;
+}
+.container{
+  justify-content: center;
+}
+
+
+/* 헤더 */
+.appHeader{
+  width: 1000px;
+  height: 105px;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+}
+.brand{
+  justify-content: center;
+  flex-grow: 2;
+}
+.memberOnly{
+  flex-grow:1;
+}
+.searchForm{
+  flex-grow: 1;
+  text-align: right;
+}
+.buttonSearch{
+  border: none;
+  border-radius: 5px;
+  background-color: #988574;
+  color: white;
+  height: 3.5rem;
+}
+
+/* 내비게이션 */
+.appNavigation, .appFooter{
+  width: 100%;
+}
+.menu{
+  /* width: 1000px; */
+  background-color: #988574;
+  display: flex;
+  justify-content: center;
+}
+.buttonNone{
+  display: none;
+}
+
+.menu__list{
+  width: 1000px;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 2rem;
+  color: white;
+  font-size: 1.6rem;
+  font-weight: 800;
+  margin-bottom: 3rem;
+}
+.menu__list li{
+  padding-top: 1.5rem;
+}
+.menu__link{
+  text-shadow: 1px 1px 0 black, -1px -1px 0 black;
+  /* outline: 0; */
+}
+
+/* 사이트 메인 내용 */
+.appMain{
+  width: 1000px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+
+/* 북내용 */
+.book, .board{
+  width: 320px;
+}
+.book__title{
+  font-size: 1.8rem;
+}
+.book__enTitle{
+  display: block;
+}
+.book__cover{
+  text-align: center;
+}
+.book__info{
+  text-align: center;
+}
+.book__info dt, .book__info dd{
+  margin: 0;
+  display: inline-block;
+}
+.book__info [aria-label]{
+  display: block;
+}
+
+/* 뉴스 관련 부분 */
+.news{
+  width: 660px;
+}
+
+
+
+/* 트위터 관련 부분 */
+.twitter{
+  width: 420px;
+  order: 1;
+}
+
+/* 게시판 관련 부분 */
+.board{
+  width: 320px;
+}
+
+.favorite{
+  width: 220px;
+  order: 2;
+}

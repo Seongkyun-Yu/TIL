@@ -1,0 +1,15 @@
+/* Reset CSS Style */
+.resetMargin{
+  margin-top: 0;
+  margin-bottom: 1em;
+}
+.resetList{
+  margin: 0;
+  padding-left: 0;
+  list-style-type: none;
+}
+.resetBox{
+  border: 0;
+  padding: 0;
+  margin: 0;
+}

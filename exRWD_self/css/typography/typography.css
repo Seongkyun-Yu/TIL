@@ -1,0 +1,37 @@
+/* Typegraphy Style */
+/* Web Font - Spoqa Han Sans */
+@import url("https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css");
+@import url("./fonts.css");
+
+
+/* 루트 요소의 기본 글자 크기 */
+html{
+  font-size: 10px;
+}
+
+/* 본문의 기본 글자 스타일 */
+body{
+  font-family: 'Spoqa Han Sans', 'Sans-serif'; 
+  font-weight: 300;
+  color: #181818;
+  background-color: #fff;
+}
+
+/* 하이퍼 링크 글자 스타일 */
+a{
+  color: inherit;
+  text-decoration: none;
+}
+a:hover, a:focus{
+  color: #f00;
+}
+
+/* 메뉴 관련 폰트 공통 */
+.menu__link{
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+.menu__subMenu{
+  font-size: 1.5rem;
+  font-weight: 400;
+}

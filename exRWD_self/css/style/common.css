@@ -1,0 +1,173 @@
+/* All Device CSS */
+/* 기본 box-sizing 설정 */
+*, *::before, *::after{
+  box-sizing: border-box;
+}
+.container{
+  display: flex;
+}
+/* 멤버 서비스 */
+.memberOnly{
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+.memberOnly a{
+  display: inline-block;
+  padding: 0.5em 1em;
+}
+/* 메인 콘텐츠 */
+.appMain{
+  display: flex;
+}
+/* 검색 폼 */
+[type="search"]{
+  border: 1px solid #333;
+  padding: 0.2em 0.25em 0.3em 1em;
+  height: 35px;
+  border-radius: 3px;
+}
+/* 메인콘텐츠 섹션 공통 */
+.appMain [class*="__title"]{
+  font-size: 1.8rem;
+  padding-top: 0.5em;
+}
+.appMain [class*="__enTitle"]{
+  display: block;
+}
+.appMain [class*="__summary"]{
+  line-height: 1.5;
+}
+/* 추천 서적 */
+.book__cover{
+  text-align: center;
+}
+.book__cover figcaption{
+  font-size: 1.6rem;
+  margin: 1em 0;
+}
+.book__info{
+  text-align: center;
+}
+.book__info dt, .book__info dd{
+  display: inline-block;
+}
+.book__info dd{
+  margin-left: 0;
+}
+.book__info [aria-label]{
+  display: block;
+  font-size: 2.5rem;
+}
+/* 새소식 */
+.news__date{
+  display: block;
+  text-align: right;
+}
+/* 게시판 */
+.board{
+  position: relative;
+}
+.board__list{
+  list-style-type: none;
+}
+.board__list li{
+  margin-top: 0.5em;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.board__list a{
+  padding: 0.5em 0;
+  width: calc(100% - 7em);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.board__list time{
+  margin-left: auto;
+}
+.board__more{
+  position: absolute;
+  top: 0.5em;
+  right: -1em;
+  padding: 1em;
+}
+/* 인기 사이트 */
+.favorite__list{
+  list-style-type: none;
+}
+.favorite__list li{
+  margin-top: 0.5em;
+  counter-increment: number;
+}
+.favorite__list li::before{
+  display: inline-block;
+  content: counter(number);
+  background: #eea60a;
+  color: #fff;
+  padding: 0.5em 1em 0.75em;
+  border-radius: 50%;
+  margin-right: 0.5em;
+}
+.favorite__list a{
+  display: inline-block;
+  padding: 0.5em 0;
+  position: relative;
+}
+.favorite__list a:hover::after{
+  content: attr(data-tooltip);
+  position: absolute;
+  top: 80%;
+  left: 60%;
+  white-space: nowrap;
+  background: #eea60a;
+  color: #fff;
+  padding: 0.5em 1em;
+  border: 1px solid #999;
+  border-radius: 3px;
+  box-shadow: 3px 3px 0 0 #333;
+  z-index: 10;
+}
+/* 트위터 (CSS Grid 레이아웃 활용 예시) */
+.twitter__container{
+  display: grid;
+  grid-template-columns: 4fr 1fr;
+  grid-template-rows: auto;
+  column-gap: 1em;
+}
+.twitter__userInfo dd{
+  margin-left: 0;
+  display: inline-block;
+}
+.twitter__userProfile{
+  grid-area: 1 / 2 / 4 / 3;
+  margin: 0;
+  text-align: right;
+}
+.twitter__date{
+  text-align: right;
+}
+/* 푸터 */
+.appFooter{
+  padding: 3em 20px;
+  background:
+    linear-gradient(27deg, #151515 5px, transparent 5px) 0 5px,
+    linear-gradient(207deg, #151515 5px, transparent 5px) 10px 0px,
+    linear-gradient(27deg, #222 5px, transparent 5px) 0px 10px,
+    linear-gradient(207deg, #222 5px, transparent 5px) 10px 5px,
+    linear-gradient(90deg, #1b1b1b 10px, transparent 10px),
+    linear-gradient(#1d1d1d 25%, #1a1a1a 25%, #1a1a1a 50%, transparent 50%, transparent 75%, #242424 75%, #242424);
+  background-color: #131313;
+  background-size: 20px 20px;
+  color: #fff;
+  line-height: 1.5;
+}
+.address{
+  font-style: normal;
+  margin-bottom: 1em;
+}
+.copyright{
+  font-size: 1em;
+  text-transform: uppercase;
+}

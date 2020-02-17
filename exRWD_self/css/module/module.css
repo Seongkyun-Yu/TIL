@@ -1,0 +1,87 @@
+/* Common Class */
+/* 버튼 스타일 */
+.button{
+  border: 1px solid #333;
+  border-radius: 3px;
+  padding: 0.5em 1em;
+  font-size: 1em;
+  cursor: pointer;
+}
+.buttonNone{
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background: transparent;
+}
+.round{
+  border-radius: 15px;
+}
+/* 글자 색상별 테마 */
+.themeGreen {
+  color: #abd375;
+ }
+ .themeYellow {
+  color: #e8ca58;
+ }
+ .themeBrown {
+  color: #c7b39a;
+ }
+ .themeSkyblue {
+  color: #6aaee6;
+ }
+ .themeOrange {
+  color: #eea60a;
+ }
+ /* 반응형 콘텐츠 */
+ .responsive{
+   max-width: 100%;
+   height: auto;
+ }
+ /* Sprite(스프라이트) 배경 이미지 */
+ .sprite{
+   background: url("./../images/sprite_main.png") no-repeat;
+   padding-left: 65px;
+   height: 60px;
+ }
+ .spriteBook{
+   background-position: 0 0;
+ }
+ .spriteNews{
+   background-position: 0 -230px;
+ }
+ .spriteBoard{
+   background-position: 0 -115px;
+ }
+ .spriteFavorite{
+   background-position: 0 -345px;
+ }
+ .spriteTwitter{
+   background-position: 0 -460px;
+ }
+ /* 반응형 iframe 콘텐츠 */
+.iframeContainer{
+  height: 0;
+  position: relative;
+}
+.iframe4To3{
+  padding-top: 75%;
+}
+.iframe16To9{
+  padding-top: 56.25%;
+}
+.iframe21To9{
+  padding-top: 42.857142857142855%;
+}
+.iframeContainer iframe{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+/* 둥근 이미지 스타일 */
+.circlePhoto{
+  border: 1px solid #333;
+  padding: 0.5em;
+  border-radius: 50%;
+}

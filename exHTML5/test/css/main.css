@@ -1,0 +1,162 @@
+@charset "utf-8";
+@import url(./normalize.css);
+
+/* 기본 박스 사이징 재설정 (width에 border-width와 padding을 포함하여 계산) */
+*, *::before, *::after{
+    box-sizing: border-box;
+}
+/* 숨김 콘텐츠 */
+.a11y-hidden{
+    position: absolute;
+    width: 1px;             
+    height: 1px;
+    overflow: hidden;
+    margin: -1px;
+    clip: rect(0,0,0,0);
+    clip-path: polygon(0 0, 0 0, 0 0);
+}
+
+/* CSS Module */
+/* float 이슈를 해결하기 위한 CSS 선언 */
+.clearfix::after{
+    content: "";
+    display: block; /* content는 inline 요소라 클리어가 무시됨 따라서 display에 block을 설정해줌*/
+    clear: both;    /* 모두 float라서 main이 높이 못잡아도 clearfix가 강제로 마진 추가함(탑방향으로)*/
+}
+
+/* 기본설정 */
+html{
+    font-size: 10px;
+}
+body{
+    font-size: 1.4rem;
+    color: #181818;
+    background-color: #fff;
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+.container{
+    background-color: silver;
+    /* display: flex;
+    flex-direction: column;     /* flex정렬 방향(justify-content: 주축, align=items: 교차축) */
+    /* align-items: center; */
+}
+
+.header, .visual, .main, .slogan, .footer{
+    box-sizing: border-box;
+    width: 940px;
+    margin: 0  auto;
+}
+
+.header{
+    background-color: #fff;
+    border-radius: 0 0 15px 15px;
+    padding: 0 30px;
+    position: relative;
+    /* height: 10vh; */
+}
+
+/* 로고 */
+.logo{
+    position: absolute;
+    top: 45px;
+    left: 65px;
+    margin: 0;
+}
+
+/* 멤버 링크 */
+.member{
+    margin: 0;
+    padding: 2px 0;
+    list-style-type: none;
+    text-align: right;
+    font-size: 0;
+    position: relative;
+    right : -10px;
+}
+
+.member li, a{
+    display: inline-block;
+}
+
+.member li{
+    /* background-color: yellow; */
+
+    font-size: 1.4rem;
+}
+
+.member li:nth-child(n+2)::before{
+    content: ":";
+    margin: 0, 2px;
+}
+
+.member a{
+    text-transform: uppercase;
+    padding: 8px 10px;
+    /* background-color: aqua; */
+}
+
+.visual{
+    background-color: lime;
+    height: 10vh;
+}
+
+.main{
+    display: flex;
+    /* flex-direction: row; */
+    flex-flow: row wrap; /* flex방향, 줄바꿈 허용 선언 */
+    justify-content: space-around;  /* 균등분배 */
+    height: 60vh;
+    padding: 30px 15px;
+    background-color: #fff;
+
+    /* flex-wrap: wrap; 줄바꿈 허용 */
+    /* overflow: hidden;           reflow:다시그림->자식요소 높이 불러옴-> main이 다시 그림 repaint */
+    /* padding: 30px 15px; */
+}
+
+.group{
+    /* float: left;
+    height: 60vh;
+    margin:  0 15px; */
+}
+
+.group1{
+    background-color: tomato;
+    width: 250px;
+}
+
+.group2{
+    background-color: skyblue;
+    width: 380px;
+}
+
+.group3{
+    background-color: pink;
+    width: 190px;
+    /*order: -1; */                 /* 랜더링 순서는 기본 0, 작을수록 먼저 렌더링*/
+}
+
+
+
+
+.slogan{
+    background-color: orange;
+    height: 10vh;
+}
+
+.footer-bg{
+    background-color: purple;
+    width: 100vw;
+    /* display: flex;
+    flex-direction: row;
+    justify-content: center; */
+}
+
+.footer{
+    background-color: yellow;
+    height: 10vh;
+}

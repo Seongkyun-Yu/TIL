@@ -1,0 +1,95 @@
+@charset "utf-8";
+@import url(./normalize.css);
+
+/* 기본 박스 사이징 재설정 (width에 border-width와 padding을 포함하여 계산) */
+*, *::before, *::after{
+    box-sizing: border-box;
+}
+
+/* CSS Module */
+/* float 이슈를 해결하기 위한 CSS 선언 */
+.clearfix::after{
+    content: "";
+    display: block; /* content는 inline 요소라 클리어가 무시됨 따라서 display에 block을 설정해줌*/
+    clear: both;    /* 모두 float라서 main이 높이 못잡아도 clearfix가 강제로 마진 추가함(탑방향으로)*/
+}
+
+.container{
+    background-color: silver;
+    display: flex;
+    flex-direction: column;     /* flex정렬 방향(justify-content: 주축, align=items: 교차축) */
+    align-items: center;
+}
+
+.header, .visual, .main, .slogan, .footer{
+    box-sizing: border-box;
+    width: 940px;
+    /* margin: 0  auto; */
+}
+
+.header{
+    background-color: yellow;
+    height: 10vh;
+}
+
+.visual{
+    background-color: lime;
+    height: 10vh;
+}
+
+.main{
+    display: flex;
+    /* flex-direction: row; */
+    flex-flow: row wrap; /* flex방향, 줄바꿈 허용 선언 */
+    justify-content: space-around;  /* 균등분배 */
+    height: 60vh;
+    padding: 30px 15px;
+    background-color: blue;
+
+    /* flex-wrap: wrap; 줄바꿈 허용 */
+    /* overflow: hidden;           reflow:다시그림->자식요소 높이 불러옴-> main이 다시 그림 repaint */
+    /* padding: 30px 15px; */
+}
+
+.group{
+    /* float: left;
+    height: 60vh;
+    margin:  0 15px; */
+}
+
+.group1{
+    background-color: tomato;
+    width: 250px;
+}
+
+.group2{
+    background-color: skyblue;
+    width: 380px;
+}
+
+.group3{
+    background-color: pink;
+    width: 190px;
+    /*order: -1; */                 /* 랜더링 순서는 기본 0, 작을수록 먼저 렌더링*/
+}
+
+
+
+
+.slogan{
+    background-color: orange;
+    height: 10vh;
+}
+
+.footer-bg{
+    background-color: purple;
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.footer{
+    background-color: yellow;
+    height: 10vh;
+}

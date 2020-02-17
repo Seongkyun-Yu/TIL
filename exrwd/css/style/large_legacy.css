@@ -1,0 +1,100 @@
+body{
+  background-color: skyblue;
+  font-size: 1.6em;
+}
+.appHeader, .appMain{
+  margin: 0 auto;
+}
+.appHeader{
+  width: 1000px;
+  position: relative;
+  margin-bottom: 1.5em;
+}
+/* 로고 */
+.brand{
+  position: absolute;
+  margin: 0;
+  left: 0;
+  top: 50%;
+  margin-top: -30px;
+}
+/* 검색 폼 */
+.searchForm{
+  text-align: right;
+}
+input[name="search"]{
+  width: 400px;
+}
+.buttonSearch{
+  border: 1px solid #aaa;
+  border-radius: 5px;
+  background-color: #988574;
+  color: #fff;
+  height: 35px;
+  vertical-align: middle;
+}
+/* 메인 메뉴 */
+.appNavigation{
+  background: #988574;
+  padding: 2em 0;
+}
+.menu__list::after{
+  content: "";
+  clear: both;
+  display: block;
+}
+.menu__item{
+  float: left;
+  margin: 0 25px;
+}
+.menu__link{
+  font-size: 1.15em;
+  font-weight: 900;
+  text-shadow: 1px 1px 0 #000, -1px -1px 0 #000;
+}
+.menu__subMenu{
+  font-size: 1.05em;
+  font-weight: 700;
+  margin-top: 1.5em
+}
+.menu__subMenu li{
+  margin-top: 1em;
+}
+.buttonBurger{
+  display: none;
+}
+.menu__list{
+  width: 1000px;
+  margin: 0 auto;
+  color: #fff;
+}
+.appMain{
+  width: 1020px;
+}
+.appMain::after{
+  content: "";
+  display: block;
+  clear: both;
+}
+.book, .news, .board, .favorite, .twitter{
+  float: left;
+  margin-left: 10px;
+  margin-right: 10px;
+  min-height: 300px;
+}
+.book{
+  width: 320px;
+}
+.news{
+  width: 660px;
+}
+.board{
+  width: 320px;
+}
+.favorite{
+  width: 220px;
+  float: right;
+}
+.twitter{
+  width: 420px;
+}

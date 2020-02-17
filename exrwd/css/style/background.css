@@ -1,0 +1,30 @@
+.container{
+  background-color: silver;
+}
+.appHeader{
+  background-color: yellow;
+}
+.appNavigation{
+  background-color: tan;
+}
+.appMain{
+  background-color: darkblue;
+}
+.book{
+  background-color: orange;
+}
+.news{
+  background-color: pink;
+}
+.board{
+  background-color: tomato;
+}
+.favorite{
+  background-color: lime;
+}
+.twitter{
+  background-color: skyblue;
+}
+.appFooter{
+  background-color: hotpink;
+}

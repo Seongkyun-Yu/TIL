@@ -1,0 +1,32 @@
+/* 공통 스타일 */
+/* 링크 스타일 */
+a{
+  text-decoration: none;
+  color: inherit;
+}
+/* 박스 모델 초기화 */
+body, body *, body *::before, body *::after{
+  box-sizing: border-box;
+}
+/* 공통 레이아웃 */
+/* 멤버 서비스 */
+.memberOnly{
+  text-align: right;
+  padding: 4px 10px 4px 0;
+}
+.memberOnly li, .memberOnly a{
+  display: inline-block;
+  line-height: 42px;
+}
+.memberOnly a{
+  padding: 0 0.8em;
+}
+/* 검색 폼 */
+input[name="search"]{
+  border: 1px solid #aaa;
+  border-radius: 5px;
+  height: 35px;
+  margin-right: 5px;
+  padding-left: 1em;
+  vertical-align: middle;
+}
