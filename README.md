@@ -10,4 +10,5 @@ https://github.com/Seongkyun-Yu/project-ediya <br>
 ## 자바스크립트 공부 내역 
 2020-02-16 : 변수, 연산자, 조건문, 함수, 객체 <br>
 2020-02-17 : 배열, 반복문, 배열 내장함수, 객체 생성자, 클래스 <br>
+2020-02-18 : 삼항연산자, Truthy, Flasy, 단축 평가 논리 계산법, 비구조화 할당, spread, scope <br>
 <br>
