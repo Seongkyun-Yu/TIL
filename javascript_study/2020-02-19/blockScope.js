@@ -9,7 +9,6 @@ function print(hero1, hero2, hero3){
     let i = hero1;
     if(hero2===1){
         let i = 'str';
-        console.log(i)
     }
         
     console.log(i)
@@ -40,3 +39,5 @@ console.log(i)
 // superhero.forEach(myFunction)
 
 
+console.log('===========================');
+superhero.forEach(console.log)
