@@ -158,7 +158,7 @@ for(let i=0; i<5; i++){
   for(let j=4-i; j>0; j--){
     str15 += ' '
   }
-  for(let k=0; k<2*i+1; k++){
+  for(let j=0; j<2*i+1; j++){
     str15 += '*';
   }
   str15 += '\n';
@@ -173,7 +173,7 @@ for(let i=0; i<5; i++){
 
   str16_v1 += addstr16_v1;
 
-  for(let k=9-2*i; k>0; k--){
+  for(let j=9-2*i; j>0; j--){
     str16_v1 += '*'
   }
 
@@ -186,7 +186,7 @@ for(let i=0; i<5; i++){
   for(let j=0; j<i; j++){
     str16_v2 += ' ';
   }
-  for(let k=9-2*i; k>0; k--){
+  for(let j=9-2*i; j>0; j--){
     str16_v2 += '*'
   }  
   str16_v2 += '\n';
