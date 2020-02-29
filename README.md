@@ -22,4 +22,5 @@ https://github.com/Seongkyun-Yu/project-ediya <br>
 2020-02-26 : 함수-스코프 예습, 연습문제 추가 풀이<br>
 2020-02-27 : 함수<br>
 2020-02-28 : 스코프, 콜백 함수<br>
+2020-02-29 : 전역 변수의 문제점, let, const, 프로퍼티 어트리뷰트 예습<br>
 <br>
