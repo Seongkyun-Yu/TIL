@@ -17,6 +17,7 @@ module.exports = {
         "no-console" : "off",
         "curly" : "off",
         "nonblock-statement-body-position" : "off",
-        "no-plusplus" : "off"
+        "no-plusplus" : "off",
+        "linebreak-style" : "off"
     }
 };
