@@ -106,3 +106,31 @@ console.log(getThisBinding.apply(thisArg, a));
 console.log(getThisBinding.call(thisArg, 1, 2, 3));
 // Arguments(3) [1, 2, 3, callee: ƒ, Symbol(Symbol.iterator): ƒ]
 // { a: 1 }
+
+
+function Person1(name) {
+  this.name = name;
+  this.getThis = function() {
+    console.log(this);
+  }
+}
+
+Person1.prototype.doSomething = function (callback) {
+  // ①
+  console.log(this);
+  callback();
+};
+
+function foo1() {
+  console.log(this.name); // ②
+}
+
+const person = new Person1('Lee');
+
+person.doSomething(foo1); // ''
+// =>  window.name은 브라우저 창의 이름을 나타내는 빌트인 프로퍼티이다. window.name의 기본값은 ''이다.
+// 만약 Node.js 환경에서 실행하면 undefined가 출력된다.
+
+Person1.prototype.doSomething(foo1);
+
+person.getThis();
