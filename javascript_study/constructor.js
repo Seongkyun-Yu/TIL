@@ -15,3 +15,14 @@ function Circle(radius) {
 // 인스턴스 생성. Circle 생성자 함수는 명시적으로 반환한 객체를 반환한다.
 const circle = new Circle(1);
 console.log(circle); // Circle {radius: 1, getDiameter: ƒ}
+
+
+// 객체를 반환하는 일반 함수
+function createUser(name, role) {
+  return { name, role };
+}
+
+// 생성자 함수로서 정의하지 않은 일반 함수를 new 연산자와 함께 호출
+let inst = createUser('Lee', 'admin');
+// 함수가 생성한 객체를 반환한다.
+console.log(inst); // {name: "Lee", role: "admin"}
