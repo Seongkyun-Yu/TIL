@@ -30,4 +30,5 @@ https://github.com/Seongkyun-Yu/project-ediya <br>
 2020-03-04 : 빌트인 객체, this 예습<br>
 2020-03-06 : 실행 컨텍스트 예습<br>
 2020-03-07 : 클로저 예습<br>
+2020-03-09 : let, const, 프로퍼티 어트리뷰트 <br>
 <br>
