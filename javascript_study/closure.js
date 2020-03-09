@@ -12,3 +12,15 @@ const increase = (function () {
 increase();
 
 console.log($counter);
+
+var arr = [];
+
+for (let i = 0; i < 5; i++) {
+  arr[i] = function () { // ①
+    return i;
+  };
+}
+
+for (var j = 0; j < arr.length; j++) {
+  console.log(arr[j]()); // ②
+}
