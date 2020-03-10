@@ -2,7 +2,9 @@
 function deepFreeze(target) {
   if (target && typeof target === 'object' && !Object.isFrozen(target)) {
     Object.freeze(target);
+
     let keyArr = Object.keys(target);
+
     for (let i = 0; i < keyArr.length; i++)
       deepFreeze(target[keyArr[i]]);
   }
