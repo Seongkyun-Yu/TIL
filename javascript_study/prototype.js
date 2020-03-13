@@ -24,3 +24,9 @@ console.log(Object.getOwnPropertyDescriptor(Object.prototype, '__proto__'));
 
 // 모든 객체는 Object.prototype의 접근자 프로퍼티 __proto__를 상속받아 사용할 수 있다.
 console.log({}.__proto__ === Object.prototype); // true
+
+// 내부적으로 순환 참조하게 구현할 경우 체크해서 에러가 발생하게 한다.
+// child의 프로토타입을 parent로 설정
+child.__proto__ = parent;
+// parent의 프로토타입을 child로 설정
+parent.__proto__ = child; // TypeError: Cyclic __proto__ value
