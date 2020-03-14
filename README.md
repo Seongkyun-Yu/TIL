@@ -34,4 +34,6 @@ https://github.com/Seongkyun-Yu/project-ediya <br>
 2020-03-10 : Freeze, 재귀함수<br>
 2020-03-11 : Error Type, 일급 객체<br>
 2020-03-12 : 자료구조 연습문제, 프로토타입, 캡슐화 예습<br>
+2020-03-13 : 프로토타입
+2020-03-14 : 클래스 예습
 <br>
