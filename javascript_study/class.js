@@ -22,3 +22,21 @@ class Derived extends Base {
 const a = new Derived('yu');
 
 a.sayHi();
+
+
+const base = {
+  name: 'Lee',
+  sayHi() {
+    return `Hi! ${this.name}`;
+  }
+};
+
+const derived = {
+  __proto__: base,
+  // ES6 사양에서 정의한 메소드이다. [[HomeObject]]를 갖는다.
+  sayHi () {
+    return `${super.name}. how are you doing?`;
+  }
+};
+
+console.log(derived.sayHi()); // Hi! Lee. how are you doing?
