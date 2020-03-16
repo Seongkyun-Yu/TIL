@@ -37,4 +37,5 @@ https://github.com/Seongkyun-Yu/project-ediya <br>
 2020-03-13 : 프로토타입<br>
 2020-03-14 : 클래스 예습<br>
 2020-03-15 : 전체 복습, 알고리즘 문제 개선<br>
+2020-03-16 : 빌트인객체, this <br>
 <br>
