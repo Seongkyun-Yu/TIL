@@ -30,3 +30,8 @@ console.log({}.__proto__ === Object.prototype); // true
 child.__proto__ = parent;
 // parent의 프로토타입을 child로 설정
 parent.__proto__ = child; // TypeError: Cyclic __proto__ value
+
+// 숙제 전역객체도 객체이기 때문에 프로토타입 체인으로 검색함
+// 검색순서 : 전역스코프 -> 전역객체 -> 전역객체 프로토타입 체인
+Object.prototype.x = 1;
+console.log(x);
