@@ -34,6 +34,7 @@ const base = {
 const derived = {
   __proto__: base,
   // ES6 사양에서 정의한 메소드이다. [[HomeObject]]를 갖는다.
+  // super는 자신이 속한 객체의 상위 객체이다(프로토타입체인 상)
   sayHi () {
     return `${super.name}. how are you doing?`;
   }
