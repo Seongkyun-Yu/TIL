@@ -76,4 +76,10 @@ classStack.push(9); // 9을/를 배열에 넣었습니다. 현재 배열: 1,2,3,
 classStack.pop(); // 마지막 배열 요소(9)을/를 제거했습니다. 현재 배열: 1,2,3,4,5,6,7,8
 
 
-
+// Arraay.from 연습 [1, 2, 3]
+const arr5 = Array.from({ '0': 0, '1': 1, '2': 2, length: 3 }, 
+function (v, i) { 
+  console.log(v);
+  return i; 
+});
+console.log(arr5); // [0, 1, 2, 3, 4]
