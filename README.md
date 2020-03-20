@@ -41,4 +41,5 @@ https://github.com/Seongkyun-Yu/project-ediya <br>
 2020-03-17 : 암묵적 전역, 실행컨텍스트<br>
 2020-03-18 : 클래스 수퍼, 화살표 함수, Rest 파라미터<br>
 2020-03-19 : 배열 예습<br>
+2020-03-20 : 배열 <br>
 <br>
