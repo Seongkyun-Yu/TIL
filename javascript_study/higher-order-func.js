@@ -79,3 +79,53 @@ console.log(index); // 1
 // name이 'Park'인 요소의 인덱스를 구한다.
 index = users.findIndex(predicate('name', 'Park'));
 console.log(index); // 3
+
+const company = ['google', 'apple', 'microsoft', '삼성', '엘지'];
+company.sort(); // 오름차순 정렬
+console.log(company); // [ 'apple', 'google', 'microsoft', '삼성', '엘지' ]
+
+
+const points = [120, 110, 1, 5, 2, 25, 10];
+
+points.sort(function(a, b) {
+  console.log(a, b);
+  return a - b;
+});
+
+console.log(points);
+
+
+const member = [
+  { name: 'Yu', age: 32, address: 'incheon', sign: 2008, content: 'JavaScript' },
+  { name: 'Jeon', age: 30, address: 'incheon', sign: 2009, content: 'HTML' },
+  { name: 'Park', age: 20, address: 'seoul', sign: 2015, content: 'CSS' }
+];
+
+function compare(key) {
+  return function(a, b) {
+    return a[key] > b[key] ? 1 : -1;
+  };
+}
+
+member.sort(compare('content'));
+console.log(member);
+
+const numbers = [1, 2, 3, 4, 5];
+
+// 짝수만을 필터링한다 (0은 false로 평가된다)
+const evens = numbers.filter(item => !(item % 2));
+
+console.log(evens); // [0, 2, 4]
+
+const member1 = [
+  { name: 'Lee', address: 'Seoul' },
+  { name: 'Kim', address: 'Incheon'},
+  { name: 'Choi', address: 'Incheon' },
+  { name: 'Park', address: 'Seoul' }
+];
+
+// address가 Seoul인 요소를 반환한다.
+const result = member1.findIndex(item => item.address === 'Seoul');
+
+// Array#find는 배열이 아니라 요소를 반환한다.
+console.log(result); // { name: 'Lee', address: 'Seoul' }
