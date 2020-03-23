@@ -79,7 +79,7 @@ classStack.pop(); // 마지막 배열 요소(9)을/를 제거했습니다. 현�
 // Arraay.from 연습 [1, 2, 3]
 const arr5 = Array.from({ '0': 0, '1': 1, '2': 2, length: 3 }, 
 function (v, i) { 
-  console.log(v);
+  console.log(v); // 순차적으로 0, 1, 2를 출력한다
   return i; 
 });
 console.log(arr5); // [0, 1, 2, 3, 4]
