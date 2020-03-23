@@ -121,3 +121,12 @@ console.log(render());
   <label><input type="checkbox">Javascript</label>
 </li>
 */
+
+// map 예제
+function getValues(key) {
+  return todos.map(todos => todos[key]);
+}
+
+console.log(getValues('id')); // [3, 2, 1]
+console.log(getValues('content')); // [ 'HTML', 'CSS', 'Javascript' ]
+console.log(getValues('completed')); // [ false, true, false ]
