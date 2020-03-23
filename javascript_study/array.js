@@ -76,10 +76,12 @@ classStack.push(9); // 9을/를 배열에 넣었습니다. 현재 배열: 1,2,3,
 classStack.pop(); // 마지막 배열 요소(9)을/를 제거했습니다. 현재 배열: 1,2,3,4,5,6,7,8
 
 
-// Arraay.from 연습 [1, 2, 3]
-const arr5 = Array.from({ '0': 0, '1': 1, '2': 2, length: 3 }, 
-function (v, i) { 
-  console.log(v); // 순차적으로 0, 1, 2를 출력한다
-  return i; 
-});
-console.log(arr5); // [0, 1, 2, 3, 4]
+const arr = [1, 2, 3];
+
+// 배열에 요소 2가 포함되어 있는지 확인한다.
+let result = arr.includes(2);
+console.log(result); // true
+
+// 배열에 요소 100이 포함되어 있는지 확인한다.
+result = arr.includes(100);
+console.log(result); // false
