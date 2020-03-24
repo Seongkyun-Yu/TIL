@@ -88,5 +88,32 @@ const getAllDifference = function(iter1, iter2) {
   return [...result];
 };
 
-console.log(getDifference(set1, set2)); // Set { 1, 2, 3, 4, 5 }
-console.log(getAllDifference(set1, set2)); // [ 1, 2, 3, 4, 5 ]
+console.log(getDifference(set1, set2)); // Set { 1, 2 }
+console.log(getAllDifference(set1, set2)); // [ 1, 2 ]
+
+
+
+// Set 객체 받아 상위집합 여부 구하기
+const getIsSuperset = function(set1, set2) {
+
+  for (const value of set2) {
+    if( !set1.has(value) ) return false;
+  }
+
+  return true;
+};
+
+// 배열과 Set 객체 받아 상위집합 여부 구하기
+const getAllIsSuperset = function(iter1, iter2) {
+  iter1 = new Set([...iter1]);
+  iter2 = new Set([...iter2]);
+
+  for (const value of iter2) {
+    if( !iter1.has(value) ) return false;
+  }
+
+  return true;
+};
+
+console.log(getIsSuperset(set1, set2)); // false
+console.log(getAllIsSuperset(set1, set2)); // false
