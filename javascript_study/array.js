@@ -124,7 +124,7 @@ console.log(render());
 
 // map 예제
 function getValues(key) {
-  return todos.map(todos => todos[key]);
+  return todos.map(todo => todo[key]);
 }
 
 console.log(getValues('id')); // [3, 2, 1]
