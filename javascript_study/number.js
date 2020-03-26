@@ -21,3 +21,8 @@ console.log(Number.MAX_VALUE);  // 1.7976931348623157e+308
 
 // Number.MIN_VALUE 자바스크립트에서 사용 가능한 가장 작은 숫자
 console.log(Number.MIN_VALUE);  // 5e-324
+
+
+// Number.POSITIVE_INFINITY, Number.NEGATIVE_INFINITY
+console.log(Number.POSITIVE_INFINITY);  // Infinity
+console.log(Number.NEGATIVE_INFINITY);  // -Infinity
