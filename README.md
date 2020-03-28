@@ -48,5 +48,5 @@ https://github.com/Seongkyun-Yu/project-ediya <br>
 2020-03-24 : 선택정렬, 삽입정렬 구현<br>
 2020-03-25 : 배열함수, 전체 복습<br>
 2020-03-26 : Number 래퍼 객체, String 래퍼 객체, Math 객체, Date 객체, 정규표현식 예습<br>
-2020-03-27 : 브라우저 랜더링, ELIPSON<br>
+2020-03-27 : 브라우저 랜더링, EPSILON<br>
 <br>
