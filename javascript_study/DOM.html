@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <input type="text">
+  <script>
+    // input 요소 노드 객체를 선택
+    const $input = document.querySelector('input');
+
+    // input 요소 노드 객체의 프로토타입 확인
+    console.log($input.toString()); // [object HTMLInputElement]
+    // well-known symbol인 Symbol.toStringTag은 toString 메소드이 반환하는
+    // 객체 설명 디폴트 문자열의 작성에 사용되는 문자열이다.
+    console.log($input[Symbol.toStringTag]); // HTMLInputElement
+  </script>
+</body>
+</html>
