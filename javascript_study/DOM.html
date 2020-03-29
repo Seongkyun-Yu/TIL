@@ -2,6 +2,11 @@
 <html>
 <body>
   <input type="text">
+  <ul>
+    <li class="apple">Apple</li>
+    <li class="banana">Banana</li>
+    <li class="orange">Orange</li>
+  </ul>
   <script>
     // input 요소 노드 객체를 선택
     const $input = document.querySelector('input');
@@ -11,6 +16,17 @@
     // well-known symbol인 Symbol.toStringTag은 toString 메소드이 반환하는
     // 객체 설명 디폴트 문자열의 작성에 사용되는 문자열이다.
     console.log($input[Symbol.toStringTag]); // HTMLInputElement
+
+    // 태그 이름으로 노드 선택
+    const $tagElems = document.getElementsByTagName('li');
+
+    // 클래스 이름으로 노드 선택
+    const $classElems = document.getElementsByClassName('fruit');
+    
+    // CSS 선택자로 노드 선택
+    const $cssElem = document.querySelector('.banana');
+    const $cssElems = document.querySelectorAll('ul > li');
+
   </script>
 </body>
 </html>
