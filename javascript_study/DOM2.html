@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <body>
+      <input id="user" type="text" value="ungmo2">
+      <input id="ck" type="checkbox" checked>
+    <script>
+      const $checkbox = document.getElementById('ck');
+
+      $checkbox.onchange = function (e) {
+        console.log('chcked prop: ', e.target.checked);
+        console.log('checked attr: ', $checkbox.getAttribute('checked'));
+      }
+
+      const $input = document.getElementById('user');
+      
+      console.log($input.getAttribute('value'));
+      $input.setAttribute('value', 'ungmo3'); // 초기값 변경한다는 의미, 어트리뷰트 벨류
+      console.log($input.getAttribute('value'));
+
+      $input.oninput = function (e) {
+        console.log('value prop: ', e.target.value); // 사용자 입력값
+        console.log('attri prop: ', $input.getAttribute('value'));
+      }
+    </script>
+  </body>
+</html>
