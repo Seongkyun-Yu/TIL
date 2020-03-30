@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <input type="text" class="input">
+  <ul class="todos"></ul>
+</body>
+<script>
+  const $input = document.querySelector('.input');
+  const $todos = document.querySelector('.todos');
+
+  $input.onkeyup = function (e) {
+    if (e.keyCode !== 13) return;
+    $todos.innerHTML += `<li><input type="checkbox">${$input.value} <button>X</button></li>`;
+    $input.value = '';
+  };
+
+  $todos.onchange = function (e) {
+    if (e.target.matches('li > input') && e.target.checked) e.target.parentNode.style.textDecoration = 'line-through';
+    else e.target.parentNode.style.textDecoration = 'None';
+  };
+
+  $todos.onclick = function (e) {
+    // if (e.target.matches('li > button')) e.target.parentNode.parentNode.removeChild(e.target.parentNode);
+    if (e.target.matches('li > button')) $todos.removeChild(e.target.parentNode);
+  };
+</script>
+</html>
