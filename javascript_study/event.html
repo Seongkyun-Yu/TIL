@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #fruits {
+      display: flex;
+      list-style-type: none;
+    }
+
+    #fruits > li {
+      margin-right: 20px;
+      cursor: pointer;
+    }
+
+    .active {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <ul id="fruits">
+      <li id="apple" class="active">Apple</li>
+      <li id="banana">Banana</li>
+      <li id="orange">Orange</li>
+    </ul>
+  </nav>
+  <em class="msg">apple</em>
+  <script>
+    const $fruits = document.getElementById('fruits');
+    const $msg = document.querySelector('.msg');
+
+    $fruits.onclick = e => {
+      if(!e.target.matches('ul > li')) return;
+
+      [...$fruits.children].forEach(fruit => {
+        // if (fruit === e.target) fruit.classList.add('active');
+        // else fruit.classList.remove('active');
+        fruit.classList.toggle('active', fruit === e.target);
+      });
+      $msg.textContent = e.target.id;
+    };
+  </script>
+</body>
+
+</html>
