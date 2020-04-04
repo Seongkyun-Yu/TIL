@@ -51,5 +51,6 @@ https://github.com/Seongkyun-Yu/project-ediya <br>
 2020-03-27 : 브라우저 랜더링, EPSILON<br>
 2020-03-28 : DOM 예습<br>
 2020-03-29 : DOM 예습2<br>
-2020-03-30 : DOM 수업<br>
+2020-03-30 : DOM <br>
+2020-03-31 : Event <br>
 <br>
