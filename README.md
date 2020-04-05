@@ -56,5 +56,5 @@ https://github.com/Seongkyun-Yu/project-ediya <br>
 2020-04-01 : 해커톤 기획<br>
 2020-04-02 : Todo-List<br>
 2020-04-03 : 해커톤 [Simple-MusicPlayer](https://github.com/Seongkyun-Yu/MusicPlayer)<br>
-<br>
 2020-04-04 : Ajax 예습<br>
+2020-04-05 : Rest-API 예습<br>
