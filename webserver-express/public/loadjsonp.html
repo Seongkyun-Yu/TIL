@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://poiemaweb.com/assets/css/ajax.css">
+  </head>
+  <body>
+    <div id="content"></div>
+  <script>
+    function showTours(data) {
+      console.log(data); // data: object
+
+      let newContent = `<div id="tours">
+          <h1>Guided Tours</h1>
+        <ul>`;
+
+      data.tours.forEach(tour => {
+        newContent += `<li class="${tour.region} tour">
+            <h2>${tour.location}</h2>
+            <span class="details">${tour.details}</span>
+            <button class="book">Book Now</button>
+          </li>`;
+      });
+
+      newContent += '</ul></div>';
+
+      document.getElementById('content').innerHTML = newContent;
+    }
+    </script>
+    <script src='https://poiemaweb.com/assets/data/data-jsonp.js'></script>
+  </body>
+</html>
