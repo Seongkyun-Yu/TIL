@@ -93,6 +93,5 @@ $todos.onclick = ({ target }) => {
   if (!target.matches('button')) return;
 
   const url = `/todos/${target.parentNode.id}`;
-
   deleteTodo(url, target.parentNode.id);
 };
