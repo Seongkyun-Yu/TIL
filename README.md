@@ -59,3 +59,5 @@ https://github.com/Seongkyun-Yu/project-ediya <br>
 2020-04-04 : Ajax 예습<br>
 2020-04-05 : Rest-API 예습<br>
 2020-04-06 : Todo-List, Ajax<br>
+2020-04-07 : Ajax<br>
+2020-04-08 : Promise 예습, 블로그 정리<br>
