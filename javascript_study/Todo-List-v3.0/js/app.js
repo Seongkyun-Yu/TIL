@@ -10,8 +10,9 @@ const $nav = document.querySelector('.nav');
 
 const render = () => {
   let str = '';
-  const renderTodos = navState === 'all' ? todos : navState === 'active' ? todos.filter(todo => !todo.completed) : todos.filter(todo => todo.completed);
-  renderTodos.forEach(({id, content, completed}) => {
+  let renderTodos = navState === 'all' ? todos : navState === 'active' ? todos.filter(todo => !todo.completed) : todos.filter(todo => todo.completed);
+  renderTodos = renderTodos.sort((todo1, todo2) => todo2.id - todo1.id);
+  renderTodos.forEach(({ id, content, completed }) => {
     str += `<li id="${id}" class="todo-item">
               <input id="ck-${id}" class="checkbox" type="checkbox" ${completed ? 'checked' : ''}>
               <label for="ck-${id}">${content}</label>

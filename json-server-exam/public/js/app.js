@@ -4,9 +4,9 @@ const $todos = document.querySelector('.todos');
 const $inputTodo = document.querySelector('.input-todo');
 
 const xhrReq = (() => {
-  const xhr = new XMLHttpRequest();
-
   const xhrSet = (type, url, callback, payload) => {
+    const xhr = new XMLHttpRequest();
+
     xhr.open(type, url);
 
     xhr.setRequestHeader('content-type', 'application/json');
@@ -23,8 +23,8 @@ const xhrReq = (() => {
   };
 
   const get = (url, callback) => xhrSet('GET', url, callback);
-  const post = (url, callback, payload) => xhrSet('POST', url, callback, payload);
-  const patch = (url, callback, payload) => xhrSet('PATCH', url, callback, payload);
+  const post = (url, payload, callback) => xhrSet('POST', url, callback, payload);
+  const patch = (url, payload, callback) => xhrSet('PATCH', url, callback, payload);
   const deletePayload = (url, callback) => xhrSet('DELETE', url, callback);
 
   return { get, post, patch, deletePayload };
@@ -51,19 +51,7 @@ const getTodos = () => {
   });
 };
 
-const patchTodo = (url, payload) => {
-  xhrReq.patch(url, (patchItem) => {
-    todos = todos.map((todo) => (todo.id === patchItem.id ? patchItem : todo));
-    render();
-  }, payload);
-};
-
-const deleteTodo = (url, id) => {
-  xhrReq.deletePayload(url, () => {
-    todos = todos.filter((todo) => todo.id !== +id);
-    render();
-  });
-};
+const generateId = () => (todos.length ? Math.max(...todos.map(todo => todo.id) + 1) : 1);
 
 
 window.onload = getTodos;
@@ -72,26 +60,32 @@ $inputTodo.onkeyup = (e) => {
   const content = e.target.value;
   if (e.keyCode !== 13 || content.trim() === '') return;
 
-  let id = +Math.max(...todos.map((todo) => todo.id));
+  let id = generateId();
   id++;
 
-  xhrReq.post('/todos', (data) => {
+  xhrReq.post('/todos', { id, content, completed: false }, (data) => {
     todos = [data, ...todos]
     render();
-  }, { id, content, completed: false });
+  });
 };
 
 $todos.onchange = ({ target }) => {
   const url = `/todos/${target.parentNode.id}`;
-  const index = todos.findIndex((todo) => todo.id === +target.parentNode.id);
-  const payload = { completed: !todos[index].completed };
+  // const index = todos.findIndex((todo) => todo.id === +target.parentNode.id);
+  const payload = { completed: !todos.find((todo) => todo.id === +target.parentNode.id).completed };
 
-  patchTodo(url, payload);
+  xhrReq.patch(url, payload, (patchItem) => {
+    todos = todos.map((todo) => (todo.id === patchItem.id ? patchItem : todo));
+    render();
+  });
 };
 
 $todos.onclick = ({ target }) => {
   if (!target.matches('button')) return;
 
   const url = `/todos/${target.parentNode.id}`;
-  deleteTodo(url, target.parentNode.id);
+  xhrReq.deletePayload(url, () => {
+    todos = todos.filter((todo) => todo.id !== +target.parentNode.id);
+    render();
+  });
 };
