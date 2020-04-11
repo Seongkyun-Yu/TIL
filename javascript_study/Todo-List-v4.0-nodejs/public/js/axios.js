@@ -60,10 +60,6 @@ const render = () => {
 
 const generateId = () => (todos.length ? Math.max(...todos.map((todo) => todo.id))+ 1 : 1);
 
-const countCompleted = () => todos.filter((todo) => todo.completed).length;
-
-const countActived = () => todos.filter((todo) => !todo.completed).length;
-
 
 // Event handler
 window.onload = axios.get('/todos')

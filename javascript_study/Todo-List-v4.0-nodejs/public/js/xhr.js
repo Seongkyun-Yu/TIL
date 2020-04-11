@@ -1,6 +1,7 @@
 let todos = [];
 // 현재 선택된 nav 상태(현재 active 상태인 nav 요소의 자식 요소의 id)
 let navState = 'all'; // 'all' / 'active' / 'completed'
+
 // DOMs
 const $todos = document.querySelector('.todos');
 const $input = document.querySelector('.input-todo');
@@ -9,6 +10,7 @@ const $clearCompleted = document.querySelector('.clear-completed > .btn');
 const $completedTodos = document.querySelector('.completed-todos');
 const $activeTodos = document.querySelector('.active-todos');
 const $nav = document.querySelector('.nav');
+
 const render = () => {
   const _todos = todos.filter(({ completed }) => (navState === 'all' ? true : navState === 'active' ? !completed : completed));
   let html = '';
@@ -24,6 +26,7 @@ const render = () => {
   $completedTodos.textContent = todos.filter(todo => todo.completed).length;
   $activeTodos.textContent = todos.filter(todo => !todo.completed).length;
 };
+
 const ajax = (() => {
   const req = (method, url, callback, payload) => {
     const xhr = new XMLHttpRequest();
@@ -53,7 +56,9 @@ const ajax = (() => {
     }
   };
 })();
+
 const generateid = () => (todos.length ? Math.max(...todos.map(todo => todo.id)) + 1 : 1);
+
 const getTodos = () => {
   ajax.get('/todos', _todos => {
     todos = _todos;
@@ -61,6 +66,7 @@ const getTodos = () => {
     render();
   });
 };
+
 const addTodo = content => {
   ajax.post('/todos', { id: generateid(), content, completed: false }, _todos => {
     todos = _todos;
@@ -68,6 +74,7 @@ const addTodo = content => {
     render();
   });
 };
+
 const toggleCompleted = id => {
   const completed = !todos.find(todo => todo.id === +id).completed;
   ajax.patch(`/todos/${id}`, { completed }, _todos => {
@@ -76,6 +83,7 @@ const toggleCompleted = id => {
     render();
   });
 };
+
 const removeTodo = id => {
   ajax.delete(`/todos/${id}`, _todos => {
     todos = _todos;
@@ -83,6 +91,7 @@ const removeTodo = id => {
     render();
   });
 };
+
 const changeNav = id => {
   // $navItem의 id가 e.target의 id와 같으면 active 클래스를 추가하고 아니면 active 클래스를 제거
   [...$nav.children].forEach($navItem => {
@@ -92,6 +101,7 @@ const changeNav = id => {
   console.log('[navState]', navState);
   render();
 };
+
 const toggleCompletedAll = completed => {
   ajax.patch('/todos', { completed }, _todos => {
     todos = _todos;
@@ -99,6 +109,7 @@ const toggleCompletedAll = completed => {
     render();
   });
 };
+
 const removeCompleted = () => {
   ajax.delete('/todos/completed', _todos => {
     todos = _todos;
@@ -106,28 +117,36 @@ const removeCompleted = () => {
     render();
   });
 };
+
+
 // Event bindings
 window.onload = getTodos;
+
 $input.onkeyup = ({ target, keyCode }) => {
   const content = target.value.trim();
   if (!content || keyCode !== 13) return;
   target.value = '';
   addTodo(content);
 };
+
 $todos.onchange = ({ target }) => {
   toggleCompleted(target.parentNode.id);
 };
+
 $todos.onclick = ({ target }) => {
   if (!target.matches('.todos > li.todo-item > .remove-todo')) return;
   removeTodo(target.parentNode.id);
 };
+
 $nav.onclick = ({ target }) => {
   if (!target.matches('.nav > li')) return;
   changeNav(target.id);
 };
+
 // todo.completed 일괄 토글
 $checkbox.onchange = ({ target }) => {
   toggleCompletedAll(target.checked);
 };
+
 // todo.completed 일괄 제거
 $clearCompleted.onclick = removeCompleted;
