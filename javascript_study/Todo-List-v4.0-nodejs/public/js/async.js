@@ -75,31 +75,15 @@ const inputTodo = async (e) => {
   render();
 };
 
-const completedTodo = async (target, completed) => {
+const completedTodo = async ({ target }) => {
+  const completed = todos.find((todo) => todo.id === +target.parentNode.id).completed;
+
   const { data } = await axios.patch(`/todos/${target.parentNode.id}`, { completed });
   todos = data;
   render();
 } 
 
-const removeTodo = async (target) => await axios.delete(`/todos/${target.parentNode.id}`);
-const completedAllTodo = async (payload) => await axios.patch('/todos', payload);
-const clearCompleteTodos = async () => await axios.delete('/todos/completed');
-
-// Event handler
-window.onload = getTodos;
-
-$inputTodo.onkeydown = inputTodo;
-
-$todos.onchange = async ({ target }) => {
-  const completed = todos.find((todo) => todo.id === +target.parentNode.id).completed;
-
-  const { data } = await axios.patch(`/todos/${target.parentNode.id}`, { completed });
-  
-  todos = data;
-  render();
-};
-
-$todos.onclick = async ({ target }) => {
+const removeTodo = async ({ target }) => {
   if (!target.matches('.remove-todo')) return;
 
   const { data } = await axios.delete(`/todos/${target.parentNode.id}`);
@@ -108,7 +92,7 @@ $todos.onclick = async ({ target }) => {
   render();
 };
 
-$ckCompleteAll.onclick = async ({ target }) => {
+const completedAllTodo = async ({ target }) => {
   const payload = target.checked ? { completed: true } : { completed: false };
 
   const { data } = await axios.patch('/todos', payload);
@@ -117,18 +101,7 @@ $ckCompleteAll.onclick = async ({ target }) => {
   render();
 };
 
-$nav.onclick = ({ target }) => {
-  if (!target.matches('.nav > li:not(.active)')) return;
-
-  [...target.parentNode.children].forEach(child => {
-    child.classList.toggle('active', child.id === target.id);
-  });
-
-  navState = target.id;
-  render();
-};
-
-$clearCompleted.onclick = async ({ target }) => {
+const clearCompleteTodos = async ({ target }) => {
   if (!target.matches('.clear-completed .btn')) return;
 
   const { data } = await axios.delete('/todos/completed')
@@ -136,3 +109,27 @@ $clearCompleted.onclick = async ({ target }) => {
   todos = data;
   render();
 };
+
+
+// Event handler
+window.onload = getTodos;
+
+$inputTodo.onkeydown = inputTodo;
+
+$todos.onchange = completedTodo;
+
+$todos.onclick = removeTodo;
+
+$ckCompleteAll.onclick = completedAllTodo;
+
+$clearCompleted.onclick = clearCompleteTodos;
+
+$nav.onclick = ({ target }) => {
+  if (!target.matches('.nav > li:not(.active)')) return;
+
+  [...target.parentNode.children].forEach(child => child.classList.toggle('active', child.id === target.id));
+
+  navState = target.id;
+  render();
+};
+
