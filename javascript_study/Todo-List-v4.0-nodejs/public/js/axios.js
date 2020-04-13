@@ -45,7 +45,7 @@ $inputTodo.onkeydown = (e) => {
 };
 
 $todos.onchange = ({ target }) => {
-  const completed = todos.find((todo) => todo.id === +target.parentNode.id).completed;
+  const { completed } = todos.find((todo) => todo.id === +target.parentNode.id);
 
   axios.patch(`/todos/${target.parentNode.id}`, { completed })
     .then(({ data }) => todos = data)
