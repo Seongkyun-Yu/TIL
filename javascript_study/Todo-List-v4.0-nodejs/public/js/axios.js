@@ -9,38 +9,6 @@ const $clearCompleted = document.querySelector('.clear-completed');
 const $activeTodos = document.querySelector('.active-todos');
 const $nav = document.querySelector('.nav');
 
-const ajax = (() => {
-  const requst = (type, url, payload) => {
-    return new Promise((resolve, reject) => {
-      const xhr = new XMLHttpRequest();
-
-      xhr.open(type, url);
-
-      xhr.setRequestHeader('content-type', 'application/json');
-      xhr.send(JSON.stringify(payload));
-
-      xhr.onload = () => {
-        if (xhr.status === 200 || xhr.status === 201) resolve(JSON.parse(xhr.response));
-        else reject(new Error(`${xhr.status} ${xhr.response}`));
-      };
-    });
-  };
-
-  return {
-    get(url) {
-      return requst('GET', url);
-    },
-    post(url, payload) {
-      return requst('POST', url, payload);
-    },
-    patch(url, payload) {
-      return requst('PATCH', url, payload);
-    },
-    delete(url) {
-      return requst('DELETE', url);
-    }
-  };
-})();
 
 const render = () => {
   let str = '';
@@ -63,9 +31,9 @@ const generateId = () => (todos.length ? Math.max(...todos.map((todo) => todo.id
 
 // Event handler
 window.onload = axios.get('/todos')
-    .then(({ data }) => todos = data)
-    .then(render)
-    .catch((err) => console.error(err));
+  .then(({ data }) => (todos = data))
+  .then(render)
+  .catch((err) => console.error(err));
 
 $inputTodo.onkeydown = (e) => {
   if (e.keyCode !== 13) return;
