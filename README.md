@@ -4,8 +4,8 @@ Today I Learned...
 <br><br><br>
 
 ## 미니프로젝트
-2020-02-11~2020-02-14 : 이디야 프로젝트 진행 <br>
-https://github.com/Seongkyun-Yu/project-ediya <br>
+2020-02-11~2020-02-14 : 이디야 프로젝트 진행 [ediya-clone](https://github.com/Seongkyun-Yu/project-ediya)<br>
+2020-04-03 : 해커톤(뮤직플레이어) [Simple-MusicPlayer](https://github.com/Seongkyun-Yu/MusicPlayer)<br>
 <br>
 
 ## 자바스크립트 공부 내역 
@@ -61,4 +61,6 @@ https://github.com/Seongkyun-Yu/project-ediya <br>
 2020-04-06 : Todo-List, Ajax<br>
 2020-04-07 : Ajax<br>
 2020-04-08 : Promise 예습, 블로그 정리<br>
-2020-04-09 : Promise Todo List 만들기<br>
+2020-04-09 : Promise Todo List<br>
+2020-04-10 : Async, Await, Axios Todo List<br>
+2020-04-11 : Web 접근성, 좋은 질문을 하는 방법<br>
