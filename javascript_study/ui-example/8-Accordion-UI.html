@@ -169,18 +169,6 @@
       this.$accordion.children[0].children[1].style.height = `${this.$accordion.children[0].children[1].scrollHeight}px`;
 
       // do something!
-      // this.$accordion.onclick = ({ target }) => {
-      //   if (!target.parentNode.parentNode.matches('.accordion > li')) return;
-
-      //   [...this.$accordion.children].forEach((li) => {
-      //     li.classList.remove('active');
-      //     // console.log(li.children[1].style.height);
-      //     li.children[1].style.height = 0;
-      //   });
-      //   target.parentNode.parentNode.classList.add('active');
-
-      //   target.parentNode.nextSibling.nextSibling.style.height = target.parentNode.parentNode.classList.contains('active') ? `${target.parentNode.nextSibling.nextSibling.scrollHeight}px` : '0';
-      // };
       this.$accordion.onclick = this.render;
     }
 
