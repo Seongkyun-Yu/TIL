@@ -43,36 +43,44 @@
     const $display = document.querySelector('.display');
     const $control = document.querySelector('.control');
 
-    let timestamp = 0;
-    let timerId;
-
-    const calcTime = () => {
-      let millseconds = timestamp - Math.floor(timestamp / 100) * 100;
-      let seconds = Math.floor(timestamp / 100);
-      let min = Math.floor(seconds / 60);
-
-      millseconds = millseconds >= 100 ? millseconds - 100 : millseconds;
-      millseconds = millseconds >= 10 ? millseconds : `0${millseconds}`;
-
-      min = min >= 60 ? min - 60 : min;
-      min = min >= 10 ? min : `0${min}`;
-
-      seconds = seconds >= 60 ? seconds - 60 : seconds;
-      seconds = seconds >= 10 ? seconds : `0${seconds}`;
-
-      $display.innerText = `${min}:${seconds}:${millseconds}`;
+    const displayTime = (min, sec, mill) => {
+      $display.innerText = `${min >= 10 ? min : `0${min}`}:${sec >= 10 ? sec : `0${sec}`}:${mill >= 10 ? mill : `0${mill}`}`;
     };
 
-    const startTime = () => {
-      timestamp += 1;
-      calcTime();
-    };
+    const stopWatch = (() => {
+      let timestamp = 0;
+      let timerId;
+
+      const calcTime = () => {
+        const mill = timestamp % 100;
+        let sec = Math.floor(timestamp / 100);
+        const min = Math.floor(sec / 60);
+        sec = sec >= 60 ? sec - 60 : sec;
+
+        displayTime(min, sec, mill);
+      };
+
+      const start = () => {
+        timerId = setInterval(() => {
+          timestamp += 1;
+          calcTime();
+        }, 10);
+      };
+
+      const stop = () => clearInterval(timerId);
+
+      return {
+        start, stop
+      };
+    })();
 
     $control.onclick = ({ target }) => {
       if (target.classList.toggle('active')) {
-        timerId = setInterval(startTime, 10);
+        stopWatch.start();
+        target.innerText = 'Stop';
       } else {
-        clearInterval(timerId);
+        stopWatch.stop();
+        target.innerText = 'Start';
       }
     };
   </script>
