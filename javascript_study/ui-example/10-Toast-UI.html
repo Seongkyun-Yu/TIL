@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Toast UI</title>
+  <style>
+  @import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400);
+
+  body {
+    font-family: 'Open Sans';
+    font-weight: 300;
+    background-color: #D6E1E5;
+  }
+
+  h1 {
+    color: #DB5B33;
+    font-weight: 300;
+    text-align: center;
+  }
+
+  /* CSS 작성 바랍니다. */
+  .toast-container {
+    position: fixed;
+    width: 300px;
+    bottom: 0;
+    right: 0;
+  }
+
+  .toast {
+    position: relative;
+    width: 100%;
+    height: 100px;
+    box-sizing: border-box;
+    padding: 10px;
+    animation-duration: 1s;
+    animation-name: slidein;
+  }
+
+  @keyframes slidein {
+    from {
+      transform : translate3d(100%, 0, 0);
+    }
+
+    to {
+      transform : translate3d(0, 0, 0);
+    }
+  }
+
+  .close {
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-color: transparent;
+    border: 0;
+    outline: 0;
+    padding: 10px 12px;
+  }
+
+  .toast > strong {
+    display: block;
+    margin: 0 0 15px 0;
+  }
+
+  .success {
+    background-color: rgba(0, 255, 150, 0.8);
+  }
+
+  .error {
+    background-color: rgba(255, 0, 0, 0.5);
+  }
+
+  .warning {
+    background-color: rgba(255, 255, 0, 0.5);
+  }
+
+  </style>
+</head>
+<body>
+  <h1>JavaScript Toast</h1>
+
+  <button class="show-success">Success</button>
+  <button class="show-error">Error</button>
+  <button class="show-warning">Warning</button>
+
+  
+  <div class="toast-container">
+  </div>
+    
+  </div>
+  <script>
+    const $toastContainer = document.querySelector('.toast-container');
+    const $showSuccess = document.querySelector('.show-success');
+    const $showError = document.querySelector('.show-error');
+    const $showWarning = document.querySelector('.show-warning');
+
+    const toastControl = (() => {
+      let count = 0;
+
+      const makeMessage = (type, title, message) => {
+        const $newDiv = document.createElement('div');
+        $newDiv.classList.add('toast', type);
+
+        const $strong = document.createElement('strong');
+        const $title = document.createTextNode(`${title} ${count}`);
+        const $message = document.createTextNode(message);
+        const $closeBtn = document.createElement('button');
+        const $closeBtnText = document.createTextNode('X');
+    
+        $closeBtn.appendChild($closeBtnText);
+        $closeBtn.classList.add('close');
+
+        $strong.appendChild($title);
+
+        $newDiv.appendChild($strong);
+        $newDiv.appendChild($message);
+        $newDiv.appendChild($closeBtn);
+
+        $toastContainer.appendChild($newDiv);
+
+        setTimeout(() => {
+          if (![...$toastContainer.children].includes($newDiv)) return;
+
+          $toastContainer.removeChild($newDiv);
+          count--;
+        }, 3000);
+
+        $closeBtn.onclick = () => {
+          $toastContainer.removeChild($newDiv);
+          count--;
+        };
+
+        count++;
+      };
+
+      const success = () => makeMessage('success', 'Well done!', 'This is success alert');
+      const error = () => makeMessage('error', 'Check it out!', 'This is error alert');
+      const warning = () => makeMessage('warning', 'Check it out!', 'This is warning alert');
+
+      return { success, error, warning };
+    })();
+
+    $showSuccess.onclick = toastControl.success;
+    $showError.onclick = toastControl.error;
+    $showWarning.onclick = toastControl.warning;
+    </script>
+</body>
+</html>

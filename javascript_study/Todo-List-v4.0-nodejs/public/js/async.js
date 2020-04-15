@@ -9,38 +9,6 @@ const $clearCompleted = document.querySelector('.clear-completed');
 const $activeTodos = document.querySelector('.active-todos');
 const $nav = document.querySelector('.nav');
 
-const ajax = (() => {
-  const requst = (type, url, payload) => {
-    return new Promise((resolve, reject) => {
-      const xhr = new XMLHttpRequest();
-
-      xhr.open(type, url);
-
-      xhr.setRequestHeader('content-type', 'application/json');
-      xhr.send(JSON.stringify(payload));
-
-      xhr.onload = () => {
-        if (xhr.status === 200 || xhr.status === 201) resolve(JSON.parse(xhr.response));
-        else reject(new Error(`${xhr.status} ${xhr.response}`));
-      };
-    });
-  };
-
-  return {
-    get(url) {
-      return requst('GET', url);
-    },
-    post(url, payload) {
-      return requst('POST', url, payload);
-    },
-    patch(url, payload) {
-      return requst('PATCH', url, payload);
-    },
-    delete(url) {
-      return requst('DELETE', url);
-    }
-  };
-})();
 
 const render = () => {
   let str = '';
@@ -76,7 +44,7 @@ const inputTodo = async (e) => {
 };
 
 const completedTodo = async ({ target }) => {
-  const completed = todos.find((todo) => todo.id === +target.parentNode.id).completed;
+  const { completed } = todos.find((todo) => todo.id === +target.parentNode.id);
 
   const { data } = await axios.patch(`/todos/${target.parentNode.id}`, { completed });
   todos = data;
@@ -87,7 +55,7 @@ const removeTodo = async ({ target }) => {
   if (!target.matches('.remove-todo')) return;
 
   const { data } = await axios.delete(`/todos/${target.parentNode.id}`);
-  
+
   todos = data;
   render();
 };
@@ -96,7 +64,7 @@ const completedAllTodo = async ({ target }) => {
   const payload = target.checked ? { completed: true } : { completed: false };
 
   const { data } = await axios.patch('/todos', payload);
-  
+
   todos = data;
   render();
 };
@@ -105,7 +73,7 @@ const clearCompleteTodos = async ({ target }) => {
   if (!target.matches('.clear-completed .btn')) return;
 
   const { data } = await axios.delete('/todos/completed')
-  
+
   todos = data;
   render();
 };
@@ -132,4 +100,3 @@ $nav.onclick = ({ target }) => {
   navState = target.id;
   render();
 };
-

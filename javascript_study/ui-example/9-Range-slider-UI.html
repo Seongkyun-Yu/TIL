@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Draggable Range Slider</title>
+  <style>
+    html {
+      height: 100%;
+    }
+
+    body {
+      margin: 0;
+      background-color: #292c2f;
+      font-family: monospace;
+      overflow: hidden;
+    }
+
+    header {
+      height: 70px;
+      line-height: 70px;
+      background: #252525;
+    }
+
+    .range-container {
+      position: absolute;
+      left: 30px;
+      top: 25px;
+      width: 300px;
+      height: 20px;
+    }
+
+    .range {
+      position: relative;
+      margin: 0 10px;
+      height: 20px;
+      cursor: pointer;
+    }
+
+    .range-track {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 100%;
+      height: 4px;
+      background: #424242;
+      border-radius: 4px;
+    }
+
+    .range-track.fill {
+      width: 0%;
+      background: #4ac1ff;
+    }
+
+    .range-handle {
+      position: absolute;
+      left: -10px;
+      height: 20px;
+      width: 20px;
+      border-radius: 50%;
+      background: #fff;
+      cursor: pointer;
+      outline: none;
+    }
+
+    .gradient {
+      position: absolute;
+      width: 100%;
+      height: calc(100% - 70px);
+      background-image: linear-gradient(0deg, #f1a829, #f14429);
+    }
+
+    .gradient-val {
+      color: #ccc;
+      font-size: 14px;
+      font-weight: 800;
+      padding-left: 350px;
+      user-select: none;
+    }
+
+    .gradient-val span {
+      color: #ccc;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="range-container">
+      <div class="range">
+        <div class="range-track"></div>
+        <div class="range-track fill"></div>
+        <span class="range-handle"></span>
+      </div>
+    </div>
+    <div class="gradient-val">
+      background-image: linear-gradient(
+        <span class="gradient-angle">0</span>deg,
+        <span style="color: #f1a829;">#f1a829</span>,
+        <span style="color: #f14429;">#f14429</span> )
+    </div>
+  </header>
+  <div class="gradient"></div>
+  <script>
+    const $range = document.querySelector('.range');
+    const $track = document.querySelector('.range-track');
+    const $fill = document.querySelector('.range-track.fill');
+    const $handle = document.querySelector('.range-handle');
+    const $gradient = document.querySelector('.gradient');
+    const $gradientAngle = document.querySelector('.gradient-angle');
+
+    // .range-track 요소의 정보
+    const { left, right, width } = $track.getBoundingClientRect();
+    
+    /**
+     * mousedown, mousemove 이벤트 핸들러
+     * 1. 뷰포트를 기준으로 한 마우스 포인터의 x축 위치를 바탕으로 .range-handle 요소를 수평 이동하고 .fill 요소의 너비를 변경한다.
+     * 2. .gradient 요소의 background-image를 변경한다.
+     *
+     * @param {MouseEvent} e - 이벤트 객체
+     */
+    let initailMousePos = 0;
+    let offset = 0;
+
+    function rangeHandler(e) {
+      // do something!
+      offset = e.clientX - initailMousePos;
+      offset = offset < 0 ? 0 : offset > width ? width : offset;
+
+      $gradientAngle.innerText = Math.floor((offset / 280) * 360);
+      $gradient.style.backgroundImage = `linear-gradient(${(offset / 280) * 360}deg, #f1a829, #f14429)`;
+      $fill.style.width = `${offset}px`;
+      $handle.style.transform = `translate3d(${offset}px, 0, 0)`;
+    }
+
+    // .range-track 요소의 좌우 영역 내에서 발생한 이벤트만 캐치하기 위해 .range 요소에 이벤트를 등록한다.
+    // margin 영역은 이벤트를 발생시키지 않는다.
+    $range.addEventListener('mousedown', e => {
+      e.preventDefault();
+
+      initailMousePos = e.clientX - offset;
+
+      rangeHandler(e);
+
+      // mousedown 이벤트가 발생한 상태에서 mousemove 이벤트가 발생
+      $range.addEventListener('mousemove', rangeHandler);
+    });
+
+    // mouseup 이벤트가 발생하면 mousemove 이벤트를 삭제한다.
+    // $range 밖에서 발생한 mouseup 이벤트도 처리하기 위해 document의 mouseup 이벤트에 이벤트 핸들러를 등록한다
+    document.addEventListener('mouseup', () => {
+      $range.removeEventListener('mousemove', rangeHandler);
+    });
+  </script>
+</body>
+</html>

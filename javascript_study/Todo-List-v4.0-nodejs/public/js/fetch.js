@@ -9,38 +9,6 @@ const $clearCompleted = document.querySelector('.clear-completed');
 const $activeTodos = document.querySelector('.active-todos');
 const $nav = document.querySelector('.nav');
 
-const ajax = (() => {
-  const requst = (type, url, payload) => {
-    return new Promise((resolve, reject) => {
-      const xhr = new XMLHttpRequest();
-
-      xhr.open(type, url);
-
-      xhr.setRequestHeader('content-type', 'application/json');
-      xhr.send(JSON.stringify(payload));
-
-      xhr.onload = () => {
-        if (xhr.status === 200 || xhr.status === 201) resolve(JSON.parse(xhr.response));
-        else reject(new Error(`${xhr.status} ${xhr.response}`));
-      };
-    });
-  };
-
-  return {
-    get(url) {
-      return requst('GET', url);
-    },
-    post(url, payload) {
-      return requst('POST', url, payload);
-    },
-    patch(url, payload) {
-      return requst('PATCH', url, payload);
-    },
-    delete(url) {
-      return requst('DELETE', url);
-    }
-  };
-})();
 
 const render = () => {
   let str = '';
@@ -83,7 +51,7 @@ $inputTodo.onkeydown = (e) => {
 };
 
 $todos.onchange = ({ target }) => {
-  const completed = todos.find((todo) => todo.id === +target.parentNode.id).completed;
+  const { completed } = todos.find((todo) => todo.id === +target.parentNode.id);
 
   fetch(`/todos/${target.parentNode.id}`, { 
     method: 'PATCH',
@@ -113,14 +81,14 @@ $ckCompleteAll.onclick = ({ target }) => {
   const payload = target.checked ? { completed: true } : { completed: false };
 
   fetch('/todos', {
-      method: 'PATCH',
-      headers: { 'content-type': 'application/json' },
-      body: JSON.stringify(payload)
-    })
+    method: 'PATCH',
+    headers: { 'content-type': 'application/json' },
+    body: JSON.stringify(payload)
+  })
     .then(res => res.json())
     .then((res) => todos = res)
     .then(render)
-    .catch((err) => console.error(err));  
+    .catch((err) => console.error(err));
 };
 
 $nav.onclick = ({ target }) => {

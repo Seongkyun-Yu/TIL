@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Stop watch</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css?family=Source+Code+Pro');
+
+    .stop-watch {
+      font-family: 'Source Code Pro', monospace;
+      text-align: center;
+      font-size: 3em;
+      padding: 30px;
+    }
+
+    .control {
+      width: 300px;
+      padding: 5px;
+      margin-top: 15px;
+      font-size: 36px;
+      font-weight: bold;
+      border: 2px solid #f44336;
+      border-radius: 4px;
+      cursor: pointer;
+      outline: none;
+    }
+
+    .control:hover {
+      background: #f44336;
+      color: aliceblue;
+    }
+  </style>
+  <title>Stop watch</title>
+</head>
+<body>
+  <div class="stop-watch">
+    <div class="display">00:00:00</div>
+    <button class="control">Start</button>
+  </div>
+  <script>
+    const $display = document.querySelector('.display');
+    const $control = document.querySelector('.control');
+
+    const displayTime = (min, sec, mill) => {
+      $display.innerText = `${min >= 10 ? min : `0${min}`}:${sec >= 10 ? sec : `0${sec}`}:${mill >= 10 ? mill : `0${mill}`}`;
+    };
+
+    const stopWatch = (() => {
+      let timestamp = 0;
+      let timerId;
+
+      const calcTime = () => {
+        const mill = timestamp % 100;
+        let sec = Math.floor(timestamp / 100);
+        const min = Math.floor(sec / 60);
+        sec = sec >= 60 ? sec - 60 : sec;
+
+        displayTime(min, sec, mill);
+      };
+
+      const start = () => {
+        timerId = setInterval(() => {
+          timestamp += 1;
+          calcTime();
+        }, 10);
+      };
+
+      const stop = () => clearInterval(timerId);
+
+      return {
+        start, stop
+      };
+    })();
+
+    $control.onclick = ({ target }) => {
+      if (target.classList.toggle('active')) {
+        stopWatch.start();
+        target.innerText = 'Stop';
+      } else {
+        stopWatch.stop();
+        target.innerText = 'Start';
+      }
+    };
+  </script>
+</body>
+</html>
