@@ -64,3 +64,8 @@ Today I Learned...
 2020-04-09 : Promise Todo List<br>
 2020-04-10 : Async, Await, Axios Todo List<br>
 2020-04-11 : Web 접근성, 좋은 질문을 하는 방법<br>
+2020-04-13 : 모듈<br>
+2020-04-14 : Todo-List ver4<br>
+2020-04-15 : babel, webpack 예습<br>
+2020-04-16 : babel, webpack<br>
+2020-04-17 : 미니프로젝트 기획<br>

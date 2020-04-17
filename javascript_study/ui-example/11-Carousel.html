@@ -190,7 +190,8 @@
 
       attachEvent() {
         // 핸들러 내부의 this가 Carousel 클래스의 인스턴스를 가리키도록 this를 바인딩한다.
-        this.prev.addEventListener('click', this.moveToPrev.bind(this));
+        // console.log(this);
+        this.prev.addEventListener('click', this.moveToPrev);
         this.next.addEventListener('click', this.moveToNext.bind(this));
         // transition 중에 발생한 이동 요청은 무시한다.
         this.container.addEventListener('transitionend', () => this.isTransiting = false);
@@ -212,7 +213,9 @@
         prev 버튼 이벤트 핸들러
         이전 슬라이더로 이동하기 위해 carousel-container 요소를 오른쪽으로 이동시킨다.
       */
+
       moveToPrev() {
+        console.log(this);
         // 과도한 이동 요청 방지를 위해 트랜지션이 진행중인 상태라면 이동 요청을 무시한다.
         if (this.isTransiting) return;
 
