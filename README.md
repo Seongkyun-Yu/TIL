@@ -69,3 +69,4 @@ Today I Learned...
 2020-04-15 : babel, webpack 예습<br>
 2020-04-16 : babel, webpack<br>
 2020-04-17 : 미니프로젝트 기획<br>
+2020-04-18 : Nodejs<br>
