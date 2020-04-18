@@ -1,5 +1,7 @@
 const express = require('express');
 const cors = require('cors');
+const key = require('./config.json');
+const BootpayRest = require('bootpay-rest-client');
 
 const app = express();
 app.use(cors());
@@ -39,19 +41,19 @@ let musics = [
 ]
 
 let users = [
-  { id: 'ysungkoon', name: '유성균', password: '1111',
+  { id: 'ysungkoon', name: '유성균', password: '111111',
     playlist : ['A to the 0', 'Hurts So Good Blues', 'Fight or Flight', 'Right Here Beside You', 'Sun Spots', 'Nightingale'], 
     favorite: ['Unrequited', 'Pirouette', 'Hurts So Good Blues', 'Fight or Flight', 'Right Here Beside You', 'Sun Spots'], 
   },
-  { id: 'angryboo', name: '송부용',password: '1111', 
+  { id: 'angryboo', name: '송부용',password: '111111', 
     playlist : ['Same Time', 'Motel Rock', 'Cages', 'Firefly', 'Down by the Riverside', 'Hurts So Good Blues'],
     favorite: ['Cloud Chaser', 'Motel Rock', 'Cages', 'Down by the Riverside', 'Hurts So Good Blues'], 
   },
-  { id: 'hozero', name: '정호영', password: '1111', 
+  { id: 'hozero', name: '정호영', password: '111111', 
     playlist : ['Motel Rock', 'Cloud Chaser', 'Firefly', 'Blues Infusion', 'Bit Coin', 'Fight or Flight'], 
     favorite: ['Bellissimo', 'Motel Rock', 'Bit Coin', 'Fight or Flight', 'Right Here Beside You'], 
   },
-  { id: 'pkt0831', name: '박기태', password: '1111', 
+  { id: 'pkt0831', name: '박기태', password: '111111', 
     playlist : ['Bit Coin', 'Sun Spots', 'Charisma', 'Triumph', 'Run', 'Moskito'], 
     favorite: ['Sun Spots', 'Charisma', 'Bit Coin'], 
   },
@@ -198,7 +200,36 @@ app.patch('/deletefavorite', (req, res) => {
   res.send(users[userIndex].favorite.map(list => musics.find(music => music.title === list)));
 });
 
+// payment
+app.get('/key', (req, res) => {
+  console.log('[GET] key');
+  res.send(key);
+});
 
+app.post('/confirm', (req, res) => {
+  console.log('[POST] confirm');
+
+  const { data } = req.body;
+
+  BootpayRest.setConfig(
+    key.rest_id,
+    key.private_key
+  );
+  
+  BootpayRest.getAccessToken().then(function (response) {
+    // Access Token을 발급 받았을 때
+    if (response.status === 200 && response.data.token !== undefined) {
+      BootpayRest.verify(data.receipt_id).then(function (_response) {
+        // 검증 결과를 제대로 가져왔을 때
+        if (_response.status === 200) {
+          console.log(_response);
+        }
+      });
+    }
+  }).catch((err) => console.log(err));
+
+  res.send({wow: 'hi'});
+})
 
 // app.get('/todos', (req, res) => {
 //   console.log('[GET]');
