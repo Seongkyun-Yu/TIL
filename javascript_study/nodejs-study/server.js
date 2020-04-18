@@ -4,11 +4,6 @@ const cors = require('cors');
 const app = express();
 app.use(cors());
 
-let todos = [
-  { id: 3, content: 'Javascript', completed: false },
-  { id: 2, content: 'CSS', completed: true },
-  { id: 1, content: 'HTML', completed: false }
-];
 
 let musics = [
   { id: 1, type: 'hiphop', title: 'A to the 0', fileName: 'A_to_the_0', composer: 'Diamond Ortiz', time: '3:38', totalCount: 100},
@@ -43,7 +38,7 @@ let musics = [
   { id: 30, type: 'dance', title: 'Moskito', fileName: 'Moskito', composer: 'Quincas Moreira', time: '1:58', totalCount: 449},
 ]
 
-const users = [
+let users = [
   { id: 'ysungkoon', name: '유성균', password: '1111',
     playlist : ['A to the 0', 'Hurts So Good Blues', 'Fight or Flight', 'Right Here Beside You', 'Sun Spots', 'Nightingale'], 
     favorite: ['Unrequited', 'Pirouette', 'Hurts So Good Blues', 'Fight or Flight', 'Right Here Beside You', 'Sun Spots'], 
@@ -78,6 +73,22 @@ app.post('/login', (req, res) => {
 
   res.send(userData ? { id: userData.id, name: userData.name, playlist: userData.playlist, favorite: userData.favorite } : undefined);
 });
+
+// signin
+app.post('/signin', (req, res) => {
+  console.log('[POST] signin');
+  const { id, password, name } = req.body;
+  
+  const userData = users.find(user => user.id === id && user.password === password);
+
+  if (!userData) users = [...users, { id, name, password, playlist: [], favorite: [] }];
+
+  console.log(users);
+  
+
+  res.send(userData ? {type: false, message: '이미 가입된 아이디 입니다'} : { type: true, message: `${id}님 회원가입을 축하드립니다` });
+});
+
 
 // get all music list
 app.get('/musics', (req, res) => {

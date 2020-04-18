@@ -28,12 +28,28 @@ const generateId = () => (todos.length ? Math.max(...todos.map((todo) => todo.id
 
 
 // login funcs
-const login = async (e, id, password) => {
+const login = async (e) => {
+  const id = 'ysungkoon'
+  const password = '1111'
+
   const {data} = await axios.post('/login', { id, password });
   loginUser = data;
   render(loginUser);
 };
-login('testEvent', 'ysungkoon', '111')
+// login('testEvent')
+
+// signin funcs
+const signin = async (e) => {
+  const id = 'ysungkon'
+  const password = '1111'
+  const name = '유성균'
+
+  const {data} = await axios.post('/signin', { id, password, name });
+  loginUser = data;
+  render(loginUser);
+};
+// signin('testEvent')
+
 
 // Get data funcs
 const getMusics = async (e) => {
@@ -48,49 +64,67 @@ const getTop10Musics = async (e) => {
   render(musics);
 };
 
-const getPlaylist = async (e, id) => {
+const getPlaylist = async (e) => {
+  const id = 'ysungkoon';
+
   const {data} = await axios.post('/playlist', { id });
   playlist = data;
   render(playlist);
 };
 
-const getFavorite = async (e, id) => {
+const getFavorite = async (e) => {
+  const id = 'ysungkoon';
+
   const {data} = await axios.post('/favorite', { id });
   playlist = data;
   render(playlist);
 };
 
-const getTypeList = async (e, type) => {
+const getTypeList = async (e) => {
+  const type = 'hiphop';
+
   const {data} = await axios.post('/typelist', { type });
   lenderList = data;
   render(lenderList);
 };
-// getTypeList('testEvent','hiphop');
+// getTypeList('testEvent');
 
-const addPlaylist = async (e, id, title) => {
+const addPlaylist = async (e) => {
+  const id = 'ysungkoon';
+  const title = 'Nightingale';
+
   const {data} = await axios.post('/addplaylist', { id, title });
   playlist = data;
   render(playlist);
 };
-// addPlaylist('testEvent','ysungkoon', 'Nightingale');
+// addPlaylist('testEvent');
 
-const addFavorite = async (e, id, title) => {
+const addFavorite = async (e) => {
+  const id = 'ysungkoon';
+  const title = 'Nightingale';
+
   const {data} = await axios.post('/addFavorite', { id, title });
   playlist = data;
   render(playlist);
 };
-// addFavorite('testEvent','ysungkoon', 'Nightingale');
+// addFavorite('testEvent');
 
 const deletePlaylist = async (e, id, deleteIndex) => {
+  const id = 'ysungkoon';
+  const deleteIndex = 0;
+
   const {data} = await axios.patch('/deletePlaylist', { id, deleteIndex });
   playlist = data;
   render(playlist);
 };
-// deletePlaylist('testEvent','ysungkoon', 0);
+// deletePlaylist('testEvent');
 
-const deleteFavorite = async (e, id, deleteIndex) => {
+const deleteFavorite = async (e) => {
+  const id = 'ysungkoon';
+  const deleteIndex = 0;
+
   const {data} = await axios.patch('/deletefavorite', { id, deleteIndex });
   playlist = data;
   render(playlist);
 };
-// deleteFavorite('testEvent','ysungkoon', 0);
+// deleteFavorite('testEvent');
