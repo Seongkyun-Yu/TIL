@@ -41,19 +41,19 @@ let musics = [
 ]
 
 let users = [
-  { id: 'ysungkoon', name: '유성균', password: '111111',
+  { id: 'ysungkoon', name: '유성균', password: '111111', email: 'ysungkyun@gmail.com',
     playlist : ['A to the 0', 'Hurts So Good Blues', 'Fight or Flight', 'Right Here Beside You', 'Sun Spots', 'Nightingale'], 
     favorite: ['Unrequited', 'Pirouette', 'Hurts So Good Blues', 'Fight or Flight', 'Right Here Beside You', 'Sun Spots'], 
   },
-  { id: 'angryboo', name: '송부용',password: '111111', 
+  { id: 'angryboo', name: '송부용',password: '111111', email: 'angryboo@gmail.com',
     playlist : ['Same Time', 'Motel Rock', 'Cages', 'Firefly', 'Down by the Riverside', 'Hurts So Good Blues'],
     favorite: ['Cloud Chaser', 'Motel Rock', 'Cages', 'Down by the Riverside', 'Hurts So Good Blues'], 
   },
-  { id: 'hozero', name: '정호영', password: '111111', 
+  { id: 'hozero', name: '정호영', password: '111111', email: 'hozero@gmail.com',
     playlist : ['Motel Rock', 'Cloud Chaser', 'Firefly', 'Blues Infusion', 'Bit Coin', 'Fight or Flight'], 
     favorite: ['Bellissimo', 'Motel Rock', 'Bit Coin', 'Fight or Flight', 'Right Here Beside You'], 
   },
-  { id: 'pkt0831', name: '박기태', password: '111111', 
+  { id: 'pkt0831', name: '박기태', password: '111111', email: 'pkt0831@gmail.com',
     playlist : ['Bit Coin', 'Sun Spots', 'Charisma', 'Triumph', 'Run', 'Moskito'], 
     favorite: ['Sun Spots', 'Charisma', 'Bit Coin'], 
   },
