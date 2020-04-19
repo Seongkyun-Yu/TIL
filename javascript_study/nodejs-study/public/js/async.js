@@ -21,7 +21,6 @@ const render = (data) => {
   // $activeTodos.textContent = todos.filter(todo => !todo.completed).length;
   $musics.innerHTML = JSON.stringify(data)
   console.log(typeof data);
-  
 };
 
 const generateId = () => (todos.length ? Math.max(...todos.map((todo) => todo.id)) + 1 : 1);
@@ -40,9 +39,9 @@ const login = async (e) => {
 
 // signin funcs
 const signin = async (e) => {
-  const id = 'ysungkon'
-  const password = '1111'
-  const name = '유성균'
+  const id = 'ysungkon';
+  const password = '1111';
+  const name = '유성균';
 
   const {data} = await axios.post('/signin', { id, password, name });
   loginUser = data;
