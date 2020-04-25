@@ -70,3 +70,4 @@ Today I Learned...
 2020-04-16 : babel, webpack<br>
 2020-04-17 : 미니프로젝트 기획<br>
 2020-04-18 : Nodejs<br>
+2020-04-20~24: 미니프로젝트 [Baam-Player](https://github.com/Seongkyun-Yu/baam-player)<br>
