@@ -1,14 +1,14 @@
 queue_list = list();
 
 def enqueue(data):
-    queue_list.append(data);
+    queue_list.append(data)
     
 def dequeue():
-    data = queue_list[0];
-    del queue_list[0];
+    data = queue_list[0]
+    del queue_list[0]
     return data;
 
 for index in range(10):
-  enqueue(index);
+  enqueue(index)
 
-print(len(queue_list));
+print(len(queue_list))
