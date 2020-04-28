@@ -20,44 +20,20 @@
 // 예제 #2
 // 3번 학생이 2번 학생이나 4번 학생에게 체육복을 빌려주면 학생 4명이 체육수업을 들을 수 있습니다.
 
-// function solution(n, lost, reserve) {
-//   let count = lost.length;
-
-//   for (let i = 0; i < reserve.length; i++) {
-//     const findIndex = lost.indexOf(reserve[i]);
-//     if (findIndex === -1) {
-//       lost.splice(findIndex, 1);
-//       continue;
-//     }
-
-//     for (let j = 0; j < lost.length; j++) {
-//       if (Math.abs(lost[j] - reserve[i]) === 1) {
-//         count++;
-//         lost.splice(j, 1);
-//         break;
-//       }
-//     }
-//   }
-
-//   return count;
-// }
 
 function solution(n, lost, reserve) {
   const deleteIndex = [];
   let deleteCount = 0;
 
-  console.log(lost.length);
-  
-  lost.forEach((num, i) => {
-    console.log(num);
-
-    const findIndex = reserve.indexOf(num);
+  for (let i = 0; i < lost.length; i++) {
+    const findIndex = reserve.indexOf(lost[i]);
     if (findIndex !== -1) {
       reserve.splice(findIndex, 1);
-      // lost.splice(i, 1);
+      lost.splice(i - deleteCount, 1);
       deleteIndex.push(i);
+      deleteCount++;
     }
-  });
+  }
 
   for (let i = 0, j = 0; i < deleteIndex.length; i++, j++) {
     lost.splice(deleteIndex[i] - j, 1);
@@ -74,5 +50,5 @@ function solution(n, lost, reserve) {
   return n - lost.length;
 }
 
-solution(5, [2, 4],	[2, 4])
-// console.log(solution(5, [2, 4],	[2, 4]));
+// solution(5, [2, 4],	[2, 4])
+console.log(solution(5, [2, 4],	[2, 4]));
