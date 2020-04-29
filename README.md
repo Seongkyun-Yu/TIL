@@ -4,9 +4,9 @@ Today I Learned...
 <br><br><br>
 
 ## # 미니프로젝트
-2020-02-11~2020-02-14 : 이디야 프로젝트 진행 [ediya-clone](https://github.com/Seongkyun-Yu/project-ediya)<br>
+2020-02-11 ~ 2020-02-14 : 이디야 프로젝트 진행 [ediya-clone](https://github.com/Seongkyun-Yu/project-ediya)<br>
 2020-04-03 : 해커톤(뮤직플레이어) [Simple-MusicPlayer](https://github.com/Seongkyun-Yu/MusicPlayer)<br>
-2020-04-20~2020-04-24 : Baam player(뮤직플레이어) [Baam-player](https://github.com/Seongkyun-Yu/baam-player)<br>
+2020-04-20 ~ 2020-04-24 : Baam player(뮤직플레이어) [Baam-player](https://github.com/Seongkyun-Yu/baam-player)<br>
 
 <br>
 
