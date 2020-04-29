@@ -46,8 +46,6 @@ function solution(n, lost, reserve) {
   const deleteIndex = [];
   let deleteCount = 0;
 
-  console.log(lost.length);
-  
   lost.forEach((num, i) => {
     console.log(num);
 
