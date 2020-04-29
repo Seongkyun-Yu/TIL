@@ -28,7 +28,7 @@ function solution(n, lost, reserve) {
   for (let i = 0; i < newReserve.length; i++) {
     for (let j = 0; j < newLost.length; j++) {
       if (Math.abs(newLost[j] - newReserve[i]) === 1) {
-        newLost.splice(j, 1)
+        newLost.splice(j, 1);
         break;
       }
     }
