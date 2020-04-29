@@ -3,12 +3,17 @@
 Today I Learned...
 <br><br><br>
 
-## 미니프로젝트
+## # 미니프로젝트
 2020-02-11~2020-02-14 : 이디야 프로젝트 진행 [ediya-clone](https://github.com/Seongkyun-Yu/project-ediya)<br>
 2020-04-03 : 해커톤(뮤직플레이어) [Simple-MusicPlayer](https://github.com/Seongkyun-Yu/MusicPlayer)<br>
+2020-04-20~2020-04-24 : Baam player(뮤직플레이어) [Baam-player](https://github.com/Seongkyun-Yu/baam-player)<br>
+
 <br>
 
-## 자바스크립트 공부 내역 
+# 일자별 공부 내역
+
+## # 자바스크립트 공부 내역
+
 2020-02-16 : (인강) 변수, 연산자, 조건문, 함수, 객체 <br>
 2020-02-17 : (인강) 배열, 반복문, 배열 내장함수, 객체 생성자, 클래스 <br>
 2020-02-18 : (인강) 삼항연산자, Truthy, Flasy, 단축 평가 논리 계산법, 비구조화 할당, spread, scope <br>
@@ -71,3 +76,13 @@ Today I Learned...
 2020-04-17 : 미니프로젝트 기획<br>
 2020-04-18 : Nodejs<br>
 2020-04-20~24: 미니프로젝트 [Baam-Player](https://github.com/Seongkyun-Yu/baam-player)<br>
+2020-04-25 : 미니프로젝트 오류 수정<br>
+
+<br>
+
+## # 알고리즘 공부 내역
+
+2020-04-26 : 스택, 큐<br>
+2020-04-27 : 링크드리스트<br>
+2020-04-28 : 알고리즘 문제풀이 ([크레인](https://programmers.co.kr/learn/courses/30/lessons/64061), [모의고사](https://programmers.co.kr/learn/courses/30/lessons/42840), [완주하지 못한 선수](https://programmers.co.kr/learn/courses/30/lessons/42576))<br>
+2020-04-29 : 알고리즘 문제풀이 ([도난 당한 체육복](https://programmers.co.kr/learn/courses/30/lessons/42862))<br>
