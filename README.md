@@ -85,3 +85,10 @@ Today I Learned...
 2020-04-27 : 링크드리스트<br>
 2020-04-28 : 알고리즘 문제풀이 ([크레인](https://programmers.co.kr/learn/courses/30/lessons/64061), [모의고사](https://programmers.co.kr/learn/courses/30/lessons/42840), [완주하지 못한 선수](https://programmers.co.kr/learn/courses/30/lessons/42576))<br>
 2020-04-29 : 알고리즘 문제풀이 ([도난 당한 체육복](https://programmers.co.kr/learn/courses/30/lessons/42862))<br>
+
+<br>
+
+## # 데이터베이스 공부 내역
+
+2020-04-30 : MySQL (CRUD)<br>
+2020-05-01 : MySQL (Join, nginx)<br>
