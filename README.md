@@ -85,6 +85,8 @@ Today I Learned...
 2020-04-27 : 링크드리스트<br>
 2020-04-28 : 알고리즘 문제풀이 ([크레인](https://programmers.co.kr/learn/courses/30/lessons/64061), [모의고사](https://programmers.co.kr/learn/courses/30/lessons/42840), [완주하지 못한 선수](https://programmers.co.kr/learn/courses/30/lessons/42576))<br>
 2020-04-29 : 알고리즘 문제풀이 ([도난 당한 체육복](https://programmers.co.kr/learn/courses/30/lessons/42862))<br>
+2020-04-30 : 알고리즘 문제풀이 ([K번째수](https://programmers.co.kr/learn/courses/30/lessons/42748))<br>
+2020-05-03 : 알고리즘 문제풀이 ([2016년](https://programmers.co.kr/learn/courses/30/lessons/12901), [가운데 글자 가져오기](https://programmers.co.kr/learn/courses/30/lessons/12903), [같은 숫자는 싫어](https://programmers.co.kr/learn/courses/30/lessons/12906))<br>
 
 <br>
 
