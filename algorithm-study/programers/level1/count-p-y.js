@@ -22,8 +22,10 @@ function solution(s) {
   let countP = 0;
   let countY = 0;
 
-  s.forEach(char => {
+  [...s].forEach(char => {
     if (char === 'p' || char === 'P') countP++;
     if (char === 'y' || char === 'Y') countY++;
   });
+
+  return countP === countY ? true : false;
 }
