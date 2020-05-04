@@ -94,3 +94,8 @@ Today I Learned...
 
 2020-04-30 : MySQL (CRUD)<br>
 2020-05-01 : MySQL (Join, nginx)<br>
+
+<br>
+
+## # React 공부 내역
+2020-05-04 : React를 배워야 하는 이유, React로 Hello world 출력
