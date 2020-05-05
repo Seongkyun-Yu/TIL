@@ -11,5 +11,5 @@
 // str은 부호(+,-)와 숫자로만 구성되어 있고, 잘못된 값이 입력되는 경우는 없습니다.
 
 function solution(s) {
-  return parseInt(s);
+  return +s;
 }
