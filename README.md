@@ -1,15 +1,16 @@
 # TIL
+
 ![pangStudy](./images/pangStudy.jpg) <br>
 Today I Learned...
 <br><br><br>
 
 ## # 미니프로젝트
+
 2020-02-11 ~ 2020-02-14 : 이디야 프로젝트 진행 [ediya-clone](https://github.com/Seongkyun-Yu/project-ediya)<br>
 2020-04-03 : 해커톤(뮤직플레이어) [Simple-MusicPlayer](https://github.com/Seongkyun-Yu/MusicPlayer)<br>
 2020-04-20 ~ 2020-04-24 : Baam player(뮤직플레이어) [Baam-player](https://github.com/Seongkyun-Yu/baam-player)<br>
 
 <br>
-
 
 ## # 자바스크립트 공부 내역
 
@@ -89,6 +90,7 @@ Today I Learned...
 2020-05-03 : 알고리즘 문제풀이 ([2016년](https://programmers.co.kr/learn/courses/30/lessons/12901), [가운데 글자 가져오기](https://programmers.co.kr/learn/courses/30/lessons/12903), [같은 숫자는 싫어](https://programmers.co.kr/learn/courses/30/lessons/12906))<br>
 2020-05-04 : 알고리즘 문제풀이 ([나누어 떨어지는 숫자 배열](https://programmers.co.kr/learn/courses/30/lessons/12910), [두 정수 사이의 값](https://programmers.co.kr/learn/courses/30/lessons/12912), [문자열 내 마음대로 정렬하기](https://programmers.co.kr/learn/courses/30/lessons/12915), [문자열 내 p와 y의 개수](https://programmers.co.kr/learn/courses/30/lessons/12916), [문자열 내림차순으로 배치하기](https://programmers.co.kr/learn/courses/30/lessons/12917), [문자열 다루기 기본](https://programmers.co.kr/learn/courses/30/lessons/12918), [서울에서 김서방 찾기](https://programmers.co.kr/learn/courses/30/lessons/12919))<br>
 2020-05-05 : 알고리즘 문제풀이 ([소수 찾기](https://programmers.co.kr/learn/courses/30/lessons/12921), [수박수박수박수박수박수?](https://programmers.co.kr/learn/courses/30/lessons/12922), [문자열을 정수로 바꾸기](https://programmers.co.kr/learn/courses/30/lessons/12925))<br>
+2020-05-06 : 알고리즘 문제풀이 ([시저 암호](https://programmers.co.kr/learn/courses/30/lessons/12926), [약수의 합](https://programmers.co.kr/learn/courses/30/lessons/12928), [이상한 문자 만들기](https://programmers.co.kr/learn/courses/30/lessons/12930))
 
 <br>
 
@@ -100,4 +102,5 @@ Today I Learned...
 <br>
 
 ## # React 공부 내역
+
 2020-05-04 : React를 배워야 하는 이유, React로 Hello world 출력
