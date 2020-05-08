@@ -1,12 +1,8 @@
 import React, { useState } from 'react';
-import LoginTitle from './atoms/LoginTitle';
-import LoginForm from './molecules/LoginForm';
-
-const AppStyle = {
-  padding: 100,
-  margin: 100,
-  border: '1px solid #333',
-};
+// import LoginTitle from './atoms/LoginTitle';
+// import LoginForm from './molecules/LoginForm';
+import LoginSection from './organisms/LoginSection';
+import Header from './organisms/Header';
 
 const users = [
   {
@@ -41,12 +37,18 @@ function App() {
 
   if (!state.isLogin)
     return (
-      <div className="App" style={AppStyle}>
-        <LoginTitle />
-        <LoginForm logIn={logIn}></LoginForm>
-      </div>
+      <>
+        <Header isLogin={state.isLogin}></Header>
+        <LoginSection logIn={logIn} />
+      </>
     );
-  else return <h1>로그인 성공!</h1>;
+  else
+    return (
+      <>
+        <Header isLogin={state.isLogin}></Header>
+        <h1>로그인 성공!</h1>
+      </>
+    );
 }
 
 // class App extends Component {
