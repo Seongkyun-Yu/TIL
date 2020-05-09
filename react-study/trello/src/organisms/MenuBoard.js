@@ -11,7 +11,7 @@ const boardStyle = {
 const MenuBoard = ({ menuBoards, deleteBoard, state, setState }) => {
   return (
     <>
-      <NewBoardForm />
+      <NewBoardForm state={state} setState={setState} />
       <article style={boardStyle}>
         {menuBoards.map((menuBoard, i) => (
           <ul>

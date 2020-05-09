@@ -11,7 +11,7 @@ const NewBoardForm = ({ state, setState }) => {
   return (
     <div style={newBoardStyle}>
       <NewBoardTitle />
-      <InputNewBoard />
+      <InputNewBoard state={state} setState={setState} />
     </div>
   );
 };
