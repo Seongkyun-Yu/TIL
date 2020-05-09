@@ -1,11 +1,24 @@
 import React from 'react';
 import Header from '../organisms/Header';
+import MenuBoard from '../organisms/MenuBoard';
 
-const MainPage = ({ isLogin }) => {
+const MainPage = ({
+  loginId,
+  logOut,
+  menuBoards,
+  deleteBoard,
+  state,
+  setState,
+}) => {
   return (
     <>
-      <Header isLogin={isLogin} />
-      <h1>로그인 성공!</h1>
+      <Header isLogin={true} loginId={loginId} logOut={logOut} />
+      <MenuBoard
+        menuBoards={menuBoards}
+        deleteBoard={deleteBoard}
+        state={state}
+        setState={setState}
+      />
     </>
   );
 };
