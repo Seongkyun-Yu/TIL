@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
-// import LoginTitle from './atoms/LoginTitle';
-// import LoginForm from './molecules/LoginForm';
-import LoginSection from './organisms/LoginSection';
-import Header from './organisms/Header';
+
+import LoginPage from './templates/LoginPage';
+import MainPage from './templates/MainPage';
 
 const users = [
   {
@@ -35,31 +34,15 @@ function App() {
     canLogIn ? setState({ ...state, isLogin: true }) : setState(state);
   };
 
-  if (!state.isLogin)
-    return (
-      <>
-        <Header isLogin={state.isLogin}></Header>
-        <LoginSection logIn={logIn} />
-      </>
-    );
-  else
-    return (
-      <>
-        <Header isLogin={state.isLogin}></Header>
-        <h1>로그인 성공!</h1>
-      </>
-    );
+  return (
+    <>
+      {state.isLogin ? (
+        <MainPage isLogin={state.isLogin} />
+      ) : (
+        <LoginPage isLogin={state.isLogin} logIn={logIn} />
+      )}
+    </>
+  );
 }
-
-// class App extends Component {
-//   render() {
-//     return (
-//       <div className="App" style={AppStyle}>
-//         <LoginTitle />
-//         <LoginForm></LoginForm>
-//       </div>
-//     );
-//   }
-// }
 
 export default App;

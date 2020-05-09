@@ -8,6 +8,7 @@ const SubmitBtn = ({ title, logIn, tryId, tryPass }) => {
       type="submit"
       onClick={(e) => {
         e.preventDefault();
+
         logIn(tryId.current.value, tryPass.current.value);
       }}
     >
