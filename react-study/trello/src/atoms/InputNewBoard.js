@@ -11,6 +11,8 @@ const insertNewBoard = (e, state, setState) => {
   const menuBoards = [...state.menuBoards, { title: e.target.value, menu: [] }];
 
   setState({ ...state, menuBoards });
+
+  e.target.value = '';
 };
 
 const InputNewBoard = ({ state, setState }) => {
