@@ -14,16 +14,30 @@ const users = [
   },
 ];
 
-const menus = [
+let menuBoards = [
   {
-    title: '오늘의 식단 지우기',
+    title: '오늘의 식단',
+    menu: ['참치김밥', '치즈김밥', '라면'],
+  },
+  {
+    title: '내일 식단',
+    menu: ['라면땅', '제육볶음', '콜라'],
+  },
+  {
+    title: '내일 식단',
+    menu: [],
+  },
+  {
+    title: '내일 식단',
+    menu: [],
   },
 ];
 
 function App() {
   const [state, setState] = useState({
     isLogin: false,
-    test: 'test',
+    loginId: '',
+    menuBoards,
   });
 
   const logIn = (id, password) => {
@@ -31,15 +45,34 @@ function App() {
       (user) => user.id === id && user.password === password,
     );
 
-    canLogIn ? setState({ ...state, isLogin: true }) : setState(state);
+    canLogIn
+      ? setState({ ...state, isLogin: true, loginId: id })
+      : setState(state);
+  };
+
+  const logOut = () => {
+    setState({ ...state, isLogin: false, loginId: '' });
+  };
+
+  const deleteBoard = (index) => {
+    menuBoards = menuBoards.filter((_, i) => i !== index);
+    setState({ ...state, menuBoards });
   };
 
   return (
     <>
       {state.isLogin ? (
-        <MainPage isLogin={state.isLogin} />
+        <MainPage
+          isLogin={state.isLogin}
+          loginId={state.loginId}
+          logOut={logOut}
+          menuBoards={state.menuBoards}
+          deleteBoard={deleteBoard}
+          state={state}
+          setState={setState}
+        />
       ) : (
-        <LoginPage isLogin={state.isLogin} logIn={logIn} />
+        <LoginPage isLogin={state.isLogin} logIn={logIn} logOut={logOut} />
       )}
     </>
   );
