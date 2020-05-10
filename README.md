@@ -107,5 +107,4 @@ Today I Learned...
 2020-05-06 : React CRA 사용법, JSX
 2020-05-07 : 컴포넌트, state, props
 2020-05-08 : 리액트 훅, useState, useRef
-2020-05-09 : trello 만들기
-2020-05-10 : React 생명주기 예습
+2020-05-09~10 : trello 만들기, React 생명주기 예습
