@@ -104,3 +104,8 @@ Today I Learned...
 ## # React 공부 내역
 
 2020-05-04 : React를 배워야 하는 이유, React로 Hello world 출력
+2020-05-06 : React CRA 사용법, JSX
+2020-05-07 : 컴포넌트, state, props
+2020-05-08 : 리액트 훅, useState, useRef
+2020-05-09 : trello 만들기
+2020-05-10 : React 생명주기 예습
