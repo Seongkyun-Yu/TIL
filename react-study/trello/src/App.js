@@ -55,7 +55,8 @@ function App() {
   };
 
   const deleteBoard = (index) => {
-    menuBoards = menuBoards.filter((_, i) => i !== index);
+    menuBoards = state.menuBoards.filter((_, i) => i !== index);
+
     setState({ ...state, menuBoards });
   };
 
