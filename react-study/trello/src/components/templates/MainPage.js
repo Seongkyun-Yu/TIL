@@ -26,7 +26,7 @@ const MainPage = () => {
   const insertNewBoard = (e) => {
     if (e.keyCode !== 13) return;
 
-    menuBoards = [...menuState, { title: e.target.value, menu: [] }];
+    const menuBoards = [...menuState, { title: e.target.value, menu: [] }];
     setMenuState(menuBoards);
 
     e.target.value = '';
@@ -37,14 +37,30 @@ const MainPage = () => {
     setMenuState(menuBoards);
   };
 
+  const inputMenu = (e, index) => {
+    if (e.keyCode !== 13) return;
+
+    const menuBoards = menuState.map((Board, i) => {
+      if (index === i) {
+        Board.menu = [...Board.menu, e.target.value];
+        return Board;
+      }
+
+      return Board;
+    });
+
+    setMenuState(menuBoards);
+
+    e.target.value = '';
+  };
+
   return (
     <>
       <MenuBoard
-        menuBoards={menuBoards}
+        menuState={menuState}
         deleteBoard={deleteBoard}
         insertNewBoard={insertNewBoard}
-        menuState={menuState}
-        setMenuState={setMenuState}
+        inputMenu={inputMenu}
       />
     </>
   );
