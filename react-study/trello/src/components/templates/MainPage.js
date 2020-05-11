@@ -55,14 +55,12 @@ const MainPage = () => {
   };
 
   return (
-    <>
-      <MenuBoard
-        menuState={menuState}
-        deleteBoard={deleteBoard}
-        insertNewBoard={insertNewBoard}
-        inputMenu={inputMenu}
-      />
-    </>
+    <MenuBoard
+      menuState={menuState}
+      deleteBoard={deleteBoard}
+      insertNewBoard={insertNewBoard}
+      inputMenu={inputMenu}
+    />
   );
 };
 
