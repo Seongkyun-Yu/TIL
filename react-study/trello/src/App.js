@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
-import LoginPage from './templates/LoginPage';
-import MainPage from './templates/MainPage';
+import LoginPage from './components/templates/LoginPage';
+import MainPage from './components/templates/MainPage';
 
 const users = [
   {
