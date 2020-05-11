@@ -1,7 +1,5 @@
 import React from 'react';
 
-// const
-
 const SubmitBtn = ({ title, logIn, tryId, tryPass }) => {
   return (
     <button

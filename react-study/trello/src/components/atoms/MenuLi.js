@@ -4,7 +4,7 @@ const foodStyle = {
   listStyle: 'none',
 };
 
-let liKey = 100;
+let liKey = 0;
 
 const MenuLi = ({ menu }) => {
   return (
