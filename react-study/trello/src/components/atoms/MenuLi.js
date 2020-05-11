@@ -4,14 +4,18 @@ const foodStyle = {
   listStyle: 'none',
 };
 
+let liKey = 100;
+
 const MenuLi = ({ menu }) => {
   return (
     <>
-      {menu.map((food, i) => (
-        <li key={i.toString()} style={foodStyle}>
-          {food}
-        </li>
-      ))}
+      {menu.map((food) => {
+        return (
+          <li key={++liKey} style={foodStyle}>
+            {food}
+          </li>
+        );
+      })}
     </>
   );
 };

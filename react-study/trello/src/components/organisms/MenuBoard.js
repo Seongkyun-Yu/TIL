@@ -8,13 +8,15 @@ const boardStyle = {
   display: 'flex',
 };
 
+let ulKey = 0;
+
 const MenuBoard = ({ menuState, deleteBoard, insertNewBoard, inputMenu }) => {
   return (
     <>
       <NewBoardForm insertNewBoard={insertNewBoard} />
       <article style={boardStyle}>
         {menuState.map((menuBoard, i) => (
-          <ul>
+          <ul key={++ulKey}>
             <DeleteBoard
               title={menuBoard.title}
               index={i}
