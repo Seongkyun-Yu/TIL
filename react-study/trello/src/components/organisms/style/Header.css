@@ -1,0 +1,8 @@
+.headerStyle {
+  width: 100%;
+  height: 50px;
+  background: linear-gradient(to left, #d3cce3, #e9e4f0);
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}

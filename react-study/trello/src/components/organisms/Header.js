@@ -2,18 +2,14 @@ import React from 'react';
 import NeedLogin from '../atoms/NeedLogin';
 import LogoutBtn from '../atoms/LogoutBtn';
 
-const headerStyle = {
-  width: '100%',
-  height: '50px',
-  backgroundColor: 'green',
-  display: 'flex',
-  justifyContent: 'flex-end',
-  alignItems: 'center',
-};
+import classNames from 'classnames/bind';
+import style from './style/Header.css';
+
+const st = classNames.bind(style);
 
 const Header = ({ isLogin, loginId, logOut }) => {
   return (
-    <header style={headerStyle}>
+    <header className={st('headerStyle')}>
       {isLogin ? (
         <>
           <h2>{loginId}</h2>

@@ -1,6 +1,7 @@
 import React from 'react';
 
 const buttonStyle = {
+  display: 'block',
   width: '80px',
   height: '30px',
 };

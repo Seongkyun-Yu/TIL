@@ -1,12 +1,18 @@
 import React from 'react';
+import classNames from 'classnames/bind';
+
+import style from './style/LoginTitle.css';
+
+const st = classNames.bind(style);
 
 const LoginTitle = () => {
-  const h1Style = {
+  const strongStyle = {
     textAlign: 'center',
+    fontFamily: 'Nanum Myeongjo',
   };
   return (
     <div>
-      <h1 style={h1Style}>로그인</h1>
+      <strong className={st('longInTitle')}>LogIn</strong>
     </div>
   );
 };
