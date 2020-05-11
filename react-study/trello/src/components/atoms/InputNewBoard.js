@@ -5,21 +5,11 @@ const inputStyle = {
   margin: '0px 10px',
 };
 
-const insertNewBoard = (e, state, setState) => {
-  if (e.keyCode !== 13) return;
-
-  const menuBoards = [...state.menuBoards, { title: e.target.value, menu: [] }];
-
-  setState({ ...state, menuBoards });
-
-  e.target.value = '';
-};
-
-const InputNewBoard = ({ state, setState }) => {
+const InputNewBoard = ({ insertNewBoard }) => {
   return (
     <input
       style={inputStyle}
-      onKeyUp={(e) => insertNewBoard(e, state, setState)}
+      onKeyUp={(e) => insertNewBoard(e)}
       placeholder="보드 제목을 입력하세요"
     />
   );

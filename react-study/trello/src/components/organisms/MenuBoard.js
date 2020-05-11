@@ -8,10 +8,16 @@ const boardStyle = {
   display: 'flex',
 };
 
-const MenuBoard = ({ menuBoards, deleteBoard, state, setState }) => {
+const MenuBoard = ({
+  menuBoards,
+  deleteBoard,
+  menuState,
+  setMenuState,
+  insertNewBoard,
+}) => {
   return (
     <>
-      <NewBoardForm state={state} setState={setState} />
+      <NewBoardForm insertNewBoard={insertNewBoard} />
       <article style={boardStyle}>
         {menuBoards.map((menuBoard, i) => (
           <ul>
@@ -21,7 +27,11 @@ const MenuBoard = ({ menuBoards, deleteBoard, state, setState }) => {
               deleteBoard={deleteBoard}
             />
             <MenuLi menu={menuBoard.menu} />
-            <InputMenu index={i} state={state} setState={setState} />
+            <InputMenu
+              index={i}
+              menuState={menuState}
+              setMenuState={setMenuState}
+            />
           </ul>
         ))}
       </article>

@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 
+import Header from './components/organisms/Header';
+
 import LoginPage from './components/templates/LoginPage';
 import MainPage from './components/templates/MainPage';
 
@@ -14,30 +16,10 @@ const users = [
   },
 ];
 
-let menuBoards = [
-  {
-    title: '오늘의 식단',
-    menu: ['참치김밥', '치즈김밥', '라면'],
-  },
-  {
-    title: '내일 식단',
-    menu: ['라면땅', '제육볶음', '콜라'],
-  },
-  {
-    title: '내일 식단',
-    menu: [],
-  },
-  {
-    title: '내일 식단',
-    menu: [],
-  },
-];
-
 function App() {
-  const [state, setState] = useState({
+  const [logInState, setLogInState] = useState({
     isLogin: false,
     loginId: '',
-    menuBoards,
   });
 
   const logIn = (id, password) => {
@@ -46,34 +28,25 @@ function App() {
     );
 
     canLogIn
-      ? setState({ ...state, isLogin: true, loginId: id })
-      : setState(state);
+      ? setLogInState({ ...logInState, isLogin: true, loginId: id })
+      : setLogInState(logInState);
   };
 
   const logOut = () => {
-    setState({ ...state, isLogin: false, loginId: '' });
-  };
-
-  const deleteBoard = (index) => {
-    menuBoards = state.menuBoards.filter((_, i) => i !== index);
-
-    setState({ ...state, menuBoards });
+    setLogInState({ ...logInState, isLogin: false, loginId: '' });
   };
 
   return (
     <>
-      {state.isLogin ? (
-        <MainPage
-          isLogin={state.isLogin}
-          loginId={state.loginId}
-          logOut={logOut}
-          menuBoards={state.menuBoards}
-          deleteBoard={deleteBoard}
-          state={state}
-          setState={setState}
-        />
+      <Header
+        isLogin={logInState.isLogin}
+        loginId={logInState.loginId}
+        logOut={logOut}
+      />
+      {logInState.isLogin ? (
+        <MainPage />
       ) : (
-        <LoginPage isLogin={state.isLogin} logIn={logIn} logOut={logOut} />
+        <LoginPage logIn={logIn} logOut={logOut} />
       )}
     </>
   );

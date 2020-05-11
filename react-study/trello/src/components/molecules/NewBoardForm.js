@@ -7,11 +7,11 @@ const newBoardStyle = {
   alignItems: 'center',
 };
 
-const NewBoardForm = ({ state, setState }) => {
+const NewBoardForm = ({ insertNewBoard }) => {
   return (
     <div style={newBoardStyle}>
       <NewBoardTitle />
-      <InputNewBoard state={state} setState={setState} />
+      <InputNewBoard insertNewBoard={insertNewBoard} />
     </div>
   );
 };
