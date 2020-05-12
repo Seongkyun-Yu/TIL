@@ -8,6 +8,8 @@
     "@testing-library/user-event": "^7.1.2",
     "eslint-config-airbnb": "^18.1.0",
     "eslint-config-prettier": "^6.11.0",
+    "eslint-config-react-app": "^5.2.1",
+    "lodash": "^4.17.15",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.1"
@@ -41,7 +43,7 @@
     ]
   },
   "devDependencies": {
-    "eslint": "^7.0.0",
+    "eslint": "^6.6.0",
     "husky": "^4.2.5",
     "lint-staged": "^10.2.2",
     "prettier": "2.0.5"
