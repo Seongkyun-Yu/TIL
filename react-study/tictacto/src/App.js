@@ -17,11 +17,16 @@ const ulStyle = {
 };
 
 const liStyle = {
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
   backgroundColor: 'white',
   width: '100px',
   height: '100px',
   border: 'solid',
   listStyle: 'none',
+  margin: '-1px',
+  fontSize: '80px',
 };
 
 const gameTable = [
@@ -110,7 +115,7 @@ function App() {
       </ul>
       {gamesState.map((game, i) => (
         <button type="button" onClick={() => backsies(i)}>
-          {i + 1}번째 수로 무르기
+          {i}번째 수 무르기
         </button>
       ))}
     </>
