@@ -47,7 +47,7 @@ function App() {
       {logInState.isLogin ? (
         <MainPage />
       ) : (
-        <LoginPage logIn={logIn} logOut={logOut} />
+        <LoginPage logInState={logInState} logIn={logIn} />
       )}
     </div>
   );

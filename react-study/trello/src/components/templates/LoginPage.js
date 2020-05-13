@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import LoginSection from '../organisms/LoginSection';
 
-const LoginPage = ({ logIn }) => {
+const LoginPage = ({ logInState, logIn }) => {
+  useEffect(() => {
+    return () => alert('login hi');
+  }, [logInState]);
   return <LoginSection logIn={logIn} />;
 };
 
