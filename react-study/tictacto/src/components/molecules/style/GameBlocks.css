@@ -1,0 +1,8 @@
+.GameBlocks {
+  display: flex;
+  flex-wrap: wrap;
+  width: 310px;
+  height: 300px;
+  margin: 50px;
+  padding: 0px;
+}

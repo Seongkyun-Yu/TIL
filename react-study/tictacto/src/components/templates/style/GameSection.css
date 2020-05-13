@@ -1,0 +1,11 @@
+.GameSection {
+  position: absolute;
+  top: 100px;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  width: 800px;
+  height: 500px;
+  margin: auto;
+  text-align: center;
+}
