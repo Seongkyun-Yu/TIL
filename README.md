@@ -109,3 +109,5 @@ Today I Learned...
 2020-05-08 : 리액트 훅, useState, useRef<br>
 2020-05-09~10 : trello 만들기, React 생명주기 예습<br>
 2020-05-11 : trello 복습<br>
+2020-05-12 : tic-tak-toe 만들기, React 생명주기<br>
+2020-05-13 : React Hook (useEffect, useMemo, useCallback)<br>
