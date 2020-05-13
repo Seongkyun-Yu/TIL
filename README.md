@@ -92,6 +92,7 @@ Today I Learned...
 2020-05-05 : 알고리즘 문제풀이 ([소수 찾기](https://programmers.co.kr/learn/courses/30/lessons/12921), [수박수박수박수박수박수?](https://programmers.co.kr/learn/courses/30/lessons/12922), [문자열을 정수로 바꾸기](https://programmers.co.kr/learn/courses/30/lessons/12925))<br>
 2020-05-06 : 알고리즘 문제풀이 ([시저 암호](https://programmers.co.kr/learn/courses/30/lessons/12926), [약수의 합](https://programmers.co.kr/learn/courses/30/lessons/12928), [이상한 문자 만들기](https://programmers.co.kr/learn/courses/30/lessons/12930))<br>
 2020-05-11 : 알고리즘 문제풀이([정수 제곱근 판별](https://programmers.co.kr/learn/courses/30/lessons/12934), [제일 작은 수 제거하기](https://programmers.co.kr/learn/courses/30/lessons/12935), [짝수와 홀수](https://programmers.co.kr/learn/courses/30/lessons/12937), [평균 구하기](https://programmers.co.kr/learn/courses/30/lessons/12944))<br>
+2020-05-13 : 알고리즘 문제풀이([x만큼 간격이 있는 n개의 숫자](https://programmers.co.kr/learn/courses/30/lessons/12954))
 <br>
 
 ## # 데이터베이스 공부 내역
