@@ -9,11 +9,24 @@ import React, { useState } from 'react';
 import * as _ from 'lodash';
 import './App.css';
 
+const sectionStyle = {
+  position: 'absolute',
+  top: '100px',
+  bottom: 0,
+  right: 0,
+  left: 0,
+  width: '500px',
+  height: '500px',
+  margin: 'auto',
+  textAlign: 'center',
+};
+
 const ulStyle = {
   display: 'flex',
   flexWrap: 'wrap',
-  width: '350px',
+  width: '310px',
   height: '300px',
+  // boxSizing: 'border-box',
 };
 
 const liStyle = {
@@ -76,8 +89,7 @@ function App() {
   };
 
   const checkBoard = (row, col) => {
-    if (nowGameState[row][col]) return;
-    if (winner) return;
+    if (nowGameState[row][col] || winner) return;
 
     const mark = gamesState.length % 2 ? 'O' : 'X';
     const newGameState = _.cloneDeep(nowGameState);
@@ -98,27 +110,30 @@ function App() {
   };
 
   return (
-    <>
-      <strong>{winner ? `${winner}승리!` : 'tic-tac-tok 진행중'}</strong>
-      <ul style={ulStyle}>
-        {nowGameState.map((arr, i) =>
-          arr.map((item, j) => (
-            <li
-              style={liStyle}
-              onClick={() => checkBoard(i, j)}
-              key={i * 10 + j}
-            >
-              {item}
-            </li>
-          )),
-        )}
-      </ul>
+    <section style={sectionStyle}>
+      <div>
+        <strong>{winner ? `${winner}승리!` : 'tic-tac-tok 진행중'}</strong>
+        <ul style={ulStyle}>
+          {nowGameState.map((arr, i) =>
+            arr.map((item, j) => (
+              <li
+                style={liStyle}
+                onClick={() => checkBoard(i, j)}
+                key={i * 10 + j}
+              >
+                {item}
+              </li>
+            )),
+          )}
+        </ul>
+      </div>
+
       {gamesState.map((game, i) => (
-        <button type="button" onClick={() => backsies(i)}>
-          {i}번째 수 무르기
+        <button key={i} type="button" onClick={() => backsies(i)}>
+          {i}번째 수로 무르기
         </button>
       ))}
-    </>
+    </section>
   );
 }
 
