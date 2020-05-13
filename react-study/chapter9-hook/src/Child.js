@@ -13,4 +13,4 @@ const Child = ({ list, remove }) => {
   return <h1 onClick={() => remove(list._id)}>{list.name}</h1>;
 };
 
-export default Child;
+export default React.memo(Child);

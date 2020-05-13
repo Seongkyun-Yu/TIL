@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useEffect, useMemo, useCallback } from 'react';
 import logo from './logo.svg';
 import Child from './Child';
 import './App.css';
@@ -36,13 +36,19 @@ const Parent = () => {
       name: 'eee',
     },
   ]);
-  const _remove = (_id) => {
-    console.log(state);
-    setState(state.filter((s) => s._id !== _id));
-  };
-  const _updateList = (e) => {
-    setInputState(e.target.value);
-  };
+  const _remove = useCallback(
+    (_id) => {
+      console.log(state);
+      setState(state.filter((s) => s._id !== _id));
+    },
+    [state],
+  );
+  const _updateList = useCallback(
+    (e) => {
+      setInputState(e.target.value);
+    },
+    [state],
+  );
   // const count = listLength(state);
   const count = useMemo(() => listLength(state), [state]);
   return (
