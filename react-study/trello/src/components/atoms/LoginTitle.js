@@ -17,4 +17,4 @@ const LoginTitle = () => {
   );
 };
 
-export default LoginTitle;
+export default React.memo(LoginTitle);

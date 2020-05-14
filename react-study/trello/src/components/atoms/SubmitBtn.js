@@ -7,7 +7,7 @@ const SubmitBtn = ({ title, logIn, tryId, tryPass }) => {
       onClick={(e) => {
         e.preventDefault();
 
-        logIn(tryId.current.value, tryPass.current.value);
+        logIn(tryId, tryPass);
       }}
     >
       {title}
@@ -15,4 +15,4 @@ const SubmitBtn = ({ title, logIn, tryId, tryPass }) => {
   );
 };
 
-export default SubmitBtn;
+export default React.memo(SubmitBtn);

@@ -5,6 +5,7 @@ const LoginPage = ({ logInState, logIn }) => {
   useEffect(() => {
     return () => alert('login hi');
   }, [logInState]);
+
   return <LoginSection logIn={logIn} />;
 };
 

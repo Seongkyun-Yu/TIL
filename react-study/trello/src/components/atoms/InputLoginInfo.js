@@ -4,13 +4,22 @@ import style from './style/InputLoginInfo.css';
 
 const st = classNames.bind(style);
 
-const InputLoginInfo = React.forwardRef((props, ref) => (
+// const InputLoginInfo = React.forwardRef((props, ref) => (
+//   <input
+//     className={st('InputLogin')}
+//     type={props.type}
+//     ref={ref}
+//     placeholder={props.type === 'text' ? 'ID' : 'Password'}
+//   />
+// ));
+
+const InputLoginInfo = ({ type, setInputState }) => (
   <input
     className={st('InputLogin')}
-    type={props.type}
-    ref={ref}
-    placeholder={props.type === 'text' ? 'ID' : 'Password'}
+    type={type}
+    onChange={(e) => setInputState(e.target.value)}
+    placeholder={type === 'text' ? 'ID' : 'Password'}
   />
-));
+);
 
-export default InputLoginInfo;
+export default React.memo(InputLoginInfo);
