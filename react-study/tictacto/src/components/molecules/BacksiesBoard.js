@@ -1,17 +1,24 @@
 /* eslint-disable react/prop-types */
-import React from 'react';
+import React, { useContext } from 'react';
 import BacksiesTitle from '../atoms/BacksiesTitle';
 import BacksiesBtn from '../atoms/BacksiesBtn';
 
+import GameContext from '../../Context/GameContext';
+
 import './style/BacksiesBoard.css';
 
-const BacksiesBoard = ({ historyState, backsies }) => (
-  <div className="BacksiesBoard">
-    <BacksiesTitle />
-    {historyState.map((_, num) => (
-      <BacksiesBtn backsies={backsies} num={num} />
-    ))}
-  </div>
-);
+const BacksiesBoard = () => {
+  const context = useContext(GameContext);
+  const { state } = context;
+
+  return (
+    <div className="BacksiesBoard">
+      <BacksiesTitle />
+      {state.history.map((_, num) => (
+        <BacksiesBtn num={num} />
+      ))}
+    </div>
+  );
+};
 
 export default BacksiesBoard;

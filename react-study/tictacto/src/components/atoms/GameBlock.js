@@ -1,15 +1,13 @@
 /* eslint-disable object-curly-newline */
-import React, { useEffect } from 'react';
+import React, { useContext } from 'react';
+import GameContext from '../../Context/GameContext';
 
 import './style/GameBlock.css';
 
-const GameBlock = ({ checkBoard, mark, row, col }) => {
-  useEffect(() => {
-    console.log('마크가 나타남');
-    return () => {
-      console.log('마크가 사라짐');
-    };
-  }, [mark]);
+const GameBlock = ({ mark, row, col }) => {
+  const context = useContext(GameContext);
+  const { checkBoard } = context;
+
   return (
     <li
       className="GameBlock"
