@@ -93,7 +93,7 @@ Today I Learned...
 2020-05-06 : 알고리즘 문제풀이 ([시저 암호](https://programmers.co.kr/learn/courses/30/lessons/12926), [약수의 합](https://programmers.co.kr/learn/courses/30/lessons/12928), [이상한 문자 만들기](https://programmers.co.kr/learn/courses/30/lessons/12930))<br>
 2020-05-11 : 알고리즘 문제풀이([정수 제곱근 판별](https://programmers.co.kr/learn/courses/30/lessons/12934), [제일 작은 수 제거하기](https://programmers.co.kr/learn/courses/30/lessons/12935), [짝수와 홀수](https://programmers.co.kr/learn/courses/30/lessons/12937), [평균 구하기](https://programmers.co.kr/learn/courses/30/lessons/12944))<br>
 2020-05-13 : 알고리즘 문제풀이([x만큼 간격이 있는 n개의 숫자](https://programmers.co.kr/learn/courses/30/lessons/12954))<br>
-2020-05-16 : 알고리즘 문제풀이([직사각형 별찍기](https://programmers.co.kr/learn/courses/30/lessons/12969))
+2020-05-16 : 알고리즘 문제풀이([직사각형 별찍기](https://programmers.co.kr/learn/courses/30/lessons/12969), [핸드폰 번호 가리기](https://programmers.co.kr/learn/courses/30/lessons/12948))<br>
 
 <br>
 
