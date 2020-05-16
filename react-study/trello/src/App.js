@@ -1,56 +1,43 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './App.css';
+
+import BoardContext from './Context/BoardContext';
+import useBoardData from './Hook/useBoardData';
 
 import Header from './components/organisms/Header';
 
 import LoginPage from './components/templates/LoginPage';
 import MainPage from './components/templates/MainPage';
 
-const users = [
-  {
-    id: 'aaaa',
-    password: '111111',
-  },
-  {
-    id: 'bbbb',
-    password: '111111',
-  },
-];
-
 function App() {
-  const [logInState, setLogInState] = useState({
-    isLogin: false,
-    loginId: '',
-  });
+  const [
+    state,
+    logIn,
+    logOut,
+    insertNewBoard,
+    deleteBoard,
+    inputMenu,
+    inputChange,
+  ] = useBoardData();
 
-  const logIn = (id, password) => {
-    const canLogIn = users.find(
-      (user) => user.id === id && user.password === password,
-    );
-
-    canLogIn
-      ? setLogInState({ ...logInState, isLogin: true, loginId: id })
-      : setLogInState(logInState);
-  };
-
-  const logOut = () => {
-    setLogInState({ ...logInState, isLogin: false, loginId: '' });
+  const data = {
+    state,
+    logIn,
+    logOut,
+    insertNewBoard,
+    deleteBoard,
+    inputMenu,
+    inputChange,
   };
 
   return (
-    <div className="App">
-      <Header
-        isLogin={logInState.isLogin}
-        loginId={logInState.loginId}
-        logOut={logOut}
-      />
-      {logInState.isLogin ? (
-        <MainPage />
-      ) : (
-        <LoginPage logInState={logInState} logIn={logIn} />
-      )}
+    <div>
+      <BoardContext.Provider value={data}>
+        <Header />
+        {state.isLogin ? <MainPage /> : <LoginPage />}
+      </BoardContext.Provider>
     </div>
   );
 }
 
-export default App;
+export default React.memo(App);

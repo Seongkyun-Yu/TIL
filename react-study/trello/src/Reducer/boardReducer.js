@@ -1,4 +1,14 @@
 let initData = {
+  users: [
+    {
+      id: 'aaaa',
+      password: '111111',
+    },
+    {
+      id: 'bbbb',
+      password: '111111',
+    },
+  ],
   menuBoards: [
     {
       title: '오늘의 식단',
@@ -19,19 +29,41 @@ let initData = {
   ],
   isLogin: false,
   loginId: '',
-  InputState: {
-    InputId: '',
-    InputPass: '',
-    InputBoard: '',
+  inputState: {
+    id: '',
+    pass: '',
+    board: '',
+    menu: '',
   },
 };
 
 const reducer = (state, action) => {
   switch (action.type) {
+    case 'LOG_IN':
+      return {
+        ...state,
+        isLogin: true,
+        loginId: action.loginId,
+        inputState: {
+          ...state.inputState,
+          id: '',
+          pass: '',
+        },
+      };
+    case 'LOG_OUT':
+      return {
+        ...state,
+        isLogin: false,
+        loginId: '',
+      };
     case 'INSERT_BOARD':
       return {
         ...state,
         menuBoards: [...state.menuBoards, action.newBoard],
+        inputState: {
+          ...state.inputState,
+          board: '',
+        },
       };
     case 'DELETE_BOARD':
       return {
@@ -40,6 +72,33 @@ const reducer = (state, action) => {
           ...state.menuBoards.filter((_, i) => i !== action.deleteIndex),
         ],
       };
+    case 'INPUT_MENU':
+      const newState = {
+        ...state,
+        menuBoards: state.menuBoards.map((Board, i) => {
+          if (action.boardIndex === i) {
+            Board.menu = [...Board.menu, action.newMenu];
+          }
+          return Board;
+        }),
+        inputState: {
+          ...state.inputState,
+          inputMenu: '',
+        },
+      };
+      action.setMenu('');
+
+      return newState;
+
+    case 'INPUT_CHANGE':
+      return {
+        ...state,
+        inputState: {
+          ...state.inputState,
+          [action.inputName]: action.newInputData,
+        },
+      };
+
     default:
       return state;
   }

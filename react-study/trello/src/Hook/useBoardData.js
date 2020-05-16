@@ -1,51 +1,80 @@
-import React, { useReducer } from 'react';
+import { useReducer, useCallback } from 'react';
 import { initData, reducer } from '../Reducer/boardReducer';
 
 const useBoardData = () => {
   const [state, dispatch] = useReducer(reducer, initData);
 
-  const insertNewBoard = (e) => {
-    if (e.keyCode !== 13) return;
+  const logIn = useCallback(() => {
+    const canLogIn = state.users.find(
+      (user) =>
+        user.id === state.inputState.id &&
+        user.password === state.inputState.pass,
+    );
 
-    // const menuBoards = [...menuState, { title: e.target.value, menu: [] }];
-    // setMenuState(menuBoards);
+    if (canLogIn) dispatch({ type: 'LOG_IN', loginId: state.inputState.id });
+  }, [state]);
 
-    dispatch({
-      type: 'INSERT_BOARD',
-      newBoard: { title: state.InputState.InputId, menu: [] },
-    });
+  const logOut = useCallback(() => {
+    dispatch({ type: 'LOG_OUT' });
+  }, [state]);
 
-    e.target.value = '';
-  };
+  const insertNewBoard = useCallback(
+    (e) => {
+      if (e.keyCode !== 13) return;
 
-  const deleteBoard = (index) => {
-    // menuBoards = menuState.filter((_, i) => i !== index);
-    // setMenuState(menuBoards);
+      dispatch({
+        type: 'INSERT_BOARD',
+        newBoard: { title: state.inputState.board, menu: [] },
+      });
+      e.target.value = '';
+    },
+    [state],
+  );
 
-    dispatch({
-      type: 'DELETE_BOARD',
-      deleteIndex: index,
-    });
-  };
+  const deleteBoard = useCallback(
+    (index) => {
+      dispatch({
+        type: 'DELETE_BOARD',
+        deleteIndex: index,
+      });
+    },
+    [state],
+  );
 
-  const inputMenu = (e, index) => {
-    if (e.keyCode !== 13) return;
+  const inputMenu = useCallback(
+    (e, menuState, setMenuState, index) => {
+      if (e.keyCode !== 13) return;
 
-    const menuBoards = menuState.map((Board, i) => {
-      if (index === i) {
-        Board.menu = [...Board.menu, e.target.value];
-        return Board;
-      }
+      dispatch({
+        type: 'INPUT_MENU',
+        boardIndex: index,
+        newMenu: menuState,
+        setMenu: setMenuState,
+      });
+    },
+    [state],
+  );
 
-      return Board;
-    });
+  const inputChange = useCallback(
+    (e) => {
+      dispatch({
+        type: 'INPUT_CHANGE',
+        inputName: e.target.name,
+        newInputData: e.target.value,
+      });
+    },
+    [state],
+  );
 
-    setMenuState(menuBoards);
-
-    e.target.value = '';
-  };
-
-  return [state];
+  return [
+    state,
+    logIn,
+    logOut,
+    insertNewBoard,
+    deleteBoard,
+    inputMenu,
+    inputChange,
+  ];
 };
 
 export default useBoardData;

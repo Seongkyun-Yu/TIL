@@ -1,13 +1,16 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import BoardContext from '../../Context/BoardContext';
 
-const SubmitBtn = ({ title, logIn, tryId, tryPass }) => {
+const SubmitBtn = ({ title }) => {
+  const context = useContext(BoardContext);
+  const { logIn } = context;
+
   return (
     <button
       type="submit"
       onClick={(e) => {
         e.preventDefault();
-
-        logIn(tryId, tryPass);
+        logIn();
       }}
     >
       {title}

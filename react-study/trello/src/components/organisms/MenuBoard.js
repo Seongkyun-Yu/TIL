@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import DeleteBoard from '../atoms/DeleteBoard';
 import MenuLi from '../atoms/MenuLi';
 import InputMenu from '../atoms/InputMenu';
 import NewBoardForm from '../molecules/NewBoardForm';
+import BoardContext from '../../Context/BoardContext';
 
 const boardStyle = {
   display: 'flex',
@@ -10,20 +11,19 @@ const boardStyle = {
 
 let ulKey = 0;
 
-const MenuBoard = ({ menuState, deleteBoard, insertNewBoard, inputMenu }) => {
+const MenuBoard = () => {
+  const context = useContext(BoardContext);
+  const { state } = context;
+
   return (
     <>
-      <NewBoardForm menuState={menuState} insertNewBoard={insertNewBoard} />
+      <NewBoardForm />
       <article style={boardStyle}>
-        {menuState.map((menuBoard, i) => (
+        {state.menuBoards.map((menuBoard, i) => (
           <ul key={++ulKey}>
-            <DeleteBoard
-              title={menuBoard.title}
-              index={i}
-              deleteBoard={deleteBoard}
-            />
+            <DeleteBoard title={menuBoard.title} index={i} />
             <MenuLi menu={menuBoard.menu} />
-            <InputMenu index={i} inputMenu={inputMenu} />
+            <InputMenu index={i} />
           </ul>
         ))}
       </article>

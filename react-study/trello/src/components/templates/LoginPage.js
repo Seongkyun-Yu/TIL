@@ -1,12 +1,16 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useContext } from 'react';
 import LoginSection from '../organisms/LoginSection';
+import BoardContext from '../../Context/BoardContext';
 
-const LoginPage = ({ logInState, logIn }) => {
+const LoginPage = () => {
+  const context = useContext(BoardContext);
+  const { state } = context;
+
   useEffect(() => {
     return () => alert('login hi');
-  }, [logInState]);
+  }, [state.isLogin]);
 
-  return <LoginSection logIn={logIn} />;
+  return <LoginSection />;
 };
 
 export default LoginPage;
