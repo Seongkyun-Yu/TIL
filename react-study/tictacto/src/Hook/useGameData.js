@@ -1,4 +1,4 @@
-import { useReducer } from 'react';
+import { useReducer, useCallback } from 'react';
 import * as _ from 'lodash';
 
 import { reducer, initData } from '../Reducer/gameReducer';
@@ -6,9 +6,7 @@ import { reducer, initData } from '../Reducer/gameReducer';
 const useGameData = () => {
   const [state, dispatch] = useReducer(reducer, initData);
 
-  // console.log(state);
-
-  const bingo = (board) => {
+  const bingo = useCallback((board) => {
     // X축용 변수
     let regxX1 = '';
     let regxX2 = '';
@@ -41,52 +39,58 @@ const useGameData = () => {
     }
 
     return '';
-  };
+  }, []);
 
-  const checkBoard = (row, col) => {
-    if (state.nowGame[row][col] || state.winner) return;
+  const checkBoard = useCallback(
+    (row, col) => {
+      if (state.nowGame[row][col] || state.winner) return;
 
-    const mark = state.history.length % 2 ? 'O' : 'X';
-    const newGame = _.cloneDeep(state.nowGame);
+      const mark = state.history.length % 2 ? 'O' : 'X';
+      const newGame = _.cloneDeep(state.nowGame);
 
-    newGame[row][col] = mark;
+      newGame[row][col] = mark;
 
-    // setHistoryState([...state.history, state.nowGame]);
-    dispatch({
-      type: 'SET_HISTORY',
-      pastGame: state.nowGame,
-    });
-    // setNowGameState(newGame);
-    dispatch({
-      type: 'SET_NOWGAME',
-      newGame,
-    });
+      // setHistoryState([...state.history, state.nowGame]);
+      dispatch({
+        type: 'SET_HISTORY',
+        pastGame: state.nowGame,
+      });
+      // setNowGameState(newGame);
+      dispatch({
+        type: 'SET_NOWGAME',
+        newGame,
+      });
 
-    // setWinner(bingo(newGame));
-    dispatch({
-      type: 'SET_WINNER',
-      winner: bingo(newGame),
-    });
-  };
+      // setWinner(bingo(newGame));
+      dispatch({
+        type: 'SET_WINNER',
+        winner: bingo(newGame),
+      });
+    },
+    [bingo, state.history.length, state.nowGame, state.winner],
+  );
 
-  const backsies = (num) => {
-    const newGamesState = _.cloneDeep(state.history);
-    // setNowGameState(newGamesState[num]);
-    dispatch({
-      type: 'SET_NOWGAME',
-      newGame: newGamesState[num],
-    });
-    // setHistoryState(newGamesState.slice(0, num));
-    dispatch({
-      type: 'SET_BACKSIES',
-      newHistoryGame: newGamesState.slice(0, num),
-    });
-    // setWinner('');
-    dispatch({
-      type: 'SET_WINNER',
-      winner: '',
-    });
-  };
+  const backsies = useCallback(
+    (num) => {
+      const newGamesState = _.cloneDeep(state.history);
+      // setNowGameState(newGamesState[num]);
+      dispatch({
+        type: 'SET_NOWGAME',
+        newGame: newGamesState[num],
+      });
+      // setHistoryState(newGamesState.slice(0, num));
+      dispatch({
+        type: 'SET_BACKSIES',
+        newHistoryGame: newGamesState.slice(0, num),
+      });
+      // setWinner('');
+      dispatch({
+        type: 'SET_WINNER',
+        winner: '',
+      });
+    },
+    [state],
+  );
 
   return [state, checkBoard, backsies];
 };
