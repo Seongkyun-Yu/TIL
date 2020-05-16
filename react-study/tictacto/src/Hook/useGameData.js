@@ -6,6 +6,8 @@ import { reducer, initData } from '../Reducer/gameReducer';
 const useGameData = () => {
   const [state, dispatch] = useReducer(reducer, initData);
 
+  // console.log(state);
+
   const bingo = useCallback((board) => {
     // X축용 변수
     let regxX1 = '';
