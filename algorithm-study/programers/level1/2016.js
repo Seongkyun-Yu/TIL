@@ -2,6 +2,9 @@
 
 // 입니다. 예를 들어 a=5, b=24라면 5월 24일은 화요일이므로 문자열 TUE를 반환하세요.
 
+// 2016년
+// https://programmers.co.kr/learn/courses/30/lessons/12901
+
 // 제한 조건
 // 2016년은 윤년입니다.
 // 2016년 a월 b일은 실제로 있는 날입니다. (13월 26일이나 2월 45일같은 날짜는 주어지지 않습니다)
@@ -19,13 +22,13 @@ function solution(a, b) {
   }
   sumDays += b;
 
-  if (sumDays % 7 === 0) return "THU";
-  else if (sumDays % 7 === 1) return "FRI";
-  else if (sumDays % 7 === 2) return "SAT";
-  else if (sumDays % 7 === 3) return "SUN";
-  else if (sumDays % 7 === 4) return "MON";
-  else if (sumDays % 7 === 5) return "TUE";
-  else return "WED";
+  if (sumDays % 7 === 0) return 'THU';
+  else if (sumDays % 7 === 1) return 'FRI';
+  else if (sumDays % 7 === 2) return 'SAT';
+  else if (sumDays % 7 === 3) return 'SUN';
+  else if (sumDays % 7 === 4) return 'MON';
+  else if (sumDays % 7 === 5) return 'TUE';
+  else return 'WED';
 }
 
 console.log(solution(5, 24));

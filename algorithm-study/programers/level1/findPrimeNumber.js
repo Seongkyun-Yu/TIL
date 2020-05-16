@@ -1,3 +1,6 @@
+// 소수 찾기
+// https://programmers.co.kr/learn/courses/30/lessons/12921
+
 // 문제 설명
 // 1부터 입력받은 숫자 n 사이에 있는 소수의 개수를 반환하는 함수, solution을 만들어 보세요.
 
@@ -18,24 +21,24 @@
 // 1부터 5 사이의 소수는 [2,3,5] 3개가 존재하므로 3를 반환
 
 function solution(n) {
-  let notPrime = 0;  
-  
+  let notPrime = 0;
+
   for (let i = 2; i <= n; i++) {
     let sqrt = parseInt(Math.sqrt(i), 10);
 
-    if ( i % 2 === 0) {
+    if (i % 2 === 0) {
       notPrime++;
-      continue; 
+      continue;
     }
-    
+
     for (let j = 3; j <= sqrt; j += 2) {
       if (!(i % j)) {
         notPrime++;
         break;
-      } 
+      }
     }
   }
-  
+
   return n - notPrime;
 }
 
