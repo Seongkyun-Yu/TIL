@@ -95,6 +95,7 @@ Today I Learned...
 2020-05-11 : 알고리즘 문제풀이([정수 제곱근 판별](https://github.com/Seongkyun-Yu/TIL/blob/master/algorithm-study/programers/level1/intSqrt.js), [제일 작은 수 제거하기](https://github.com/Seongkyun-Yu/TIL/blob/master/algorithm-study/programers/level1/removeMinNum.js), [짝수와 홀수](https://github.com/Seongkyun-Yu/TIL/blob/master/algorithm-study/programers/level1/evenAndOdd.js), [평균 구하기](https://github.com/Seongkyun-Yu/TIL/blob/master/algorithm-study/programers/level1/getAverage.js))<br>
 2020-05-13 : 알고리즘 문제풀이([x만큼 간격이 있는 n개의 숫자](https://github.com/Seongkyun-Yu/TIL/blob/master/algorithm-study/programers/level1/nthNum.js))<br>
 2020-05-16 : 알고리즘 문제풀이([직사각형 별찍기](https://github.com/Seongkyun-Yu/TIL/blob/master/algorithm-study/programers/level1/lecStar.js), [핸드폰 번호 가리기](https://github.com/Seongkyun-Yu/TIL/blob/master/algorithm-study/programers/level1/removePhoneNumber.js))<br>
+2020-05-17 : 알고리즘 문제풀이([콜라츠추측](https://github.com/Seongkyun-Yu/TIL/blob/master/algorithm-study/programers/level1/collatzConjecture.js), [하샤드 수](https://github.com/Seongkyun-Yu/TIL/blob/master/algorithm-study/programers/level1/harshadNum.js), [예산](https://github.com/Seongkyun-Yu/TIL/blob/master/algorithm-study/programers/level1/budget.js)(미해결))<br>
 
 <br>
 
@@ -118,3 +119,4 @@ Today I Learned...
 2020-05-14 : React Hook (useReducer, cutom Hook)<br>
 2020-05-15 : Context API<br>
 2020-05-16 : Phone book 만들기<br>
+2020-05-17 : React Hook 복습, css 추가<br>
