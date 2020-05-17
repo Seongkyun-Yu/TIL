@@ -24,7 +24,12 @@ const Book = () => {
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css"
       />
       <section className="addressContainer">
-        <div>
+        <div className="addrInfo">
+          <div className="scrollHidden">
+            <List />
+          </div>
+        </div>
+        <div className="addrAdd">
           <input
             className="InputuserData"
             onChange={updateInputValue}
@@ -39,8 +44,6 @@ const Book = () => {
           />
           <button onClick={addUserData}>번호등록</button>
         </div>
-
-        <List />
       </section>
     </PhoneContext.Provider>
   );

@@ -7,10 +7,29 @@ body {
 
 .addressContainer {
   display: flex;
-  flex-direction: column;
+  justify-content: space-around;
   align-items: center;
-  width: 500px;
-  height: 500px;
+  width: 80vw;
+  height: 80vh;
   background-color: antiquewhite;
   padding: 20px;
+}
+
+.addrInfo {
+  width: 38vw;
+  height: 78vh;
+  overflow: hidden;
+}
+
+.scrollHidden {
+  width: 40vw;
+  height: 80vh;
+  background-color: aquamarine;
+  overflow: scroll;
+}
+
+.addrAdd {
+  width: 38vw;
+  height: 78vh;
+  background-color: burlywood;
 }
