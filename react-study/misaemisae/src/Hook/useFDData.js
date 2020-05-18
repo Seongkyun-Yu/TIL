@@ -28,6 +28,11 @@ const useFDData = () => {
     }
   };
 
+  const dustQuality = (dustData) => {
+    if (dustData < 12) return { state: '좋음', className: 'far fa-smile-wink' };
+    else if (dustData < 35) return { state: '보통', className: 'far fa-smile' };
+  };
+
   useEffect(() => {
     fetchDustData();
   }, []);

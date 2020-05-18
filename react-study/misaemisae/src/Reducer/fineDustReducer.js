@@ -1,5 +1,6 @@
 const initDustData = {
   dustData: [],
+  locIndex: 0,
   error: {
     state: false,
     message: null,
