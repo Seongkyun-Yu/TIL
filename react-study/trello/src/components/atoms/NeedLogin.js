@@ -4,4 +4,4 @@ const NeedLogin = () => {
   return <h2>Need Login</h2>;
 };
 
-export default NeedLogin;
+export default React.memo(NeedLogin);

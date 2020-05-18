@@ -13,4 +13,4 @@ const LoginPage = () => {
   return <LoginSection />;
 };
 
-export default LoginPage;
+export default React.memo(LoginPage);
