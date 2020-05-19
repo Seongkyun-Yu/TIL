@@ -7,13 +7,11 @@ const Skill = () => {
   const context = useContext(SkillContext);
   const { skills } = context;
 
-  const contents = skills;
-
   let skillList = [];
-  for (var i = 0; i < contents.length; i++) {
+  for (var i = 0; i < skills.length; i++) {
     skillList.push(
       <li key={i}>
-        <NavLink to={'/Skill/' + contents[i].id}>{contents[i].title}</NavLink>
+        <NavLink to={'/Skill/' + skills[i].id}>{skills[i].title}</NavLink>
       </li>,
     );
   }

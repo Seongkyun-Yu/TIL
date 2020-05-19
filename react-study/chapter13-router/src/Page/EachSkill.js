@@ -2,15 +2,9 @@ import React, { useContext } from 'react';
 import { useParams } from 'react-router-dom';
 import { SkillContext } from '../Context/SkillContext';
 
-// const contents = [
-//   { id: 1, title: 'HTML', description: 'HTML is ...' },
-//   { id: 2, title: 'JS', description: 'JS is ...' },
-//   { id: 3, title: 'React', description: 'React is ...' },
-// ];
 const EachSkill = () => {
   const context = useContext(SkillContext);
   const { skills } = context;
-  const contents = skills;
 
   var params = useParams();
   var content_id = params.content_id;
@@ -18,9 +12,9 @@ const EachSkill = () => {
     title: '죄송합니다',
     description: '해당 공부내용을 찾지 못했습니다',
   };
-  for (var i = 0; i < contents.length; i++) {
-    if (contents[i].id === Number(content_id)) {
-      selected_topic = contents[i];
+  for (var i = 0; i < skills.length; i++) {
+    if (skills[i].id === Number(content_id)) {
+      selected_topic = skills[i];
       break;
     }
   }
