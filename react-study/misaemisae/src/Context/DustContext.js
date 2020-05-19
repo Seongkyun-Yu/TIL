@@ -5,11 +5,12 @@ import { initDustData } from '../Reducer/fineDustReducer';
 const DustContext = createContext(initDustData);
 
 const DustProvider = ({ children }) => {
-  const [state, fetchDustData] = useFDData();
+  const [state, fetchDustData, dustQuality] = useFDData();
 
   const data = {
     state,
     fetchDustData,
+    dustQuality,
   };
 
   return <DustContext.Provider value={data}>{children}</DustContext.Provider>;
