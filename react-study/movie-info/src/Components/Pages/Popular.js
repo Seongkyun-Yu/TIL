@@ -2,42 +2,32 @@ import React, { useContext, useEffect } from 'react';
 import PopularTemplate from '../Templates/PopularTemplate';
 import { MovieContext } from '../../Context/MovieContext';
 
-const Popular = (e) => {
+const Popular = () => {
   const context = useContext(MovieContext);
   const { state, getPopMovie } = context;
   const { loading } = state;
 
-  const onScroll = () => {
-    // console.log(window);
-    // console.log(window.innerHeight, window.scrollY);
-    // document.body.scrollHeight ==
-    //     document.body.scrollTop +
-    //     window.innerHeight
-    console.log(
-      document.body.scrollHeight,
-      document.body.scrollTop,
-      window.clientHeight,
-    );
-    // console.log(
-    //   document.body.scrollHeight,
-    //   document.body.scrollTop,
-    //   window.innerHeight,
-    // );
+  // console.log('컨텍스트', context.state);
 
-    // console.log(
-    //   window.scrollY,
-    //   window.scrollHeight,
-    //   document.body.scrollHeight,
-    // );
-    // console.log(document.body.clientHeight, document.body.scrollHeight);
+  const onScroll = () => {
+    console.log('ㅇㅇ', state);
+    if (
+      document.documentElement.scrollHeight ===
+      Math.ceil(document.documentElement.scrollTop) +
+        document.documentElement.clientHeight
+    ) {
+      console.log('컨텍스트', context.state);
+      getPopMovie(state.popMovies.page + 1);
+    }
   };
 
   useEffect(() => {
-    window.addEventListener('scroll', onScroll);
     if (Object.keys(state.popMovies).length === 0) getPopMovie();
+    if (Object.keys(state.popMovies).length !== 0)
+      document.addEventListener('scroll', onScroll);
 
     return () => window.removeEventListener('scroll', onScroll);
-  }, []);
+  });
 
   return <>{loading ? <h1>로딩중</h1> : <PopularTemplate />}</>;
 };

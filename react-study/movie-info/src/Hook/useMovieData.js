@@ -34,6 +34,31 @@ const useMovieData = () => {
     dispatch({ type: 'CLEAR_INPUT' });
   };
 
+  const onScroll = () => {
+    // console.log(window);
+    // console.log(window.innerHeight, window.scrollY);
+    // document.body.scrollHeight ==
+    //     document.body.scrollTop +
+    //     window.innerHeight
+    console.log(
+      document.documentElement.scrollHeight,
+      Math.ceil(document.documentElement.scrollTop),
+      document.documentElement.clientHeight,
+      window.clientHeight,
+    );
+    if (
+      document.documentElement.scrollHeight ===
+      Math.ceil(document.documentElement.scrollTop) +
+        document.documentElement.clientHeight +
+        3
+      // Object.keys(state.popMovies).length !== 0
+    ) {
+      console.log(state);
+
+      // getPopMovie(state.popMovies)
+    }
+  };
+
   return [
     state,
     getPopMovie,

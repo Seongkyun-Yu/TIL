@@ -4,6 +4,7 @@ const initMovie = {
   searchMovies: {},
   searchInput: '',
   loading: false,
+  isEndScroll: false,
 };
 
 const reducer = (state, action) => {
@@ -20,12 +21,19 @@ const reducer = (state, action) => {
       //   ...state,
       //   loading: false,
       // };
-      if (action.page !== 1)
+
+      if (action.page !== 1) {
+        console.log('나야', action.movies.results);
         return {
           ...state,
-          page: action.page,
-          results: [...state.results, ...action.movies.results],
+          popMovies: {
+            ...state.popMovies,
+            page: action.page,
+            results: [...state.popMovies.results, ...action.movies.results],
+          },
+          loading: false,
         };
+      }
       return {
         ...state,
         popMovies: action.movies,
