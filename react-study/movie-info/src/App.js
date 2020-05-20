@@ -1,15 +1,16 @@
 import React from 'react';
-import { Route } from 'react-router-dom';
-import Popular from './Components/templates/Popular';
-import Recent from './Components/templates/Recent';
-import About from './Components/templates/About';
+import { MovieContextProvider } from './Context/MovieContext';
+
+import MainRouter from './Router/MainRouter';
+import Nav from './Components/Organisms/Nav';
 
 function App() {
   return (
     <div>
-      <Route exact path="/" component={Popular} />
-      <Route path="/Recent" component={Recent} />
-      <Route path="/About" component={About} />
+      <MovieContextProvider>
+        <Nav />
+        <MainRouter />
+      </MovieContextProvider>
     </div>
   );
 }
