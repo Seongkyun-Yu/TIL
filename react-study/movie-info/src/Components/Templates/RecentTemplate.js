@@ -1,8 +1,19 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import MovieLists from '../Organisms/MovieLists';
+import { MovieContext } from '../../Context/MovieContext';
+import Loading from '../Atoms/Loading';
 
 const RecentTemplate = () => {
-  return <MovieLists type="recentMovies" />;
+  // return <MovieLists type="recentMovies" />;
+
+  const context = useContext(MovieContext);
+  const { state } = context;
+  return (
+    <div>
+      {state.loading ? <Loading /> : null}
+      <MovieLists type="recentMovies" />
+    </div>
+  );
 };
 
 export default RecentTemplate;

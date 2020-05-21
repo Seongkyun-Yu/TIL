@@ -1,0 +1,22 @@
+.movieTitle {
+  display: block;
+  height: 22px;
+  color: white;
+  font-weight: 500;
+  margin: 0;
+}
+
+.voteCount {
+  display: block;
+  height: 20px;
+  color: white;
+  font-weight: 400;
+  margin: 0;
+}
+
+.releaseDate {
+  color: white;
+  margin: 0;
+  width: 200px;
+  text-align: left;
+}

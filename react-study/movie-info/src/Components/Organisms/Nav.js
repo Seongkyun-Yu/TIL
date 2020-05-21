@@ -1,21 +1,33 @@
 import React from 'react';
-
+import './style/Nav.css';
 import { NavLink } from 'react-router-dom';
+
+const activeStyle = {
+  color: 'red',
+};
 
 const Nav = () => {
   return (
-    <ul>
+    <ul className="NavContainer">
       <li key={1}>
-        <NavLink to="/">인기순위</NavLink>
+        <NavLink className="NavLink" exact to="/" activeStyle={activeStyle}>
+          POPULAR
+        </NavLink>
       </li>
       <li key={2}>
-        <NavLink to="/Recent">최신순</NavLink>
+        <NavLink className="NavLink" to="/Recent" activeStyle={activeStyle}>
+          UPCOMMING
+        </NavLink>
       </li>
       <li key={3}>
-        <NavLink to="/Search">검색</NavLink>
+        <NavLink className="NavLink" to="/Search" activeStyle={activeStyle}>
+          SEARCH
+        </NavLink>
       </li>
       <li key={4}>
-        <NavLink to="/About">어바웃</NavLink>
+        <NavLink className="NavLink" to="/About" activeStyle={activeStyle}>
+          ABOUT
+        </NavLink>
       </li>
     </ul>
   );

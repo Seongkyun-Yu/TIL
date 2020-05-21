@@ -2,6 +2,7 @@ const initMovie = {
   popMovies: {},
   recentMovies: {},
   searchMovies: {},
+  detailMovies: {},
   searchInput: '',
   loading: false,
   isEndScroll: false,
@@ -23,7 +24,6 @@ const reducer = (state, action) => {
       // };
 
       if (action.page !== 1) {
-        console.log('나야', action.movies.results);
         return {
           ...state,
           popMovies: {
@@ -51,10 +51,22 @@ const reducer = (state, action) => {
         searchMovies: action.movies,
         loading: false,
       };
+    case 'DETAIL_MOV':
+      return {
+        ...state,
+        detailMovies: action.movies,
+        loading: false,
+      };
     case 'INPUT_CHANGE':
       return {
         ...state,
         searchInput: action.value,
+      };
+
+    case 'CLEAR_DETAIL':
+      return {
+        ...state,
+        detailMovies: {},
       };
 
     case 'CLEAR_INPUT':

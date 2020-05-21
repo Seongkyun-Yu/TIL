@@ -26,37 +26,22 @@ const useMovieData = () => {
     dispatch({ type: 'SEARCH_MOV', movies: movies.data });
   };
 
+  const getDetailMovie = async (id) => {
+    setLoading();
+    const movies = await movieApi.getMovie(id);
+    dispatch({ type: 'DETAIL_MOV', movies: movies.data });
+  };
+
   const searchInputChange = (e) => {
     dispatch({ type: 'INPUT_CHANGE', value: e.target.value });
   };
 
-  const clearInput = () => {
-    dispatch({ type: 'CLEAR_INPUT' });
+  const clearDetailMovie = () => {
+    dispatch({ type: 'CLEAR_DETAIL' });
   };
 
-  const onScroll = () => {
-    // console.log(window);
-    // console.log(window.innerHeight, window.scrollY);
-    // document.body.scrollHeight ==
-    //     document.body.scrollTop +
-    //     window.innerHeight
-    console.log(
-      document.documentElement.scrollHeight,
-      Math.ceil(document.documentElement.scrollTop),
-      document.documentElement.clientHeight,
-      window.clientHeight,
-    );
-    if (
-      document.documentElement.scrollHeight ===
-      Math.ceil(document.documentElement.scrollTop) +
-        document.documentElement.clientHeight +
-        3
-      // Object.keys(state.popMovies).length !== 0
-    ) {
-      console.log(state);
-
-      // getPopMovie(state.popMovies)
-    }
+  const clearInput = () => {
+    dispatch({ type: 'CLEAR_INPUT' });
   };
 
   return [
@@ -64,7 +49,9 @@ const useMovieData = () => {
     getPopMovie,
     getRecMovie,
     searchMovie,
+    getDetailMovie,
     searchInputChange,
+    clearDetailMovie,
     clearInput,
   ];
 };

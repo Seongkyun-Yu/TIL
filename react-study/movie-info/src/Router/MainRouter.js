@@ -11,11 +11,11 @@ function MainRouter() {
   return (
     <Switch>
       <Route exact path="/" component={Popular} />
-      <Route exact path="/Recent" component={Recent} />
-      <Route exact path="/Search" component={Search} />
-      <Route exact path="/About" component={About} />
-      <Route exact path="/Detail" component={Detail} />
-      <Route path="/:movie_type/:movie_index" component={Detail} />
+      <Route path="/Recent" component={Recent} />
+      <Route path="/Search" component={Search} />
+      <Route path="/About" component={About} />
+      <Route path="/Detail" component={Detail} />
+      <Route path="/:idx" component={Detail} />
       {/* <Route path="/Recent/:movie_type/:movie_index" component={Detail} /> */}
       {/* <Route path="/Search/:movie_type/:movie_index" component={Detail} /> */}
       <Route render={() => <h1>없는 페이지입니다</h1>} />

@@ -9,7 +9,9 @@ const MovieContextProvider = ({ children }) => {
     getPopMovie,
     getRecMovie,
     searchMovie,
+    getDetailMovie,
     searchInputChange,
+    clearDetailMovie,
     clearInput,
   ] = useMovieData();
 
@@ -18,7 +20,9 @@ const MovieContextProvider = ({ children }) => {
     getPopMovie,
     getRecMovie,
     searchMovie,
+    getDetailMovie,
     searchInputChange,
+    clearDetailMovie,
     clearInput,
   };
 
