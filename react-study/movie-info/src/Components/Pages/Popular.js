@@ -7,9 +7,12 @@ const Popular = () => {
   const context = useContext(MovieContext);
   const { state, getPopMovie } = context;
 
-  const [isEnd, setScrollState] = useState(false);
+  const [isEnd, setScrollState] = useState();
 
-  if (isEnd) getPopMovie(state.popMovies.page + 1);
+  if (isEnd) {
+    getPopMovie(state.popMovies.page + 1);
+    setScrollState(false);
+  }
 
   const onScroll = () => {
     if (
@@ -19,7 +22,9 @@ const Popular = () => {
     ) {
       setScrollState(true);
     } else {
-      setScrollState(false);
+      if (!state) {
+        setScrollState(false);
+      }
     }
   };
 

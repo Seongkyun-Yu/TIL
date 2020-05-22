@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useContext } from 'react';
 import { useParams } from 'react-router-dom';
 import { MovieContext } from '../../Context/MovieContext';
