@@ -7,7 +7,7 @@ const Popular = () => {
   const context = useContext(MovieContext);
   const { state, getPopMovie } = context;
 
-  const [isEnd, setScrollState] = useState();
+  const [isEnd, setScrollState] = useState(false);
 
   if (isEnd) {
     getPopMovie(state.popMovies.page + 1);
