@@ -96,7 +96,7 @@ Today I Learned...
 2020-05-13 : 알고리즘 문제풀이([x만큼 간격이 있는 n개의 숫자](https://github.com/Seongkyun-Yu/TIL/blob/master/algorithm-study/programers/level1/nthNum.js))<br>
 2020-05-16 : 알고리즘 문제풀이([직사각형 별찍기](https://github.com/Seongkyun-Yu/TIL/blob/master/algorithm-study/programers/level1/lecStar.js), [핸드폰 번호 가리기](https://github.com/Seongkyun-Yu/TIL/blob/master/algorithm-study/programers/level1/removePhoneNumber.js))<br>
 2020-05-17 : 알고리즘 문제풀이([콜라츠추측](https://github.com/Seongkyun-Yu/TIL/blob/master/algorithm-study/programers/level1/collatzConjecture.js), [하샤드 수](https://github.com/Seongkyun-Yu/TIL/blob/master/algorithm-study/programers/level1/harshadNum.js), [예산](https://github.com/Seongkyun-Yu/TIL/blob/master/algorithm-study/programers/level1/budget.js)(미해결))<br>
-
+2020-05-22 : 알고리즘 문제풀이([비밀지도](https://github.com/Seongkyun-Yu/TIL/blob/master/algorithm-study/programers/level1/secretMap.js))<br>
 <br>
 
 ## # 데이터베이스 공부 내역
@@ -120,3 +120,8 @@ Today I Learned...
 2020-05-15 : Context API<br>
 2020-05-16 : Phone book 만들기<br>
 2020-05-17 : React Hook 복습, css 추가<br>
+2020-05-18 : React 외부 api 연동<br>
+2020-05-19 : React Router<br>
+2020-05-20 : Movie-Info 만들기<br>
+2020-05-21 : Infinity Scroll<br>
+2020-05-22 : Code Split<br>
