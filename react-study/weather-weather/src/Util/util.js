@@ -26,6 +26,16 @@ const getYesterday = () => {
   return year + month + date;
 };
 
+const getTime = () => {
+  const today = new Date();
+
+  let time = today.getHours();
+
+  time = time.length - 1 ? time : '0' + time;
+
+  return time + '00';
+};
+
 function dfs_xy_conv(code, v1, v2) {
   let RE = 6371.00877; // 지구 반경(km)
   let GRID = 5.0; // 격자 간격(km)
@@ -93,4 +103,4 @@ function dfs_xy_conv(code, v1, v2) {
   return rs;
 }
 
-export { getToday, getYesterday, dfs_xy_conv };
+export { getToday, getYesterday, getTime, dfs_xy_conv };

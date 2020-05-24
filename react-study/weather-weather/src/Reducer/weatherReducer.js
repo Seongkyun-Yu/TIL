@@ -1,23 +1,34 @@
 const weatherInit = {
   loading: false,
-  location: {
-    latitude: 1,
-    longitude: 1,
-    addr: '',
-  },
-  day1: [],
-  day2: [],
-  day3: [],
+  SKY: [],
+  POP: [],
+  PTY: [],
+  TMN: [],
+  TMX: [],
+  REH: [],
+  WSD: [],
+  error: false,
 };
 
 const weatherReducer = (state, action) => {
   switch (action.type) {
     case 'SUCCESS':
-      return state;
+      return {
+        ...state,
+        loading: false,
+        SKY: action.SKY,
+        POP: action.POP,
+        PTY: action.PTY,
+        TMN: action.TMN,
+        TMX: action.TMX,
+        REH: action.REH,
+        WSD: action.WSD,
+      };
     case 'ERROR':
       return {
         ...state,
         loading: false,
+        error: true,
       };
     default:
       throw new Error('이상한 dispatch 명령 사용함');

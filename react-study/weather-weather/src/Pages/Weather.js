@@ -6,9 +6,9 @@ const Weather = () => {
   const context = useContext(WeatherContext);
   const { weatherState, fetchWeather, locationState, fetchLoaction } = context;
 
-  console.log(locationState);
+  console.log(weatherState);
 
-  if (!locationState.loading) fetchWeather(locationState.nx, locationState.ny);
+  // if (!locationState.loading) fetchWeather(locationState.nx, locationState.ny);
 
   // fetchWeather(locationState.latitude, locationState.longitude);
 
@@ -45,9 +45,10 @@ const Weather = () => {
 
   // getlco();
 
-  // useEffect(() => {
-  //   fetchWeather(locationState.nx, locationState.ny);
-  // }, []);
+  useEffect(() => {
+    if (locationState.nx !== 1)
+      fetchWeather(locationState.nx, locationState.ny);
+  }, [locationState]);
 
   return <div>hi</div>;
 };
