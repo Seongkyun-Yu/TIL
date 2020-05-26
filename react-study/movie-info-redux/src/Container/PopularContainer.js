@@ -32,3 +32,5 @@ const PopularContainer = () => {
     />
   );
 };
+
+export default PopularContainer;
