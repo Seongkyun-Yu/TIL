@@ -10,7 +10,7 @@ export const error = (errorMessage) => ({
 });
 
 const initState = {
-  movie: {},
+  movies: {},
   error: false,
   errorMessage: '',
   loading: false,

@@ -1,22 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter } from 'react-router-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-
-import rootReducer from './Modules/index';
-import { createStore } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
-import { composeWithDevTools } from 'redux-devtools-extension';
+import rootReducer from './Modules';
+import myLogger from './Middlewares/myLogger';
+import ReduxThunk from 'redux-thunk';
+// import myLogger2 from './Middlewares/myLogger2';
+// import myLogger3 from './Middlewares/myLogger3';
 
-const store = createStore(rootReducer, composeWithDevTools());
+const store = createStore(rootReducer, applyMiddleware(ReduxThunk, myLogger));
 
 ReactDOM.render(
   <Provider store={store}>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
+    <App />
   </Provider>,
   document.getElementById('root'),
 );

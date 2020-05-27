@@ -1,0 +1,11 @@
+.goBack {
+  position: absolute;
+  right: 5%;
+  bottom: 5%;
+  background-color: transparent;
+  border: none;
+  color: red;
+  font-weight: 700;
+  font-size: 30px;
+  cursor: pointer;
+}

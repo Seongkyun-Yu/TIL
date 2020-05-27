@@ -1,9 +1,11 @@
 const SUCCESS = 'DETAIL/SUCCESS';
 const LOADING = 'DETAIL/LOADING';
+const CLEAR = 'DETAIL/CLEAR';
 const ERROR = 'DETAIL/ERROR';
 
 export const success = (movie) => ({ type: SUCCESS, movie });
 export const loading = () => ({ type: LOADING });
+export const clear = () => ({ type: CLEAR });
 export const error = (errorMessage) => ({
   type: ERROR,
   errorMessage,
@@ -28,6 +30,12 @@ export default function Detail(state = initState, action) {
       return {
         ...state,
         loading: true,
+      };
+    case CLEAR:
+      return {
+        ...state,
+        movie: {},
+        loading: false,
       };
     case ERROR:
       return {

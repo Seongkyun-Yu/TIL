@@ -1,10 +1,10 @@
-import { combineReducer } from 'redux';
+import { combineReducers } from 'redux';
 import Popular from './Popular';
 import Recent from './Recent';
 import Detail from './Detail';
 import Search from './Search';
 
-const rootReducer = combineReducer({
+const rootReducer = combineReducers({
   Popular,
   Recent,
   Detail,
