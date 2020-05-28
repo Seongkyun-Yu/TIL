@@ -8,15 +8,22 @@ import { Provider } from 'react-redux';
 import rootReducer from './Modules';
 import myLogger from './Middlewares/myLogger';
 import ReduxThunk from 'redux-thunk';
-// import myLogger2 from './Middlewares/myLogger2';
+import myLogger2 from './Middlewares/myLogger2';
+import { composeWithDevTools } from 'redux-devtools-extension';
+import { BrowserRouter } from 'react-router-dom';
 // import myLogger3 from './Middlewares/myLogger3';
 
-const store = createStore(rootReducer, applyMiddleware(ReduxThunk, myLogger));
+const store = createStore(
+  rootReducer,
+  composeWithDevTools(applyMiddleware(ReduxThunk, myLogger, myLogger2)),
+);
 
 ReactDOM.render(
-  <Provider store={store}>
-    <App />
-  </Provider>,
+  <BrowserRouter>
+    <Provider store={store}>
+      <App />
+    </Provider>
+  </BrowserRouter>,
   document.getElementById('root'),
 );
 

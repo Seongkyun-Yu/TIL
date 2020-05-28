@@ -50,6 +50,8 @@ export const addPhoneAsync = (newPhone) => async (dispatch) => {
   console.log(newPhone);
   dispatch({ type: ADD_PHONE }); // 요청이 시작됨
   try {
+    console.log('addPhone 실행됨');
+
     const phones = await addPhone(newPhone); // API 호출
     dispatch({ type: ADD_PHONE_SUCCESS, phones }); // 성공
   } catch (e) {

@@ -7,7 +7,7 @@ import {
   deletePhoneAsync,
 } from '../Modules/Phone';
 
-function PhoneContainer() {
+function PhoneListContainer() {
   const { data, loading, error } = useSelector((state) => state.Phone.phones);
   const dispatch = useDispatch();
 
@@ -18,7 +18,8 @@ function PhoneContainer() {
   };
 
   useEffect(() => {
-    dispatch(getPhonesAsync());
+    const result = dispatch(getPhonesAsync());
+    console.log('PhoneContainer에서 보낸 dispatch의 결과', result);
   }, [dispatch]);
   if (loading) return <div>로딩중...</div>;
   if (error) return <div>에러 발생!</div>;
@@ -33,4 +34,4 @@ function PhoneContainer() {
   );
 }
 
-export default PhoneContainer;
+export default PhoneListContainer;

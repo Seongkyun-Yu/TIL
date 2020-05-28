@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 // 컴포넌트 최적화를 위하여 React.memo를 사용합니다
 const PhoneItem = React.memo(function PhoneItem({ phone, onDelete }) {
   return (
     <li>
-      {phone.name + ':' + phone.number}{' '}
+      <Link to={`/${phone.id}`}>{phone.name + ':' + phone.number} </Link>
       <button onClick={() => onDelete(phone.id)}>삭제</button>
     </li>
   );
@@ -21,7 +22,7 @@ const PhoneList = React.memo(function PhoneList({ phones, onDelete }) {
     </ul>
   );
 });
-const Phone = ({ phones, onCreate, onDelete }) => {
+const Phone = ({ phones, onCreate, onDelete, dispatch }) => {
   // 리덕스를 사용한다고 해서 모든 상태를 리덕스에서 관리해야하는 것은 아닙니다.
   const [phone, setState] = useState({
     name: '',
@@ -36,7 +37,7 @@ const Phone = ({ phones, onCreate, onDelete }) => {
   };
   const onSubmit = (e) => {
     e.preventDefault();
-    onCreate(phone);
+    dispatch(onCreate(phone));
     setState({ name: '', number: '' }); // 인풋 초기화
   };
 
