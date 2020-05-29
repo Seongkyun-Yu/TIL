@@ -97,6 +97,7 @@ Today I Learned...
 2020-05-16 : 알고리즘 문제풀이([직사각형 별찍기](https://github.com/Seongkyun-Yu/TIL/blob/master/algorithm-study/programers/level1/lecStar.js), [핸드폰 번호 가리기](https://github.com/Seongkyun-Yu/TIL/blob/master/algorithm-study/programers/level1/removePhoneNumber.js))<br>
 2020-05-17 : 알고리즘 문제풀이([콜라츠추측](https://github.com/Seongkyun-Yu/TIL/blob/master/algorithm-study/programers/level1/collatzConjecture.js), [하샤드 수](https://github.com/Seongkyun-Yu/TIL/blob/master/algorithm-study/programers/level1/harshadNum.js), [예산](https://github.com/Seongkyun-Yu/TIL/blob/master/algorithm-study/programers/level1/budget.js)(미해결))<br>
 2020-05-22 : 알고리즘 문제풀이([비밀지도](https://github.com/Seongkyun-Yu/TIL/blob/master/algorithm-study/programers/level1/secretMap.js))<br>
+2020-05-30 : 알고리즘 문제풀이([실패율](https://github.com/Seongkyun-Yu/TIL/blob/master/algorithm-study/programers/level1/failureRate.js))
 <br>
 
 ## # 데이터베이스 공부 내역
@@ -125,3 +126,10 @@ Today I Learned...
 2020-05-20 : Movie-Info 만들기<br>
 2020-05-21 : Infinity Scroll<br>
 2020-05-22 : Code Split<br>
+2020-05-23 : Proxy CROS 에러 해결 공부<br>
+2020-05-24 : Naver Map Api<br>
+2020-05-25 : 해커톤 [날씨날씨 & 미세미세](https://github.com/Seongkyun-Yu/hackathon-react)<br>
+2020-05-26 : Redux<br>
+2020-05-27 : Redux-thunk<br>
+2020-05-28 : Redux-thunk 복습<br>
+2020-05-29 : Phone Book Redux Thunk로 리팩토링<br>
