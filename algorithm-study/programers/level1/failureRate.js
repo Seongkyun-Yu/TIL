@@ -1,3 +1,6 @@
+// 실패율
+// https://programmers.co.kr/learn/courses/30/lessons/42889
+
 function solution(N, stages) {
   let member = stages.length;
   let count = 0;
