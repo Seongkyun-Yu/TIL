@@ -1,3 +1,6 @@
+// 탑
+// https://programmers.co.kr/learn/courses/30/lessons/42588
+
 function solution(heights) {
   const answer = [0];
   for (let i = 0; i < heights.length; i++) {
