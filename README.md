@@ -58,6 +58,7 @@ Today I Learned...
 2020-03-29 : DOM 예습2<br>
 2020-03-30 : DOM<br>
 2020-03-31 : Event<br>
+
 2020-04-01 : 해커톤 기획<br>
 2020-04-02 : Todo-List<br>
 2020-04-03 : 해커톤 [Simple-MusicPlayer](https://github.com/Seongkyun-Yu/MusicPlayer)<br>
@@ -97,7 +98,7 @@ Today I Learned...
 2020-05-16 : 알고리즘 문제풀이([직사각형 별찍기](https://github.com/Seongkyun-Yu/TIL/blob/master/algorithm-study/programers/level1/lecStar.js), [핸드폰 번호 가리기](https://github.com/Seongkyun-Yu/TIL/blob/master/algorithm-study/programers/level1/removePhoneNumber.js))<br>
 2020-05-17 : 알고리즘 문제풀이([콜라츠추측](https://github.com/Seongkyun-Yu/TIL/blob/master/algorithm-study/programers/level1/collatzConjecture.js), [하샤드 수](https://github.com/Seongkyun-Yu/TIL/blob/master/algorithm-study/programers/level1/harshadNum.js), [예산](https://github.com/Seongkyun-Yu/TIL/blob/master/algorithm-study/programers/level1/budget.js)(미해결))<br>
 2020-05-22 : 알고리즘 문제풀이([비밀지도](https://github.com/Seongkyun-Yu/TIL/blob/master/algorithm-study/programers/level1/secretMap.js))<br>
-2020-05-30 : 알고리즘 문제풀이([실패율](https://github.com/Seongkyun-Yu/TIL/blob/master/algorithm-study/programers/level1/failureRate.js))
+2020-05-30 : 알고리즘 문제풀이([실패율](https://github.com/Seongkyun-Yu/TIL/blob/master/algorithm-study/programers/level1/failureRate.js), [탑](https://github.com/Seongkyun-Yu/TIL/blob/master/algorithm-study/programers/level2/top.js))<br>
 <br>
 
 ## # 데이터베이스 공부 내역
