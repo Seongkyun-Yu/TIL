@@ -5,14 +5,19 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
-import rootReducer from './Modules';
+import rootReducer, { rootSaga } from './Modules';
 import myLogger from './Middlewares/myLogger';
 import ReduxThunk from 'redux-thunk';
 import { BrowserRouter } from 'react-router-dom';
-// import myLogger2 from './Middlewares/myLogger2';
-// import myLogger3 from './Middlewares/myLogger3';
+import createSagaMiddleware from 'redux-saga';
+import { composeWithDevTools } from 'redux-devtools-extension';
 
-const store = createStore(rootReducer, applyMiddleware(ReduxThunk, myLogger));
+const sagaMiddleware = createSagaMiddleware();
+const store = createStore(
+  rootReducer,
+  applyMiddleware(ReduxThunk, sagaMiddleware, myLogger),
+);
+sagaMiddleware.run(rootSaga);
 
 ReactDOM.render(
   <BrowserRouter>

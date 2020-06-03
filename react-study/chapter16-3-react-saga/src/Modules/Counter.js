@@ -21,7 +21,7 @@ function* decreaseSaga() {
   yield put(decrease()); // put은 특정 액션을 디스패치 해줍니다.
 }
 
-export function* counterSaga() {
+export function* CounterSaga() {
   yield takeEvery(INCREASE_ASYNC, increaseSaga);
   // 모든 INCREASE_ASYNC 액션을 처리
   yield takeLatest(DECREASE_ASYNC, decreaseSaga);
@@ -31,7 +31,7 @@ export function* counterSaga() {
 //초깃값 (상태가 객체가 아니라 그냥 숫자여도 상관 없습니다.)
 const initialState = 0;
 
-export function counterReducer(state = initialState, action) {
+export function CounterReducer(state = initialState, action) {
   switch (action.type) {
     case INCREASE:
       return state + 1;
