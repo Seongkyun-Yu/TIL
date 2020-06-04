@@ -1,4 +1,4 @@
-import { select, put, call, takeLatest } from 'redux-saga/effects';
+import { select, put, call, takeEvery } from 'redux-saga/effects';
 import { movieApi } from '../Api/movieApi';
 
 const GETMOVIE = 'popular/GETMOVIE';
@@ -28,7 +28,7 @@ function* getPopMovieSaga(action) {
 }
 
 function* popularSaga() {
-  yield takeLatest(GETMOVIE, getPopMovieSaga);
+  yield takeEvery(GETMOVIE, getPopMovieSaga);
 }
 
 const initialState = {
