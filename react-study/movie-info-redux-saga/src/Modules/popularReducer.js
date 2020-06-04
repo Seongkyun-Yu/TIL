@@ -17,12 +17,11 @@ function* getPopMovieSaga(action) {
     const page = action.page || 1;
 
     if (!state.Popular.page) yield put(loading());
+
     const response = yield call(movieApi.getPopular, page);
 
-    if (response.status === 200) {
-      if (state.Popular.page !== response.page)
-        yield put(success(response.page, response.results));
-    } else yield put(error('데이터 받기 실패'));
+    if (state.Popular.page < response.page)
+      yield put(success(response.page, response.results));
   } catch (e) {
     yield put(error(e));
   }
@@ -45,7 +44,7 @@ const popularReducer = (state = initialState, action) => {
     case SUCCESS:
       return {
         ...state,
-        movies: [...state, ...action.movies],
+        movies: [...state.movies, ...action.movies],
         page: action.page,
         loading: false,
       };
