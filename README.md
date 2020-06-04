@@ -99,6 +99,7 @@ Today I Learned...
 2020-05-17 : 알고리즘 문제풀이([콜라츠추측](https://github.com/Seongkyun-Yu/TIL/blob/master/algorithm-study/programers/level1/collatzConjecture.js), [하샤드 수](https://github.com/Seongkyun-Yu/TIL/blob/master/algorithm-study/programers/level1/harshadNum.js), [예산](https://github.com/Seongkyun-Yu/TIL/blob/master/algorithm-study/programers/level1/budget.js)(미해결))<br>
 2020-05-22 : 알고리즘 문제풀이([비밀지도](https://github.com/Seongkyun-Yu/TIL/blob/master/algorithm-study/programers/level1/secretMap.js))<br>
 2020-05-30 : 알고리즘 문제풀이([실패율](https://github.com/Seongkyun-Yu/TIL/blob/master/algorithm-study/programers/level1/failureRate.js), [탑](https://github.com/Seongkyun-Yu/TIL/blob/master/algorithm-study/programers/level2/top.js))<br>
+2020-06-04 : 알고리즘 문제풀이([기능개발](https://github.com/Seongkyun-Yu/TIL/blob/master/algorithm-study/programers/level2/functionDevelop.js))
 <br>
 
 ## # 데이터베이스 공부 내역
@@ -134,3 +135,6 @@ Today I Learned...
 2020-05-27 : Redux-thunk<br>
 2020-05-28 : Redux-thunk 복습<br>
 2020-05-29 : Phone Book Redux Thunk로 리팩토링<br>
+2020-06-01 : Redux-saga 예습<br>
+2020-06-02 : Redux Phone Book 리팩토링 2차<br>
+2020-06-03 : 이터러블, 이터레이터, Redux-saga, Redux-portal<br>
