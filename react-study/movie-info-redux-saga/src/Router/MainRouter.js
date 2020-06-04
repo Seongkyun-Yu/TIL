@@ -1,10 +1,10 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
-import Popular from '../Components/Pages/Popular';
-import Upcoming from '../Components/Pages/Upcoming';
-import Search from '../Components/Pages/Search';
-import Detail from '../Components/Pages/Detail';
-import NotFound from '../Components/Pages/NotFound';
+import Popular from '../Pages/Popular';
+import Upcoming from '../Pages/Upcoming';
+import Search from '../Pages/Search';
+import Detail from '../Pages/Detail';
+import NotFound from '../Pages/NotFound';
 
 const MainRouter = () => {
   return (
