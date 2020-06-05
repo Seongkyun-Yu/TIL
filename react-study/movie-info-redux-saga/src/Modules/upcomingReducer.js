@@ -1,34 +1,34 @@
 import { select, put, call, takeEvery } from 'redux-saga/effects';
 import { movieApi } from '../Api/movieApi';
 
-const GETMOVIE = 'popular/GETMOVIE';
-const SUCCESS = 'popular/SUCCESS';
-const ERROR = 'popular/ERROR';
-const LOADING = 'popular/LOADING';
+const GETMOVIE = 'upcoming/GETMOVIE';
+const SUCCESS = 'upcoming/SUCCESS';
+const ERROR = 'upcoming/ERROR';
+const LOADING = 'upcoming/LOADING';
 
-const getPopularMovie = (page = 1) => ({ type: GETMOVIE, page });
+const getUpcomingMovie = (page = 1) => ({ type: GETMOVIE, page });
 const success = (page, movies) => ({ type: SUCCESS, page, movies });
 const error = (e) => ({ type: ERROR, e });
 const loading = () => ({ type: LOADING });
 
-function* getPopMovieSaga(action) {
+function* getUpcomMovieSaga(action) {
   try {
     const state = yield select();
     const page = action.page || 1;
 
-    if (!state.Popular.page) yield put(loading());
+    if (!state.Upcoming.page) yield put(loading());
 
-    const response = yield call(movieApi.getPopular, page);
+    const response = yield call(movieApi.getUpcoming, page);
 
-    if (state.Popular.page < response.page)
+    if (state.Upcoming.page < response.page)
       yield put(success(response.page, response.results));
   } catch (e) {
     yield put(error(e));
   }
 }
 
-function* popularSaga() {
-  yield takeEvery(GETMOVIE, getPopMovieSaga);
+function* upcomingSaga() {
+  yield takeEvery(GETMOVIE, getUpcomMovieSaga);
 }
 
 const initialState = {
@@ -39,7 +39,7 @@ const initialState = {
   errorMessage: '',
 };
 
-const popularReducer = (state = initialState, action) => {
+const upcomingReducer = (state = initialState, action) => {
   switch (action.type) {
     case SUCCESS:
       return {
@@ -53,6 +53,7 @@ const popularReducer = (state = initialState, action) => {
         ...state,
         error: true,
         errorMessage: action.e,
+        loading: false,
       };
     case LOADING:
       return {
@@ -64,4 +65,4 @@ const popularReducer = (state = initialState, action) => {
   }
 };
 
-export { popularReducer, getPopularMovie, popularSaga };
+export { upcomingReducer, getUpcomingMovie, upcomingSaga };

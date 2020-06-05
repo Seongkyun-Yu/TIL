@@ -1,7 +1,16 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { getUpcomingMovie } from '../Modules/upcomingReducer';
 
 const Upcoming = () => {
-  return <h1>이곳은 Upcoming 페이지</h1>;
+  const state = useSelector((state) => state.Upcoming);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getUpcomingMovie());
+  }, [dispatch]);
+
+  return <h1>{JSON.stringify(state)}</h1>;
 };
 
 export default Upcoming;
