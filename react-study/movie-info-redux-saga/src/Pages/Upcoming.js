@@ -1,16 +1,16 @@
 import React, { useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { getUpcomingMovie } from '../Modules/upcomingReducer';
+import UpcomingTemplate from '../Components/Templates/UpcomingTemplate';
 
 const Upcoming = () => {
-  const state = useSelector((state) => state.Upcoming);
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(getUpcomingMovie());
   }, [dispatch]);
 
-  return <h1>{JSON.stringify(state)}</h1>;
+  return <UpcomingTemplate />;
 };
 
 export default Upcoming;
