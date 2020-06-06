@@ -5,12 +5,13 @@ import {
   getPhonesAsync,
   addPhoneAsync,
   deletePhoneAsync,
+  getPhonesAction,
 } from '../Modules/Phone';
 
 function PhoneContainer() {
   const { data, loading, error } = useSelector((state) => state.Phone.phones);
   const dispatch = useDispatch();
-
+  console.log(data);
   //dispatch를 컴포넌트에 넘겨줄 수도 있고
   //이와 같이 애초에 함수로 래핑하여 준비한다음 보낼 수 있다.
   const deletePhoneFunc = (id) => {
@@ -18,7 +19,7 @@ function PhoneContainer() {
   };
 
   useEffect(() => {
-    dispatch(getPhonesAsync());
+    dispatch(getPhonesAction());
   }, [dispatch]);
 
   if (loading && !data) return <div>로딩중...</div>;

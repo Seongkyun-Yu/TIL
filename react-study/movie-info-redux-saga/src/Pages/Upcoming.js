@@ -1,7 +1,16 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { getUpcomingMovie } from '../Modules/upcomingReducer';
+import UpcomingTemplate from '../Components/Templates/UpcomingTemplate';
 
 const Upcoming = () => {
-  return <h1>이곳은 Upcoming 페이지</h1>;
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getUpcomingMovie());
+  }, [dispatch]);
+
+  return <UpcomingTemplate />;
 };
 
 export default Upcoming;

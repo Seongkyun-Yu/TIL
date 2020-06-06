@@ -3,6 +3,7 @@ import { Switch, Route } from 'react-router-dom';
 import Popular from '../Pages/Popular';
 import Upcoming from '../Pages/Upcoming';
 import Search from '../Pages/Search';
+import About from '../Pages/About';
 import Detail from '../Pages/Detail';
 import NotFound from '../Pages/NotFound';
 
@@ -12,6 +13,7 @@ const MainRouter = () => {
       <Route exact path="/" component={Popular} />
       <Route path="/Upcoming" component={Upcoming} />
       <Route path="/Search" component={Search} />
+      <Route path="/About" component={About} />
       <Route path="/Detail/:idx" component={Detail} />
       <Route render={NotFound} />
     </Switch>
