@@ -10,19 +10,13 @@ function solution(n) {
       n = Math.floor(n / 3) - 1;
     } else n = Math.floor(n / 3);
 
-    numStr = num + numStr;
+    if (+num === 1) numStr = 1 + numStr;
+    else if (+num === 2) numStr = 2 + numStr;
+    else numStr = 4 + numStr;
   }
-  numStr = n + numStr;
+  if (n) numStr = n === 3 ? 4 + numStr : n + numStr;
 
-  let answer = '';
-  for (let i = 0; i < numStr.length; i++) {
-    if (+numStr[i] === 0) answer += 0;
-    else if (+numStr[i] === 1) answer += 1;
-    else if (+numStr[i] === 2) answer += 2;
-    else answer += 4;
-  }
-
-  return +answer + '';
+  return numStr;
 }
 
 console.log(solution(10));
