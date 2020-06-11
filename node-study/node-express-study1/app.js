@@ -7,6 +7,8 @@ const helmet = require('helmet');
 const mainRouter = require('./router/mainRouter');
 const userRouter = require('./router/userRouter');
 
+const db = require('./model/db');
+
 class AppServer extends http.Server {
   constructor(config) {
     const app = express();
@@ -23,6 +25,7 @@ class AppServer extends http.Server {
     this.set();
     this.middleWare();
     this.router();
+    this.dbConnection();
 
     this.app.use('/public', express.static(__dirname + '/public'));
 
@@ -53,6 +56,22 @@ class AppServer extends http.Server {
       res.status(404);
       res.send('잘못된 요청입니다');
     });
+  }
+
+  dbConnection() {
+    db.sequelize
+      .authenticate()
+      .then(() => {
+        console.log('DB접속 완료');
+        return db.sequelize.sync({ force: false });
+      })
+      .then(() => {
+        console.log('디비 접속 완료 후 다음 할 일');
+      })
+      .catch((err) => {
+        console.log('DB접속이 실패됐을 경우');
+        console.log(err);
+      });
   }
 }
 
