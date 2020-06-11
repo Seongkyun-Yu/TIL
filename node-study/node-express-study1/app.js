@@ -4,6 +4,8 @@ const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const helmet = require('helmet');
 
+const WebSocket = require('ws');
+
 const mainRouter = require('./router/mainRouter');
 const userRouter = require('./router/userRouter');
 
@@ -80,4 +82,24 @@ const createServer = (config = {}) => {
   return server.start();
 };
 
+const connectUpbit = () => {
+  const ws = new WebSocket('wss://api.upbit.com/websocket/v1');
+
+  ws.on('open', () => {
+    console.log('연결됨');
+
+    ws.send(
+      JSON.stringify([
+        { ticket: 'test' },
+        { type: 'ticker', codes: ['KRW-BTC'] },
+      ]),
+    );
+  });
+
+  ws.on('message', (data) => {
+    console.log(data.toString('utf-8'));
+  });
+};
+
 exports.createServer = createServer;
+exports.connectUpbit = connectUpbit;

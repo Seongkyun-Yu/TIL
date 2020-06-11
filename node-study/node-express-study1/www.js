@@ -1,6 +1,6 @@
 'use strict';
 
-const { createServer } = require('./app.js');
+const { createServer, connectUpbit } = require('./app.js');
 /* 
     서버의 포트
     ssl == https 443
@@ -13,10 +13,12 @@ const option = {
 
 const www = async (config = {}) => {
   const server = await createServer(config);
-  const port = config.port;
+  const { port } = config;
   server.listen(port, () => {
     console.log(`서버 돌아갑니다:::${port}`);
   });
+
+  connectUpbit();
 };
 
 www(option);
