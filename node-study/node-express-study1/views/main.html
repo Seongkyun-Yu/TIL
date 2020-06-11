@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1><%= locals.data.title %></h1>
+    <p><%- locals.data.html %></p>
+
+    <!-- <img src="/public/pang.jpg" /> -->
+    <% for(i = 0; i<10; i++) { %>
+    <span>패캠!</span>
+    <% } %>
+
+    <script>
+      let serverJson = <%- JSON.stringify(locals.data) %>
+      console.log(serverJson);
+    </script>
+  </body>
+</html>
