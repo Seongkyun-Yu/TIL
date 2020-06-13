@@ -137,9 +137,15 @@ Today I Learned...
 2020-05-27 : Redux-thunk<br>
 2020-05-28 : Redux-thunk 복습<br>
 2020-05-29 : Phone Book Redux Thunk로 리팩토링<br>
+
 2020-06-01 : Redux-saga 예습<br>
 2020-06-02 : Redux Phone Book 리팩토링 2차<br>
 2020-06-03 : 이터러블, 이터레이터, Redux-saga, Redux-portal<br>
 2020-06-04 : saga로 영화 정보 페이지 만들기1<br>
 2020-06-05 : saga로 영화 정보 페이지 만들기2<br>
 2020-06-07 : 영화 정보 페이지에 thunk 추가하기<br>
+2020-06-09 : TypeScript<br>
+2020-06-10 : NodeJS<br>
+2020-06-11 : NodeJS & DB 연결<br>
+2020-06-12 : Amazon service<br>
+2020-06-13 : 차트 그리기<br>
