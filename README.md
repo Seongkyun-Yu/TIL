@@ -149,3 +149,4 @@ Today I Learned...
 2020-06-11 : NodeJS & DB 연결<br>
 2020-06-12 : Amazon service<br>
 2020-06-13 : 차트 그리기<br>
+2020-06-14 : 차트 그리기2<br>
