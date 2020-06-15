@@ -1,3 +1,4 @@
+/* eslint-disable class-methods-use-this */
 const http = require('http');
 const express = require('express');
 const cookieParser = require('cookie-parser');

@@ -18,7 +18,7 @@ const www = async (config = {}) => {
     console.log(`서버 돌아갑니다:::${port}`);
   });
 
-  connectUpbit();
+  // connectUpbit();
 };
 
 www(option);
