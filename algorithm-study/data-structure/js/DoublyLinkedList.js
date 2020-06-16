@@ -18,11 +18,7 @@ class DoublyLinkedList {
   }
 
   prepend(value) {
-    console.log('prepend 실행');
-
     if (this.head === null) {
-      console.log('헤드가 null일때');
-
       this.head = new Node(value, null, null);
       this.head.prev = this.head;
       return;
