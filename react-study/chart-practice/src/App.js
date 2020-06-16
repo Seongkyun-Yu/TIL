@@ -15,7 +15,17 @@ const App = () => {
   );
 
   useEffect(() => {
-    dispatch(initCandle());
+    dispatch(
+      initCandle([
+        'KRW-BTC',
+        'KRW-ETH',
+        'KRW-XRP',
+        'KRW-ADA',
+        'KRW-EOS',
+        'KRW-BCH',
+        'KRW-BSV',
+      ]),
+    );
   }, []);
 
   return (

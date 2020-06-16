@@ -4,7 +4,6 @@ import { upbitApi } from '../Api/upbitApi';
 import { timestampToDatetime } from '../Utills/utill';
 
 const SUCCESS = 'coin/SUCCESS';
-const UPDATE = 'coin/UPDATE';
 const ADD = 'coin/ADD';
 const ERROR = 'coin/ERROR';
 const INIT = 'coin/INIT';
@@ -42,7 +41,7 @@ const connectSocketThunk = () => (dispatch, state) => {
     const lastCandle =
       coinState[coinMarket].candles[coinState[coinMarket].candles.length - 1];
 
-    if (lastCandle.closePrice === candle.trade_price) return;
+    // if (lastCandle.closePrice === candle.trade_price) return;
 
     const datetime = timestampToDatetime('minutes', 1, candle.trade_timestamp);
     const openPrice = lastCandle.openPrice;
@@ -146,101 +145,8 @@ function* initCandleSaga(action) {
   }
 
   yield put(initSuccess(initData));
-  // yield put(connect(coinList));
   yield put(connectSocketThunk());
 }
-
-// function* connectSocket(action) {
-//   const coinState = yield select((state) => state.Coin);
-
-//   const client = new W3CWebSocket("wss://api.upbit.com/websocket/v1");
-//   client.binaryType = "arraybuffer";
-
-//   client.onopen = () => {
-//     console.log("WebSocket Client Connected");
-//     client.send(
-//       JSON.stringify([
-//         { ticket: "CoCost" },
-//         { type: "ticker", codes: ["KRW-BTC"] },
-//       ])
-//     );
-//   };
-//   client.onmessage = (evt) => {
-//     const enc = new TextDecoder("utf-8");
-//     const arr = new Uint8Array(evt.data);
-
-//     const candle = JSON.parse(enc.decode(arr));
-
-//     const coinMarket = candle.code;
-//     const datetime = timestampToDatetime("minutes", 15, candle.trade_timestamp);
-//     const openPrice = candle.opening_price;
-//     const highPrice = candle.high_price;
-//     const lowPrice = candle.low_price;
-//     const closePrice = candle.trade_price;
-
-//     const check = coinState[coinMarket].candles.find((candle) => {
-//       return candle.datetime === datetime;
-//     });
-
-//     let newData;
-//     if (check) {
-//       const accTradeVolume = check.accTradeVolume + candle.trade_volume;
-//       const newCandle = [...coinState[coinMarket].candles];
-//       newCandle.pop();
-//       newCandle.push({
-//         datetime,
-//         openPrice,
-//         highPrice,
-//         lowPrice,
-//         closePrice,
-//         accTradeVolume,
-//       });
-//       newData = {
-//         market: coinMarket,
-//         candles: newCandle,
-//         prevClosingPrice: candle.prev_closing_price,
-//         changePrice: candle.change_price,
-//         changeRate: candle.change_rate,
-//         accTradePrice24h: candle.acc_trade_price_24h,
-//         accTradeVolume24h: candle.acc_trade_volume_24h,
-//       };
-//     } else {
-//       const accTradeVolume = candle.trade_volume;
-//       newData = {
-//         market: coinMarket,
-//         candles: [
-//           ...coinState[coinMarket].candles,
-//           {
-//             datetime,
-//             openPrice,
-//             highPrice,
-//             lowPrice,
-//             closePrice,
-//             accTradeVolume,
-//           },
-//         ],
-//         prevClosingPrice: candle.prev_closing_price,
-//         changePrice: candle.change_price,
-//         changeRate: candle.change_rate,
-//         accTradePrice24h: candle.acc_trade_price_24h,
-//         accTradeVolume24h: candle.acc_trade_volume_24h,
-//       };
-//     }
-//     console.log(newData);
-
-//     put(success(newData));
-
-//     // const check = candlesState.series[0].data.find((data) => {
-//     //   // console.log(data.x, "이것과", time);
-
-//     //   return data.x === time;
-//     // });
-
-//     // console.log(check);
-//     // // console.log(candlesState.series[0]);
-//     // if (!check) setCandles((prevState) => ({ ...prevState }));
-//   };
-// }
 
 function* coinSaga() {
   yield takeEvery(INIT, initCandleSaga);
@@ -289,16 +195,11 @@ const initialState = {
 export const coinReducer = (state = initialState, action) => {
   switch (action.type) {
     case INIT_SUCCESS:
-      console.log('리듀서 도착');
-
       return {
         ...state,
         ...action.initData,
       };
     case SUCCESS:
-    case ADD:
-      console.log('석세스 진입');
-
       return {
         ...state,
         [action.newData.market]: {
