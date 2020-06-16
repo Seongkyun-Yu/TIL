@@ -102,6 +102,8 @@ Today I Learned...
 2020-06-04 : 알고리즘 문제풀이([기능개발](https://github.com/Seongkyun-Yu/TIL/blob/master/algorithm-study/programers/level2/functionDevelop.js))<br>
 2020-06-06 : 알고리즘 문제풀이([최대공약수, 최소공배수](https://github.com/Seongkyun-Yu/TIL/blob/master/algorithm-study/programers/level1/GCM_LCM.js), [행렬의 덧셈](https://github.com/Seongkyun-Yu/TIL/blob/master/algorithm-study/programers/level1/sumMatrix.js), [다트게임](https://github.com/Seongkyun-Yu/TIL/blob/master/algorithm-study/programers/level1/dartGame.js))<br>
 2020-06-07 : 알고리즘 문제풀이([프린터](https://github.com/Seongkyun-Yu/TIL/blob/master/algorithm-study/programers/level2/printer.js) [124 나라의 숫자](https://github.com/Seongkyun-Yu/TIL/blob/master/algorithm-study/programers/level2/countryOf123.js))<br>
+2020-06-11 : 자료구조 공부(List, Linked List)<br>
+2020-06-16 : 자료구조 과제(doubly Linked List)<br>
 <br>
 
 ## # 데이터베이스 공부 내역
@@ -150,3 +152,5 @@ Today I Learned...
 2020-06-12 : Amazon service<br>
 2020-06-13 : 차트 그리기<br>
 2020-06-14 : 차트 그리기2<br>
+2020-06-15 : 웹소켓, 차트<br>
+2020-06-16 : Amazon S3, jquery<br>
