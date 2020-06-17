@@ -154,3 +154,4 @@ Today I Learned...
 2020-06-14 : 차트 그리기2<br>
 2020-06-15 : 웹소켓, 차트<br>
 2020-06-16 : Amazon S3, jquery<br>
+2020-06-17 : 차트 라이브러리 찾기(canvas.js, chart.js, techan.js)<br>
