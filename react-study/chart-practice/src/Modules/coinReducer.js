@@ -110,7 +110,7 @@ const connectSocketThunk = () => (dispatch, state) => {
 };
 
 function* initCandleSaga(action) {
-  const coinList = ['KRW-BTC', 'KRW-ETH', 'KRW-EOS'];
+  const coinList = action.coinList;
   const initData = {};
 
   for (let i = 0; i < coinList.length; i++) {
