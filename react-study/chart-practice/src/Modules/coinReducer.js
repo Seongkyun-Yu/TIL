@@ -102,7 +102,7 @@ const connectSocketThunk = () => (dispatch, state) => {
         accTradePrice24h: candle.acc_trade_price_24h,
         accTradeVolume24h: candle.acc_trade_volume_24h,
       };
-      newData.candles.shift();
+      // newData.candles.shift();
     }
 
     dispatch(success(newData));
