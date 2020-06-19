@@ -9,7 +9,7 @@ Today I Learned...
 2020-02-11 ~ 2020-02-14 : 이디야 프로젝트 진행 [ediya-clone](https://github.com/Seongkyun-Yu/project-ediya)<br>
 2020-04-03 : 해커톤(뮤직플레이어) [Simple-MusicPlayer](https://github.com/Seongkyun-Yu/MusicPlayer)<br>
 2020-04-20 ~ 2020-04-24 : Baam player(뮤직플레이어) [Baam-player](https://github.com/Seongkyun-Yu/baam-player)<br>
-
+2020-05-25 : 해커톤 [날씨날씨 & 미세미세](https://github.com/Seongkyun-Yu/hackathon-react)<br>
 <br>
 
 ## # 자바스크립트 공부 내역
@@ -102,8 +102,9 @@ Today I Learned...
 2020-06-04 : 알고리즘 문제풀이([기능개발](https://github.com/Seongkyun-Yu/TIL/blob/master/algorithm-study/programers/level2/functionDevelop.js))<br>
 2020-06-06 : 알고리즘 문제풀이([최대공약수, 최소공배수](https://github.com/Seongkyun-Yu/TIL/blob/master/algorithm-study/programers/level1/GCM_LCM.js), [행렬의 덧셈](https://github.com/Seongkyun-Yu/TIL/blob/master/algorithm-study/programers/level1/sumMatrix.js), [다트게임](https://github.com/Seongkyun-Yu/TIL/blob/master/algorithm-study/programers/level1/dartGame.js))<br>
 2020-06-07 : 알고리즘 문제풀이([프린터](https://github.com/Seongkyun-Yu/TIL/blob/master/algorithm-study/programers/level2/printer.js) [124 나라의 숫자](https://github.com/Seongkyun-Yu/TIL/blob/master/algorithm-study/programers/level2/countryOf123.js))<br>
-2020-06-11 : 자료구조 공부(List, Linked List)<br>
+2020-06-11 : List, Linked List<br>
 2020-06-16 : 자료구조 과제(doubly Linked List)<br>
+2020-06-18 : Queue, Binary Search<br>
 <br>
 
 ## # 데이터베이스 공부 내역
@@ -155,3 +156,4 @@ Today I Learned...
 2020-06-15 : 웹소켓, 차트<br>
 2020-06-16 : Amazon S3, jquery<br>
 2020-06-17 : 차트 라이브러리 찾기(canvas.js, chart.js, techan.js)<br>
+2020-06-18 : Nodejs로 Excel 업로드<br>
