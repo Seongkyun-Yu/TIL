@@ -157,3 +157,5 @@ Today I Learned...
 2020-06-16 : Amazon S3, jquery<br>
 2020-06-17 : 차트 라이브러리 찾기(canvas.js, chart.js, techan.js)<br>
 2020-06-18 : Nodejs로 Excel 업로드<br>
+2020-06-19 : Nodejs로 이미지 업로드, Crawling<br>
+2020-06-20 : React Carousel<br>
