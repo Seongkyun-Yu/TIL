@@ -1,4 +1,4 @@
-# TIL
+# TIL [![HitCount](http://hits.dwyl.com/Seongkyun-Yu/TIL.svg)](http://hits.dwyl.com/Seongkyun-Yu/TIL)
 
 ![pangStudy](./images/pangStudy.jpg) <br>
 Today I Learned...
