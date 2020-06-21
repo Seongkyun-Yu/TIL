@@ -18,7 +18,7 @@ class CircularQueue {
   }
 
   get() {
-    if ((this.front + 1) % this.capacity === this.rear) {
+    if (this.front === (this.rear - 1) % this.capacity) {
       console.log('underflow');
       return undefined;
     }
@@ -26,11 +26,16 @@ class CircularQueue {
     const result = this.array[this.front];
     this.front = ++this.front % this.capacity;
 
+    if (this.front === this.rear) {
+      this.front = -1;
+      this.rear = 0;
+    }
+
     return result;
   }
 
   peek() {
-    return this.array[this.rear];
+    return this.array[this.rear - 1];
   }
 
   print() {
@@ -56,6 +61,9 @@ for (let i = 0; i < 5; i++) {
 }
 
 circularQueue.print();
+console.log(circularQueue.get());
+console.log(circularQueue.get());
+console.log(circularQueue.get());
 console.log(circularQueue.get());
 console.log(circularQueue.get());
 circularQueue.print();
