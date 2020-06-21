@@ -35,6 +35,10 @@ class CircularQueue {
   }
 
   peek() {
+    if (this.front === -1) {
+      console.log('empty queue');
+      return 'undefined';
+    }
     return this.array[this.rear - 1];
   }
 
