@@ -35,10 +35,16 @@ class CircularQueue {
 
   print() {
     let str = '';
+    let printCount = 0;
 
-    for (let i = this.front; i % this.capacity !== this.rear; i++) {
+    if (this.front === this.rear) printCount = this.capacity;
+    else if (this.front < this.rear) printCount = this.rear;
+    else printCount = this.capacity - (this.front - this.rear);
+
+    for (let i = this.front, j = 0; j < printCount; i++, j++) {
       str += this.array[i % this.capacity] + ' ';
     }
+
     console.log(str);
   }
 }
@@ -52,5 +58,8 @@ for (let i = 0; i < 5; i++) {
 circularQueue.print();
 console.log(circularQueue.get());
 console.log(circularQueue.get());
+circularQueue.print();
 circularQueue.put(5);
+circularQueue.put(6);
+circularQueue.put(7);
 circularQueue.print();
