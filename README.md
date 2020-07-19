@@ -159,13 +159,13 @@ Today I Learned...
 2020-06-18 : Nodejs로 Excel 업로드<br>
 2020-06-19 : Nodejs로 이미지 업로드, Crawling<br>
 2020-06-20 : React Carousel<br>
-2020-06-22~26 : 메가박스 클론 프로젝트 / 프로젝트 기획 [[홈페이지 분석1 Figma](https://www.figma.com/file/5wV9UXqzE6K9JVewQcbdq2/%EB%A9%94%EA%B0%80%EB%B0%95%EC%8A%A4-%ED%81%B4%EB%A1%A0?node-id=39%3A220), [홈페이지 분석2 Figma](https://www.figma.com/proto/5wV9UXqzE6K9JVewQcbdq2/%EB%A9%94%EA%B0%80%EB%B0%95%EC%8A%A4-%ED%81%B4%EB%A1%A0?node-id=28%3A1375&scaling=min-zoom), [일정 및 기획 문서](https://docs.google.com/spreadsheets/d/1VO81fBm4dBFxHPp7vf4kFiY15_-SW46M/edit#gid=982169125)]<br>
+2020-06-22-26 : 메가박스 클론 프로젝트 / 프로젝트 기획 [[홈페이지 분석1 Figma](https://www.figma.com/file/5wV9UXqzE6K9JVewQcbdq2/%EB%A9%94%EA%B0%80%EB%B0%95%EC%8A%A4-%ED%81%B4%EB%A1%A0?node-id=39%3A220), [홈페이지 분석2 Figma](https://www.figma.com/proto/5wV9UXqzE6K9JVewQcbdq2/%EB%A9%94%EA%B0%80%EB%B0%95%EC%8A%A4-%ED%81%B4%EB%A1%A0?node-id=28%3A1375&scaling=min-zoom), [일정 및 기획 문서](https://docs.google.com/spreadsheets/d/1VO81fBm4dBFxHPp7vf4kFiY15_-SW46M/edit#gid=982169125)]<br>
 2020-06-29 : 메가박스 클론 프로젝트 / 캐러셀 & 기본 달력 구현<br>
 2020-06-30 : 메가박스 클론 프로젝트 / 영화, 영화관 선택창 레이아웃<br>
 2020-07-01 : 메가박스 클론 프로젝트 / 선택 조건별 스케쥴 출력 구현<br>
 2020-07-02 : 메가박스 클론 프로젝트 / 스케쥴 조회 기능 및 api 제작<br>
 2020-07-03 : 메가박스 클론 프로젝트 / 예약 관련 api 제작 및 연결<br>
-2020-07-04~07-05 : 메가박스 클론 프로젝트 / 극장 소개용 네이버 지도 페이지 제작(사용상 불필요해서 안쓰기로 함)<br>
+2020-07-04-05 : 메가박스 클론 프로젝트 / 극장 소개용 네이버 지도 페이지 제작(사용상 불필요해서 안쓰기로 함)<br>
 2020-07-06 : 메가박스 클론 프로젝트 / 영화 제목, 상영관, 시간 리스트 버그 수정<br>
 2020-07-07 : 메가박스 클론 프로젝트 / 결제 페이지 구현<br>
 2020-07-08 : 메가박스 클론 프로젝트 / 로그인 기능 구현<br>
