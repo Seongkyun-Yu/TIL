@@ -10,6 +10,7 @@ Today I Learned...
 2020-04-03 : 해커톤(뮤직플레이어) [Simple-MusicPlayer](https://github.com/Seongkyun-Yu/MusicPlayer)<br>
 2020-04-20 ~ 2020-04-24 : Baam player(뮤직플레이어) [Baam-player](https://github.com/Seongkyun-Yu/baam-player)<br>
 2020-05-25 : 해커톤 [날씨날씨 & 미세미세](https://github.com/Seongkyun-Yu/hackathon-react)<br>
+2020-06-22 ~ 2020-07-17 [오메가박스 (메가박스 클론)](https://github.com/OmegaBox/React_Frontend)<br>
 <br>
 
 ## # 자바스크립트 공부 내역
