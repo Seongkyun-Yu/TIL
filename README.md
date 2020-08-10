@@ -211,5 +211,5 @@ Today I Learned...
 
 ## # 기타 공부 내역
 
-2020-08-06~08-07 : ejs<br>
-2020-08-08~08-09 : AWS S3, CloudFront, Route53를 이용한 배포작업 정리
+2020-08-06 ~ 08-07 : ejs<br>
+2020-08-08 ~ 08-09 : AWS S3, CloudFront, Route53를 이용한 배포작업 정리
