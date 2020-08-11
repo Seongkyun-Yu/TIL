@@ -1,6 +1,6 @@
 .header {
   width: 100%;
-  background-color: beige;
+  background-color: rgb(246, 245, 239);
 }
 
 .headerWrap {
@@ -50,6 +50,10 @@
   font-size: 0.9rem;
 }
 
+.mainNav li {
+  padding-top: 10px;
+}
+
 .mainNav li a {
   display: block;
   padding: 0 20px;
@@ -57,5 +61,35 @@
 }
 
 .mainNav li:hover {
-  background-color: red;
+  background-color: #2c2a29;
+  color: #669900;
+}
+
+.mainNav li:hover a {
+  color: #669900;
+}
+
+.main {
+  width: 100%;
+}
+
+.mainEvent {
+  max-width: 1100px;
+  height: 576px;
+  width: 100%;
+  margin: 0 auto;
+  padding-top: 70px;
+}
+
+.eventTitle {
+  width: 25%;
+  max-width: 255px;
+}
+.eventTitle img {
+  width: 100%;
+}
+
+.eventTitle button {
+  margin-top: 30px;
+  padding: 5px 20px;
 }
