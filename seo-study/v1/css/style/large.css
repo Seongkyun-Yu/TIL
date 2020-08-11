@@ -1,0 +1,35 @@
+.header {
+  width: 100%;
+  background-color: beige;
+}
+.headerWrap {
+  max-width: 1100px;
+  height: 123px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.member {
+  padding-top: 10px;
+  width: 100%;
+}
+
+.member li {
+  height: 20px;
+  padding: 0 20px;
+  border-right: solid 1px;
+}
+
+.member li:nth-last-child(1) {
+  border-right: none;
+}
+
+.mainNav ul {
+  width: 750px;
+  height: 66px;
+}
+
+.mainNav li a {
+  display: block;
+  height: 66px;
+}
