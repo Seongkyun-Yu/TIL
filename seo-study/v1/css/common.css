@@ -166,3 +166,47 @@
   background-image: url('https://www.starbucks.co.kr/common/img/common/btn_notice_plus.png');
   background-size: cover;
 }
+
+.rewardWrap {
+  background-image: url('https://www.starbucks.co.kr/common/img/main/reward_texbg.jpg');
+  /* background-size: cover; */
+}
+
+.reward {
+  display: flex;
+}
+
+.rewardLogoWrap {
+  position: relative;
+}
+
+.rewardText {
+  position: absolute;
+  left: 30px;
+  top: 45%;
+}
+
+.memberReward {
+  display: flex;
+  width: 100%;
+  padding-top: 50px;
+}
+
+.signUpWrap {
+  width: 250px;
+}
+.signUpWrap button {
+  width: 120px;
+  height: 35px;
+  /* background-color: transparent; */
+  border: 1px solid rgb(39, 39, 39);
+}
+
+.rewardSignUp {
+  background-color: rgb(39, 39, 39);
+  color: white;
+}
+
+.rewardLogin {
+  background-color: transparent;
+}
