@@ -93,3 +93,29 @@
   margin-top: 30px;
   padding: 5px 20px;
 }
+
+.notices {
+  height: 62px;
+}
+
+.notice {
+  width: 50%;
+  color: white;
+}
+
+.noticeMore {
+  display: block;
+  width: 36px;
+  height: 36px;
+}
+
+.promotion {
+  width: 50%;
+  background-color: white;
+}
+
+.promotionMore {
+  display: block;
+  width: 36px;
+  height: 36px;
+}
