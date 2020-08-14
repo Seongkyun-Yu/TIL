@@ -1,3 +1,6 @@
+* {
+  box-sizing: border-box;
+}
 .container {
   width: 100%;
   height: 100%;
@@ -169,7 +172,8 @@
 
 .rewardWrap {
   background-image: url('https://www.starbucks.co.kr/common/img/main/reward_texbg.jpg');
-  /* background-size: cover; */
+
+  width: 100%;
 }
 
 .reward {
@@ -178,6 +182,12 @@
 
 .rewardLogoWrap {
   position: relative;
+  width: 350px;
+}
+
+.rewardImg {
+  display: inline-block;
+  width: 350px;
 }
 
 .rewardText {
@@ -186,14 +196,24 @@
   top: 45%;
 }
 
-.memberReward {
-  display: flex;
+.rewardInfoWrap {
   width: 100%;
-  padding-top: 50px;
+}
+
+.memberReward {
+  width: 100%;
+  padding-top: 30px;
+}
+
+.rewardTxtImg {
+  float: left;
+  vertical-align: bottom;
 }
 
 .signUpWrap {
+  float: left;
   width: 250px;
+  vertical-align: bottom;
 }
 .signUpWrap button {
   width: 120px;
