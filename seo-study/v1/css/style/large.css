@@ -120,15 +120,15 @@
   height: 36px;
 }
 
-.rewardLogoWrap {
-  /* width: 35%; */
-}
-
 .reward {
-  width: 100%;
+  width: 1100px;
   margin: 0 auto;
 }
 
 .memberReward {
   height: 50%;
+}
+
+.giftcardImgWrap {
+  width: 449px;
 }

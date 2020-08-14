@@ -188,6 +188,7 @@
 .rewardImg {
   display: inline-block;
   width: 350px;
+  height: 100%;
 }
 
 .rewardText {
@@ -208,6 +209,7 @@
 .rewardTxtImg {
   float: left;
   vertical-align: bottom;
+  margin-right: 10px;
 }
 
 .signUpWrap {
@@ -218,7 +220,6 @@
 .signUpWrap button {
   width: 120px;
   height: 35px;
-  /* background-color: transparent; */
   border: 1px solid rgb(39, 39, 39);
 }
 
@@ -229,4 +230,20 @@
 
 .rewardLogin {
   background-color: transparent;
+}
+
+.giftcard {
+  padding-top: 20px;
+}
+.giftcardImgWrap {
+  float: left;
+  margin-right: 10px;
+}
+
+.giftcardBtn {
+  float: left;
+  width: 250px;
+  height: 35px;
+  background-color: transparent;
+  border: 1px solid black;
 }
