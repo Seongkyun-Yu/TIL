@@ -125,10 +125,29 @@
   margin: 0 auto;
 }
 
+.rewardImg {
+  height: 335px;
+}
+
 .memberReward {
   height: 50%;
 }
 
 .giftcardImgWrap {
   width: 449px;
+}
+
+.newCoffeeWrap {
+  width: 100%;
+  height: 573px;
+}
+
+.newCoffee {
+  width: 1100px;
+  margin: 0 auto;
+}
+
+.coffeeDesc {
+  height: 100%;
+  height: 429px;
 }
