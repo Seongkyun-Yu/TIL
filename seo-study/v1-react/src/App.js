@@ -1,0 +1,206 @@
+import React from 'react';
+import './css/style/large.css';
+import './css/style.css';
+
+function App() {
+  return (
+    <div class="container">
+      <header class="header">
+        <div class="headerWrap">
+          <h1 class="logo">
+            <a href="#">
+              <img
+                src={require('./css/style/img/logo.png')}
+                alt="아스터벅스 로고"
+                title="아스터벅스"
+                class="logoImage"
+              />
+            </a>
+          </h1>
+          <ul class="member">
+            <li>
+              <a href="#">Sign In</a>
+            </li>
+            <li>
+              <a href="#">My Asterbucks</a>
+            </li>
+            <li>
+              <a href="#">Customer Service & Ideas</a>
+            </li>
+            <li>
+              <a href="#">Find a Store</a>
+            </li>
+          </ul>
+          <nav class="mainNav">
+            <ul>
+              <li>
+                <a href="#">COFFEE</a>
+              </li>
+              <li>
+                <a href="#">MENU</a>
+              </li>
+              <li>
+                <a href="#">STORE</a>
+              </li>
+              <li>
+                <a href="#">RESPONSIBILITY</a>
+              </li>
+              <li>
+                <a href="#">MY ASTERBUCKS REWARDS</a>
+              </li>
+              <li>
+                <a href="#">WHAT'S NEW</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+      <main class="main">
+        <section class="mainEventWrap">
+          <h2 class="a11yHidden">메인 이벤트</h2>
+          <div class="mainEvent">
+            <div class="eventTitle">
+              <img
+                src={require('./css/style/img/20_summer3_emblem.png')}
+                alt="STAY CHILL STAY PLAYFUL"
+              />
+              <button>
+                <a href="#">자세히보기</a>
+              </button>
+            </div>
+            <ul class="eventBeverage">
+              <li class="beverage1">
+                <a href="#">
+                  <img
+                    src={require('./css/style/img/summer3_bev1.png')}
+                    alt="블론드 서머 라떼"
+                  />
+                  <img
+                    src={require('./css/style/img/summer3_bev1_txt.png')}
+                    alt="블론드 서머 라떼 텍스트"
+                    class="beverageTxtImg"
+                  />
+                </a>
+              </li>
+              <li class="beverage2">
+                <a href="#">
+                  <img
+                    src={require('./css/style/img/summer3_bev2.png')}
+                    alt="스위티 자몽&라임 블렌디드"
+                  />
+                  <img
+                    src={require('./css/style/img/summer3_bev2_txt.png')}
+                    alt="스위티 자몽&라임 블렌디드 텍스트"
+                    class="beverageTxtImg"
+                  />
+                </a>
+              </li>
+              <li class="beverage3">
+                <img
+                  src={require('./css/style/img/summer3_bev3.png')}
+                  alt="스위트 멜론 블렌디드"
+                />
+                <img
+                  src={require('./css/style/img/summer3_bev3_txt.png')}
+                  alt="스위트 멜론 블렌디드 텍스트"
+                  class="beverageTxtImg"
+                />
+              </li>
+            </ul>
+          </div>
+        </section>
+        <section class="notices">
+          <h2 class="a11yHidden">공지사항</h2>
+          <div class="notice">
+            <span>공지사항</span>
+            <span>
+              <a href="#">홈페이지 개정 약관 안내</a>
+            </span>
+            <button>
+              <i class="noticeMore" title="공지 더보기"></i>
+            </button>
+          </div>
+          <div class="promotion">
+            <button>
+              <a href="#">
+                <span>아스터벅스 프로모션</span>
+                <i class="promotionMore" title="프로모션 더보기"></i>
+              </a>
+            </button>
+          </div>
+        </section>
+        <section class="rewardWrap">
+          <h2 class="a11yHidden">리워드 혜택</h2>
+          <div class="reward">
+            <div class="rewardLogoWrap">
+              <img
+                src={require('./css/style/img/reward_star_bg_w.png')}
+                alt="리워드 이미지"
+                class="rewardImg"
+              />
+              <img
+                src={require('./css/style/img/reward_logo.png')}
+                alt="MY ASTERBUCKS REWARDS"
+                class="rewardText"
+              />
+            </div>
+            <div class="rewardInfoWrap">
+              <div class="memberReward">
+                <img
+                  src={require('./css/style/img/reward_txt.png')}
+                  alt="아스터벅스만의 특별한 혜택, 마이 아스터벅스 리워드 아스터벅스 회원이세요? 로그인을 통해 나만의 리워드를 확인해 보세요. 아스터벅스 회원이 아니세요? 가입을 통해 리워드 혜택을 즐기세요."
+                  class="rewardTxtImg"
+                />
+                <div class="signUpWrap">
+                  <button class="rewardSignUp">회원가입</button>
+                  <button class="rewardLogin">로그인</button>
+                </div>
+              </div>
+              <div class="giftcard">
+                <div class="giftcardImgWrap">
+                  <img
+                    src={require('./css/style/img/egiftCard_txt.png')}
+                    alt="회원 가입 후, 아스터벅스 e-Gift Card를 나에게 선물하기로 구매하시고, 편리하게 등록하세요! 카드를 등록하여 마이 아스터벅스 리워드 회원이 되신 후, 첫 구매를 하시면 무료 음료 쿠폰을 드립니다!"
+                  />
+                </div>
+                <button class="giftcardBtn">회원가입</button>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="newCoffeeWrap">
+          <h2 class="a11yHidden">새로운 커피콩</h2>
+          <div class="newCoffee">
+            <figure class="newCoffeeInfo">
+              <img
+                src={require('./css/style/img/20_summer_rwanda_bean.png')}
+                alt=""
+                class="coffeeImg"
+              />
+              <figcaption class="coffeeDesc">
+                <p>
+                  <span class="coffeeMainDesc">
+                    키 라임의 섬세한 산미로 시작하여 꿀과 같은 달콤함으로 마무리
+                    되는
+                  </span>
+                  <span class="coffeeName">르완다 블론드 로스트</span>
+                  <span class="coffeeDetailDesc">
+                    비옥한 화산 토양, 높은 고도, 풍부한 강우량으로
+                    <br />
+                    이상적인 풍미를 자랑하는 르완다 블론드 로스트를 즐겨보세요.
+                    <br />
+                    시럽과 같은 부드러운 바디감을 갖고 있어 아이스커피로도
+                    좋습니다.
+                  </span>
+                </p>
+              </figcaption>
+            </figure>
+          </div>
+        </section>
+      </main>
+      <footer></footer>
+    </div>
+  );
+}
+
+export default App;

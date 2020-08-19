@@ -1,0 +1,153 @@
+.header {
+  width: 100%;
+  background-color: rgb(246, 245, 239);
+}
+
+.headerWrap {
+  position: relative;
+  max-width: 1100px;
+  height: 123px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.logo {
+  font-size: 0.5rem;
+  margin: 0;
+  position: absolute;
+  display: block;
+  top: 50%;
+  bottom: 0;
+  height: 75px;
+  margin-top: -37.5px;
+}
+
+.logoImage {
+  position: absolute;
+  left: 0;
+}
+
+.member {
+  padding-top: 10px;
+  width: 100%;
+  font-size: 0.9rem;
+}
+
+.member li {
+  height: 20px;
+  padding: 0 20px;
+  border-right: solid 1px;
+}
+
+.member li:nth-last-child(1) {
+  border-right: none;
+}
+
+.mainNav ul {
+  margin-top: 30px;
+  width: 750px;
+  height: 63px;
+  font-size: 0.85rem;
+}
+
+.mainNav li {
+  padding-top: 10px;
+}
+
+.mainNav li a {
+  display: block;
+  padding: 0 20px;
+  height: 66px;
+}
+
+.mainNav li:hover {
+  background-color: #2c2a29;
+  color: #669900;
+}
+
+.mainNav li:hover a {
+  color: #669900;
+}
+
+.main {
+  width: 100%;
+}
+
+.mainEvent {
+  max-width: 1100px;
+  height: 576px;
+  width: 100%;
+  margin: 0 auto;
+  padding-top: 70px;
+}
+
+.eventTitle {
+  width: 25%;
+  max-width: 255px;
+}
+.eventTitle img {
+  width: 100%;
+}
+
+.eventTitle button {
+  margin-top: 30px;
+  padding: 5px 20px;
+}
+
+.notices {
+  height: 62px;
+}
+
+.notice {
+  width: 50%;
+  color: white;
+}
+
+.noticeMore {
+  display: block;
+  width: 36px;
+  height: 36px;
+}
+
+.promotion {
+  width: 50%;
+  background-color: white;
+}
+
+.promotionMore {
+  display: block;
+  width: 36px;
+  height: 36px;
+}
+
+.reward {
+  width: 1100px;
+  margin: 0 auto;
+}
+
+.rewardImg {
+  height: 335px;
+}
+
+.memberReward {
+  height: 50%;
+}
+
+.giftcardImgWrap {
+  width: 449px;
+}
+
+.newCoffeeWrap {
+  width: 100%;
+  height: 573px;
+}
+
+.newCoffee {
+  width: 1100px;
+  margin: 0 auto;
+}
+
+.coffeeDesc {
+  height: 100%;
+  height: 429px;
+}
