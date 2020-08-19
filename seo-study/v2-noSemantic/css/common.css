@@ -1,0 +1,327 @@
+* {
+  box-sizing: border-box;
+}
+.container {
+  width: 100%;
+  height: 100%;
+}
+
+.headerWrap {
+  width: 100%;
+}
+
+.member {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.mainNav {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.mainNav ul {
+  display: flex;
+  justify-content: space-around;
+  /* justify-content: flex-end; */
+}
+
+.mainEventWrap {
+  width: 100%;
+  height: 100%;
+  background-image: url('https://image.istarbucks.co.kr/upload/common/img/main/2020/summer3_mv_bg.jpg');
+}
+
+.mainEvent button {
+  background: transparent;
+  border: 2px solid white;
+}
+
+.mainEvent {
+  position: relative;
+}
+
+.mainEvent a {
+  color: white;
+  font-weight: 400;
+}
+
+.beverage1 {
+  position: absolute;
+  left: 34.91%;
+  bottom: 10%;
+  max-width: 285px;
+  width: 25%;
+}
+
+.beverage1 img {
+  width: 100%;
+  height: 100%;
+}
+
+.beverage1 .beverageTxtImg {
+  position: absolute;
+  left: -60%;
+  bottom: 30%;
+  width: 73%;
+  height: 16%;
+}
+
+.beverage2 {
+  position: absolute;
+  top: 13.02%;
+  left: 58%;
+  bottom: 10%;
+  max-width: 170px;
+  width: 15.46%;
+}
+
+.beverage2 img {
+  width: 100%;
+  /* height: 100%; */
+}
+
+.beverage2 .beverageTxtImg {
+  position: absolute;
+  left: -140%;
+  top: 0;
+  width: 130%;
+  height: 16%;
+}
+
+.beverage3 {
+  position: absolute;
+  /* top: 13.02%; */
+  right: 3%;
+  bottom: 18%;
+  max-width: 322px;
+  /* width: 40%; */
+
+  width: 29.28%;
+}
+
+.beverage3 img {
+  width: 100%;
+  /* height: 100%; */
+}
+
+.beverage3 .beverageTxtImg {
+  position: absolute;
+  left: 21%;
+  bottom: -20%;
+  width: 70%;
+  /* height: 16%; */
+}
+
+.notices {
+  display: flex;
+  width: 100%;
+}
+
+.notices button {
+  background-color: transparent;
+  border: none;
+}
+
+.notice {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  color: white;
+}
+
+.notice span {
+  margin-right: 20px;
+}
+
+.notice a {
+  color: white;
+}
+
+.noticeMore {
+  background-color: transparent;
+  background-image: url('https://www.starbucks.co.kr/common/img/common/btn_notice_plus.png');
+  background-size: cover;
+  border: none;
+}
+
+.promotion button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+}
+
+.promotion a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.promotion span {
+  margin-right: 20px;
+}
+
+.promotionMore {
+  background-image: url('https://www.starbucks.co.kr/common/img/common/btn_notice_plus.png');
+  background-size: cover;
+}
+
+.rewardWrap {
+  background-image: url('https://www.starbucks.co.kr/common/img/main/reward_texbg.jpg');
+
+  width: 100%;
+}
+
+.reward {
+  display: flex;
+}
+
+.rewardLogoWrap {
+  position: relative;
+  width: 350px;
+}
+
+.rewardImg {
+  display: inline-block;
+  width: 350px;
+  height: 100%;
+}
+
+.rewardText {
+  position: absolute;
+  left: 30px;
+  top: 45%;
+}
+
+.rewardInfoWrap {
+  width: 100%;
+}
+
+.memberReward {
+  width: 100%;
+  padding-top: 30px;
+}
+
+.rewardTxtImg {
+  float: left;
+  vertical-align: bottom;
+  margin-right: 10px;
+}
+
+.signUpWrap {
+  float: left;
+  width: 250px;
+  vertical-align: bottom;
+}
+.signUpWrap button {
+  width: 120px;
+  height: 35px;
+  border: 1px solid rgb(39, 39, 39);
+}
+
+.rewardSignUp {
+  background-color: rgb(39, 39, 39);
+  color: white;
+}
+
+.rewardLogin {
+  background-color: transparent;
+}
+
+.giftcard {
+  padding-top: 20px;
+}
+.giftcardImgWrap {
+  float: left;
+  margin-right: 10px;
+}
+
+.giftcardBtn {
+  float: left;
+  width: 250px;
+  height: 35px;
+  background-color: transparent;
+  border: 1px solid black;
+}
+
+.newCoffeeWrap {
+  background-image: url(https://image.istarbucks.co.kr/upload/common/img/main/2020/20_summer_rwanda_bg.jpg);
+}
+
+.newCoffee {
+  position: relative;
+  height: 100%;
+}
+
+/* .newCoffeeInfo {
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  max-width: 770px;
+  width: 70%;
+  margin: 0 auto;
+} */
+
+.newCoffeeInfo {
+  float: right;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  margin: 0;
+  left: -50%;
+}
+
+.coffeeImg {
+  /* position: absolute;
+  top: 50%;
+  transform: translateY(-50%); */
+  position: relative;
+  float: left;
+  left: 50%;
+}
+
+.coffeeDesc {
+  /* position: absolute;
+  top: 50%;
+  transform: translateY(-50%); */
+  /* float: left;
+  text-align: center; */
+  position: relative;
+  float: left;
+  left: 60%;
+  height: 100%;
+}
+
+.coffeeMainDesc {
+  display: block;
+  color: rgb(186, 255, 198);
+  font-size: 1.1rem;
+}
+
+.coffeeDesc div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+}
+
+.coffeeName {
+  color: rgb(186, 255, 198);
+  font-size: 1.8rem;
+}
+
+.coffeeName {
+  display: block;
+}
+
+.coffeeDetailDesc {
+  margin-top: 50px;
+  color: white;
+  font-size: 1.1rem;
+  line-height: 1.5rem;
+}
