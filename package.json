@@ -17,7 +17,11 @@
     "prettier": "2.0.5"
   },
   "dependencies": {
+    "d3": "^5.16.0",
+    "d3fc": "^15.0.10",
     "eslint-config-airbnb": "^18.1.0",
-    "lodash": "^4.17.15"
+    "lodash": "^4.17.15",
+    "mockdate": "^3.0.2",
+    "seedrandom": "^3.0.5"
   }
 }
