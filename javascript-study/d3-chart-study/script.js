@@ -223,8 +223,8 @@ function drawChart() {
             return d.Open === d.Close
               ? 1
               : yScale(Math.min(d.Open, d.Close)) -
-                yScale(Math.max(d.Open, d.Close)),}
-          );
+                  yScale(Math.max(d.Open, d.Close));
+          });
 
         stems
           .transition()
@@ -249,11 +249,11 @@ function wrap(text, width) {
     let y = text.attr('y');
     let dy = parseFloat(text.attr('dy'));
     let tspan = text
-        .text(null)
-        .append('tspan')
-        .attr('x', 0)
-        .attr('y', y)
-        .attr('dy', dy + 'em');
+      .text(null)
+      .append('tspan')
+      .attr('x', 0)
+      .attr('y', y)
+      .attr('dy', dy + 'em');
     while ((word = words.pop())) {
       line.push(word);
       tspan.text(line.join(' '));
