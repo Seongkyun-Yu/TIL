@@ -106,6 +106,7 @@ Today I Learned...
 2020-06-11 : List, Linked List<br>
 2020-06-16 : 자료구조 과제(doubly Linked List)<br>
 2020-06-18 : Queue, Binary Search<br>
+2020-09-01 : 그래프, 최소 신장 트리<br>
 <br>
 
 ## # 데이터베이스 공부 내역
