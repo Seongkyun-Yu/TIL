@@ -1,4 +1,12 @@
 body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: black;
-  width: 98vw;
+  /* width: 90vw; */
+  max-width: 1500px;
+}
+
+#root {
+  width: 100%;
 }

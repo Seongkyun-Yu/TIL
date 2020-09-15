@@ -8,13 +8,11 @@ import './App.css';
 
 function App() {
   return (
-    <div>
-      <MovieContextProvider>
-        <SiteTitle />
-        <Nav />
-        <MainRouter />
-      </MovieContextProvider>
-    </div>
+    <MovieContextProvider>
+      <SiteTitle />
+      <Nav />
+      <MainRouter />
+    </MovieContextProvider>
   );
 }
 

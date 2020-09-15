@@ -1,4 +1,6 @@
 .SiteTitle {
+  display: block;
   color: red;
   text-align: center;
+  width: 100%;
 }

@@ -7,10 +7,10 @@ const PopularTemplate = () => {
   const context = useContext(MovieContext);
   const { state } = context;
   return (
-    <div>
+    <>
       {state.loading ? <Loading /> : null}
       <MovieLists type="popMovies" />
-    </div>
+    </>
   );
 };
 
