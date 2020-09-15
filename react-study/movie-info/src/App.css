@@ -3,8 +3,9 @@ body {
   justify-content: center;
   align-items: center;
   background-color: black;
-  /* width: 90vw; */
+  width: 100%;
   max-width: 1500px;
+  min-width: 450px;
 }
 
 #root {

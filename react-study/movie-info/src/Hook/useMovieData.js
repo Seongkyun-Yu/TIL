@@ -22,6 +22,7 @@ const useMovieData = () => {
 
   const searchMovie = async (search) => {
     setLoading();
+    console.log('searchmovie');
     const movies = await movieApi.searchMovies(search);
     dispatch({ type: 'SEARCH_MOV', movies: movies.data });
   };

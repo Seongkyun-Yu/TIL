@@ -4,15 +4,13 @@ import './style/SearchInput.css';
 
 const SearchInput = () => {
   const context = useContext(MovieContext);
-  const { state, searchInputChange, searchMovie } = context;
+  const { searchMovie } = context;
 
   return (
     <input
       className="searchInput"
-      onChange={searchInputChange}
-      onKeyUp={(e) => {
-        if (e.keyCode !== 13) return;
-        searchMovie(state.searchInput);
+      onChange={(e) => {
+        searchMovie(e.target.value);
       }}
     />
   );
