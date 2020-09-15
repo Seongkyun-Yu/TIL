@@ -11,7 +11,9 @@ function App() {
     <MovieContextProvider>
       <SiteTitle />
       <Nav />
-      <MainRouter />
+      <main>
+        <MainRouter />
+      </main>
     </MovieContextProvider>
   );
 }
