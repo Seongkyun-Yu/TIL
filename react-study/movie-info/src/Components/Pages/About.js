@@ -1,7 +1,13 @@
 import React from 'react';
+import './style/aboutPage.css';
 
 const About = () => {
-  return <h1>About</h1>;
+  return (
+    <div className="about">
+      <span>MOVIE INFO</span>
+      <span>Made by Seongkyun Yu</span>
+    </div>
+  );
 };
 
 export default About;

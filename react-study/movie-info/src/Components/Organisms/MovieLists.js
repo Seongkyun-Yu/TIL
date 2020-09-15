@@ -17,16 +17,12 @@ const MovieList = ({ type }) => {
         ? movies.results.map((movie, i) => {
             return (
               <Link
-                // to={location === '/' ? `/${i}` : `${location}` + `/${i}`}
                 to={`/${movie.id}`}
-                // to={{
-                //   pathname: '/Detail',
-                //   state: movie,
-                // }}
                 style={{ textDecoration: 'none', color: 'black' }}
                 movie={movie}
+                key={`movieLink-${movie.id}`}
               >
-                <li className="movieInfo" key={i}>
+                <li className="movieInfo" key={`movieList-${movie.id}`}>
                   <Poster url={movie.poster_path} title={movie.title} />
                   <SpanText className="movieTitle">{movie.title}</SpanText>
                   <SpanText className="movieTitle">{movie.vote_count}</SpanText>
