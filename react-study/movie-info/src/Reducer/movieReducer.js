@@ -16,13 +16,6 @@ const reducer = (state, action) => {
         loading: true,
       };
     case 'POPULAR_MOV':
-      // console.log('인기순위 새로받는 리듀서 호출', state.popMovies.equals({}));
-      // if (JSON.stringify(state.popMovies) === JSON.stringify(action.movies))
-      // return {
-      //   ...state,
-      //   loading: false,
-      // };
-
       if (action.page !== 1) {
         return {
           ...state,

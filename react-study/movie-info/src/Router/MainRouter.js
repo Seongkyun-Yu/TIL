@@ -16,8 +16,6 @@ function MainRouter() {
       <Route path="/About" component={About} />
       <Route path="/Detail" component={Detail} />
       <Route path="/:idx" component={Detail} />
-      {/* <Route path="/Recent/:movie_type/:movie_index" component={Detail} /> */}
-      {/* <Route path="/Search/:movie_type/:movie_index" component={Detail} /> */}
       <Route render={() => <h1>없는 페이지입니다</h1>} />
     </Switch>
   );

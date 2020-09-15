@@ -13,7 +13,6 @@ const DetailTemplate = ({ history }) => {
   const context = useContext(MovieContext);
   const { state } = context;
   const { detailMovies } = state;
-  console.log(detailMovies);
 
   return (
     <>
