@@ -12,7 +12,7 @@
 
 <br>
 
-## Requirements
+## 개발 언어 및 프레임워크
 
 - 사용 언어<br>
   HTML5, CSS3, JS6+<br>
