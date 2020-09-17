@@ -1,5 +1,6 @@
 function drawChart() {
   d3.csv('FTSE.csv').then((prices) => {
+    console.log(prices);
     const months = {
       0: 'Jan',
       1: 'Feb',
@@ -75,7 +76,8 @@ function drawChart() {
       .attr('transform', 'translate(0,' + h + ')')
       .call(xAxis);
 
-    gX.selectAll('.tick text').call(wrap, xBand.bandwidth());
+    gX.selectAll('.tick text');
+    // .call(wrap, xBand.bandwidth());
 
     const ymin = d3.min(prices.map((r) => r.Low));
     const ymax = d3.max(prices.map((r) => r.High));
