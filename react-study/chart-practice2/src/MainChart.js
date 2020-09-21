@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { format } from 'd3-format';
 import { timeFormat } from 'd3-time-format';
 import {
@@ -25,6 +25,30 @@ import {
   withDeviceRatio,
   withSize,
 } from 'react-financial-charts';
+import { tsvParse } from 'd3-dsv';
+import { timeParse } from 'd3-time-format';
+import { withOHLCData } from './withOHLCData';
+
+const parseDate = timeParse('%Y-%m-%d');
+
+const parseData = () => {
+  return (d) => {
+    const date = parseDate(d.date);
+    if (date === null) {
+      d.date = new Date(Number(d.date));
+    } else {
+      d.date = new Date(date);
+    }
+
+    for (const key in d) {
+      if (key !== 'date' && Object.prototype.hasOwnProperty.call(d, key)) {
+        d[key] = +d[key];
+      }
+    }
+
+    return d;
+  };
+};
 
 const MainChart = ({
   data: initialData,
@@ -38,8 +62,6 @@ const MainChart = ({
   const xScaleProvider = discontinuousTimeScaleProviderBuilder().inputDateAccessor(
     (d) => d.date,
   );
-
-  console.log(initialData);
 
   const ema12 = ema()
     .id(1)
@@ -68,4 +90,6 @@ const MainChart = ({
   return <div>Test Component!</div>;
 };
 
-export default MainChart;
+export default withOHLCData()(
+  withSize({ style: { minHeight: 600 } })(withDeviceRatio()(MainChart)),
+);
