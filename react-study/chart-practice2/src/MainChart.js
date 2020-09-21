@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { format } from 'd3-format';
 import { timeFormat } from 'd3-time-format';
 import {
@@ -26,30 +26,7 @@ import {
   withDeviceRatio,
   withSize,
 } from 'react-financial-charts';
-import { tsvParse } from 'd3-dsv';
-import { timeParse } from 'd3-time-format';
 import { withOHLCData } from './withOHLCData';
-
-const parseDate = timeParse('%Y-%m-%d');
-
-const parseData = () => {
-  return (d) => {
-    const date = parseDate(d.date);
-    if (date === null) {
-      d.date = new Date(Number(d.date));
-    } else {
-      d.date = new Date(date);
-    }
-
-    for (const key in d) {
-      if (key !== 'date' && Object.prototype.hasOwnProperty.call(d, key)) {
-        d[key] = +d[key];
-      }
-    }
-
-    return d;
-  };
-};
 
 const barChartExtents = (data) => {
   return data.volume;
@@ -127,7 +104,7 @@ const MainChart = ({
   const chartHeight = gridHeight - elderRayHeight;
 
   const timeDisplayFormat = timeFormat(dateTimeFormat);
-
+  const test = 1;
   return (
     <ChartCanvas
       height={height}
@@ -140,6 +117,7 @@ const MainChart = ({
       xScale={xScale}
       xAccessor={xAccessor}
       xExtents={xExtents}
+      disableInteraction={false}
       zoomAnchor={lastVisibleItemBasedZoomAnchor}
     >
       <Chart
@@ -218,7 +196,7 @@ const MainChart = ({
         <SingleValueTooltip
           yAccessor={elder.accessor()}
           yLabel="Elder Ray"
-          yDisplayFormat={(d: any) =>
+          yDisplayFormat={(d) =>
             `${pricesDisplayFormat(d.bullPower)}, ${pricesDisplayFormat(
               d.bearPower,
             )}`
