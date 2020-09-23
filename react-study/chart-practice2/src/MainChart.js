@@ -104,7 +104,6 @@ const MainChart = ({
   const chartHeight = gridHeight - elderRayHeight;
 
   const timeDisplayFormat = timeFormat(dateTimeFormat);
-  const test = 1;
   return (
     <ChartCanvas
       height={height}
