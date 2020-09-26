@@ -1,3 +1,5 @@
+import random
+
 # 이진탐색트리 삭제 코드 구현
 # 이진탐색트리
 class Node:
@@ -15,7 +17,7 @@ class NodeMgmt:
 
     while True:
       if value < self.current_node.value:
-        if self.current_node != None:
+        if self.current_node.left != None:
           self.current_node = self.current_node.left
         else:
           self.current_node.left = Node(value)
@@ -116,10 +118,30 @@ class NodeMgmt:
         self.change_node.right = self.current_node.right
 
 
-head = Node(1)
-BST = NodeMgmt(head)
-BST.insert(2)
-BST.insert(4)
-BST.insert(7)
+# 테스트코드
+# 루트 노드는 500을 넣음
+bst_nums = set();
 
-print(BST.search(7))
+while len(bst_nums) != 100:
+  bst_nums.add(random.randint(0, 999))
+
+head = Node(500)
+binary_tree = NodeMgmt(head)
+
+for num in bst_nums:
+  binary_tree.insert(num)
+
+# 입력한 100개의 숫자 검색 (검색 기능 확인)
+for num in bst_nums:
+  if binary_tree.search(num) == False:
+    print('search faild', num)
+
+# 입력한 100개의 숫자 중 10개 선택한 후 삭제 (삭제 기능 확인)
+delete_nums = set()
+bst_nums = list(bst_nums)
+while len(delete_nums) != 10:
+  delete_nums.add(bst_nums[random.randint(0,99)])
+
+for del_num in delete_nums:
+  if binary_tree.delete(del_num) == False:
+    print('delete fail', del_num)
