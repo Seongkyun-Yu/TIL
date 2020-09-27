@@ -77,18 +77,18 @@ class Heap:
       if right_child_popped_idx >= len(self.heap_array):
         if self.heap_array[popped_idx] < self.heap_array[left_child_popped_idx]:
           self.heap_array[popped_idx], self.heap_array[left_child_popped_idx] = self.heap_array[left_child_popped_idx], self.heap_array[popped_idx]
-          poped_idx = left_child_popped_idx
+          popped_idx = left_child_popped_idx
 
       # 왼쪽 오른쪽 모두 자식 노드가 있을 때
       else:
         if self.heap_array[left_child_popped_idx] > self.heap_array[right_child_popped_idx]:
           if self.heap_array[popped_idx] < self.heap_array[left_child_popped_idx]:
             self.heap_array[popped_idx], self.heap_array[left_child_popped_idx] = self.heap_array[left_child_popped_idx], self.heap_array[popped_idx]
-            poped_idx = left_child_popped_idx
+            popped_idx = left_child_popped_idx
         else:
           if self.heap_array[popped_idx] < self.heap_array[right_child_popped_idx]:
             self.heap_array[popped_idx], self.heap_array[right_child_popped_idx] = self.heap_array[right_child_popped_idx], self.heap_array[popped_idx]
-            poped_idx = right_child_popped_idx
+            popped_idx = right_child_popped_idx
 
     return returned_data
 
