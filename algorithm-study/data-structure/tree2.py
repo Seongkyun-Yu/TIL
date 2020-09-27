@@ -120,7 +120,7 @@ class NodeMgmt:
 
 # 테스트코드
 # 루트 노드는 500을 넣음
-bst_nums = set();
+bst_nums = set()
 
 while len(bst_nums) != 100:
   bst_nums.add(random.randint(0, 999))
