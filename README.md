@@ -217,6 +217,10 @@ Today I Learned...
 
 <br>
 2020-09-02 ~ 09-13 : 천천히 upbit clone 프로젝트 진행<br>
+2020-09-28 : React의 setState가 비동기 처리되는 이유 [링크](https://seongkyun-yu.github.io/2020/09/28/0052-react-batch-update/)<br>
+
+2020-09-30 : OMEGABOX IE11 지원 패치<br>
+2020-10-01 : OMEGABOX refreshToken bugfix<br>
 
 ## # 기타 공부 내역
 
