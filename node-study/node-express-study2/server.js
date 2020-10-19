@@ -1,6 +1,6 @@
-'use strict';
-
 const express = require('express');
+const cookieParaser = require('cookie-parser');
+const helmet = require('helmet');
 const http = require('http');
 
 class ApiServer extends http.Server {
@@ -14,7 +14,10 @@ class ApiServer extends http.Server {
     this.stopping = false;
   }
 
-  async start() {}
+  async start() {
+    this.app.use(helmet());
+    this.app.use(cookieParaser());
+  }
 }
 
 const init = async (config = {}) => {
