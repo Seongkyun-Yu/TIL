@@ -2,6 +2,8 @@ const express = require('express');
 const cookieParaser = require('cookie-parser');
 const helmet = require('helmet');
 const http = require('http');
+const path = require('path');
+const serveStatic = require('serve-static');
 
 class ApiServer extends http.Server {
   constructor(config) {
@@ -12,11 +14,22 @@ class ApiServer extends http.Server {
     this.currentConns = new Set();
     this.busy = new WeakSet();
     this.stopping = false;
+    this.app.static = serveStatic;
   }
 
   async start() {
     this.app.use(helmet());
     this.app.use(cookieParaser());
+
+    this.app.use(
+      this.app.static(path.join(__dirname, 'dist'), {
+        setHeader: (res, path) => {
+          res.setHeader('Access-Control-Allow-Origin', '*');
+          res.setHeaders('Access-Control-Allow-Headers', '*');
+          res.setHeaders('Access-Control-Allow-Methods', 'GET');
+        },
+      }),
+    );
   }
 }
 
