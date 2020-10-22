@@ -1,7 +1,6 @@
 import random
 
 data_list = random.sample(range(100), 50)
-print(len(data_list))
 
 def bubbleSort(data):
   for index1 in range(len(data)-1):
