@@ -16,6 +16,7 @@ nunjucks.configure('template', {
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+app.use('/uploads', express.static('uploads'));
 
 app.get('/', (req, res) => {
   res.send('hello express');
