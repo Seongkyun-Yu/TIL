@@ -18,6 +18,11 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use('/uploads', express.static('uploads'));
 
+app.use((req, res, next) => {
+  app.locals.isLogin = false;
+  next();
+});
+
 app.get('/', (req, res) => {
   res.send('hello express');
 });
