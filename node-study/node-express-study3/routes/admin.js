@@ -1,5 +1,4 @@
 const express = require('express');
-const nunjucks = require('nunjucks');
 
 const router = express.Router();
 
@@ -24,5 +23,15 @@ router.get('/products', (req, res) => {
     online: 'express',
   });
 });
+
+router.get('/products/write', (req, res) => {
+  res.render('admin/write.html');
+});
+
+router.post('/products/write', (req, res) => {
+  res.send(req.body.price);
+});
+
+router.post('/products/write');
 
 module.exports = router;

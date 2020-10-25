@@ -14,6 +14,8 @@ nunjucks.configure('template', {
 
 // 미들웨어 세팅
 app.use(logger('dev'));
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
 
 app.get('/', (req, res) => {
   res.send('hello express');
