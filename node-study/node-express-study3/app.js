@@ -16,7 +16,17 @@ nunjucks.configure('template', {
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+
 app.use('/uploads', express.static('uploads'));
+
+// 예외처리 미들웨어
+app.use((req, res, _) => {
+  res.status(400).render('common/404.html');
+});
+
+app.use((req, res, _) => {
+  res.status(500).render('common/500.html');
+});
 
 app.use((req, res, next) => {
   app.locals.isLogin = false;
