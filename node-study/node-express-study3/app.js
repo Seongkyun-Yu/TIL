@@ -1,49 +1,76 @@
 const express = require('express');
 const nunjucks = require('nunjucks');
 const logger = require('morgan');
+const bodyParser = require('body-parser');
 
-const admin = require('./routes/admin');
+class App {
+  constructor() {
+    this.app = express();
 
-const app = express();
-const port = 3000;
+    // 뷰엔진 셋팅
+    this.setViewEngine();
 
-nunjucks.configure('template', {
-  autoescape: true,
-  express: app,
-});
+    // 미들웨어 셋팅
+    this.setMiddleWare();
 
-// 미들웨어 세팅
-app.use(logger('dev'));
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
+    // 정적 디렉토리 추가
+    this.setStatic();
 
-app.use('/uploads', express.static('uploads'));
+    // 로컬 변수
+    this.setLocals();
 
-app.use((req, res, next) => {
-  app.locals.isLogin = false;
-  app.locals.req_path = req.path;
-  next();
-});
+    // 라우팅
+    this.getRouting();
 
-app.get('/', (req, res) => {
-  res.send('hello express');
-});
+    // 404 페이지를 찾을수가 없음
+    this.status404();
 
-app.get('/nodestudy', (req, res) => {
-  res.send('nodestudy get');
-});
+    // 에러처리
+    this.errorHandler();
+  }
 
-// 라우팅
-app.use('/admin', admin);
+  setMiddleWare() {
+    // 미들웨어 셋팅
+    this.app.use(logger('dev'));
+    this.app.use(bodyParser.json());
+    this.app.use(bodyParser.urlencoded({ extended: false }));
+  }
 
-app.use((req, res, _) => {
-  res.status(404).render('common/404.html');
-});
+  setViewEngine() {
+    nunjucks.configure('template', {
+      autoescape: true,
+      express: this.app,
+    });
+  }
 
-app.use((req, res, _) => {
-  res.status(500).render('common/500.html');
-});
+  setStatic() {
+    this.app.use('/uploads', express.static('uploads'));
+  }
 
-app.listen(port, () => {
-  console.log('Express listening on port 3000');
-});
+  setLocals() {
+    // 템플릿 변수
+    this.app.use((req, res, next) => {
+      this.app.locals.isLogin = true;
+      this.app.locals.req_path = req.path;
+      next();
+    });
+  }
+
+  getRouting() {
+    this.app.use(require('./controllers'));
+  }
+
+  status404() {
+    this.app.use((req, res, _) => {
+      res.status(404).render('common/404.html');
+    });
+  }
+
+  errorHandler() {
+    this.app.use((err, req, res, _) => {
+      res.status(500).render('common/500.html');
+    });
+  }
+}
+
+module.exports = new App().app;
