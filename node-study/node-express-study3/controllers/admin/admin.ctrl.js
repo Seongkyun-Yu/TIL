@@ -1,10 +1,9 @@
 const models = require('../../models');
 
 exports.get_products = (_, res) => {
-  res.render(
-    'admin/products.html',
-    { message: 'hello' }, // message 란 변수를 템플릿으로 내보낸다.
-  );
+  models.Products.findAll({}).then((products) => {
+    res.render('admin/products.html', { products });
+  });
 };
 
 exports.get_products_write = (_, res) => {
