@@ -13,17 +13,18 @@
             <div class="container-fluid"> 
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-9">
                     <ul class="nav navbar-nav">
-
+                        
                         {% from "macro/link.html" import link %}
-                        {{ link( '/admin/products' , "List" , req_path ) }}
-                        {{ link( '/admin/products/write' , "Write" , req_path ) }}
+                        {{ link( '/admin/products' , "ADMIN" , req_path ) }}
+                       
 
-                                
                     </ul> 
                 </div> 
             </div> 
         </nav>
+
         {% block content %}{% endblock %}
-    </div>
+
+    </div>    
 </body>
-</html> 
+</html>

@@ -1,9 +1,9 @@
-const Sequelize = require('sequelize');
-const path = require('path');
-const fs = require('fs');
-const dotenv = require('dotenv');
+var Sequelize = require('sequelize');
+var path = require('path');
+var fs = require('fs');
+var dotenv = require('dotenv');
 
-dotenv.config(); // LOAD CONFIG
+dotenv.config(); //LOAD CONFIG
 
 const sequelize = new Sequelize(
   process.env.DATABASE,
@@ -12,7 +12,7 @@ const sequelize = new Sequelize(
   {
     host: process.env.DB_HOST,
     dialect: 'mysql',
-    timezone: '+09:00', // 한국 시간 셋팅
+    timezone: '+09:00', //한국 시간 셋팅
     operatorsAliases: Sequelize.Op,
     pool: {
       max: 5,
