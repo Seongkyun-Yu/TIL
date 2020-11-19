@@ -33,4 +33,93 @@
 ## 기술적 문제 해결
 
 • 영화 리스트가 너무 많은 문제
-✓ Infinity Scroll을 이용해 지연 로딩 처리
+
+- Infinity Scroll을 이용해 지연 로딩 처리
+
+  ```javascript
+  import React, { useContext, useEffect, useState } from 'react';
+  import PopularTemplate from '../Templates/PopularTemplate';
+  import { MovieContext } from '../../Context/MovieContext';
+
+  const Popular = () => {
+    const context = useContext(MovieContext);
+    const { state, getPopMovie } = context;
+
+    const [isEnd, setScrollState] = useState(false);
+
+    if (isEnd) {
+      getPopMovie(state.popMovies.page + 1);
+      setScrollState(false);
+    }
+
+    const onScroll = () => {
+      if (
+        document.documentElement.scrollHeight ===
+        Math.ceil(document.documentElement.scrollTop) +
+          document.documentElement.clientHeight
+      ) {
+        setScrollState(true);
+      } else {
+        if (!state) {
+          setScrollState(false);
+        }
+      }
+    };
+
+    useEffect(() => {
+      if (Object.keys(state.popMovies).length === 0) getPopMovie();
+      document.addEventListener('scroll', onScroll);
+
+      return () => window.removeEventListener('scroll', onScroll);
+    }, []);
+
+    return <PopularTemplate />;
+  };
+
+  export default React.memo(Popular);
+  ```
+
+<br>
+
+## 프로젝트 구조
+
+```bash
+├── node_modules
+├── public
+│   ├── movie.png
+│   ├── favicon.ico
+│   ├── manifest.json
+│   └── index.html
+├── build
+├── src
+│   ├── Api
+│   │   └── api.js
+│   ├── Components                    <-- Atomic pattern
+│   │   ├── Atoms
+│   │   ├── Molecules
+│   │   ├── Organisms
+│   │   ├── Templates
+│   │   └── Pages
+│   │       ├── style
+│   │       ├── About.js
+│   │       ├── Detail.js
+│   │       ├── Recent.js
+│   │       └── ...etc
+│   ├── Context
+│   │   └── MovieContext.js
+│   ├── Hook
+│   │   └── useMovieData.js
+│   ├── Reducer
+│   │   └── movieReducer.js
+│   ├── Router
+│   │   └──  MainRouter.js
+│   ├── App.js
+│   ├── App.css
+│   ├── index.css
+│   └── index.js
+├── README.md
+├── LICENSE
+├── package.json
+├── yarn.lock
+└── .gitignore
+```
