@@ -6,25 +6,7 @@
 
 <br>
 
-## 개발기간
-
-2020년 5월 20일 ~ 5월 24일
-
-<br>
-
-## 개발 언어 및 프레임워크
-
-- 사용 언어<br>
-  HTML5, CSS3, JS6+<br>
-
-- 라이브러리<br>
-  React v.16<br>
-  axios: 0.19.2<br>
-  react-router-dom: 5.2.0<br>
-
-<br>
-
-## 개발 동기
+## Development motivation
 
 React 학습을 위해 간단한 프로젝트를 진행하면서<br>
 
@@ -36,7 +18,25 @@ React 학습을 위해 간단한 프로젝트를 진행하면서<br>
 
 <br>
 
-## 주요기능 (프로젝트의 모든 기능을 혼자 개발했습니다)
+## Development period
+
+2020년 5월 20일 ~ 5월 24일
+
+<br>
+
+## Skill & Library
+
+- 사용 언어<br>
+  HTML5, CSS3, JS6+<br>
+
+- 라이브러리<br>
+  React v.16<br>
+  axios: 0.19.2<br>
+  react-router-dom: 5.2.0<br>
+
+<br>
+
+## Main Feature (프로젝트의 모든 기능을 혼자 개발했습니다)
 
 • 최신작, 대중성 위주 영화 리스트 출력
 • 영화 검색 기능
@@ -44,7 +44,7 @@ React 학습을 위해 간단한 프로젝트를 진행하면서<br>
 
 <br>
 
-## 기술적 문제 해결
+## Technical Issue
 
 • 영화 리스트가 너무 많은 문제
 
