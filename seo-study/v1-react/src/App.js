@@ -174,7 +174,7 @@ function App() {
             <figure class="newCoffeeInfo">
               <img
                 src={require('./css/style/img/20_summer_rwanda_bean.png')}
-                alt=""
+                alt="르완다 블론드 로스트 커피 사진"
                 class="coffeeImg"
               />
               <figcaption class="coffeeDesc">
