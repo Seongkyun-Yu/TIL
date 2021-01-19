@@ -17,6 +17,9 @@ console.log(regExp2.test(password));
 
 // : 숫자, 특문 각 1회 이상, 영문은 2개 이상 사용하여 8자리 이상 입력
 const regExpPw = /(?=.*\d{1,50})(?=.*[~`!@#$%\^&*()-+=]{1,50})(?=.*[a-zA-Z]{2,50}).{8,50}$/;
+
+// : 숫자, 특문 각 1회 이상, 영문은 2개 이상 사용하여 10자리이상 최대 80자리입력
+const regExpPw2 = /(?=.*\d{1,80})(?=.*[~`!@#$%\^&*()-+=]{1,80})(?=.*[a-zA-Z]{2,80}).{10,80}$/;
 console.log(regExpPw.test(password));
 
 console.log(mail.search('kyun'));
