@@ -15,16 +15,32 @@ mapData[x][y] = 1
 count = 1
 changeLookCount = 0
 while(True):
-  if changeLookCount 
   # 방향전환
-  look -= 1
   look = 3 if look-1 < 0 else look-1
   changeLookCount += 1
 
-  if mapData[x + dx][y + dy] == 1:
+  print('------------------')
+  print(look,x,y,mapData)
+
+  if mapData[x + dx[look]][y + dy[look]] == 1 and changeLookCount != 4:
     continue
 
-  x = x + dx
-  y = y + dy
+  if mapData[x + dx[look]][y + dy[look]] == 1 and changeLookCount == 4:
+    if mapData[x - dx[look]][y - dy[look]] == 1:
+      break;
+  
+    mapData[x - dx[look]][y - dy[look]] = 1
+    x = x - dx[look]
+    y = y - dy[look]
+    count += 1
+    changeLookCount = 0
+
+    continue
+
+  x = x + dx[look]
+  y = y + dy[look]
   mapData[x][y] = 1
   count += 1
+  changeLookCount = 0
+
+print('끝', count)
