@@ -1,25 +1,23 @@
-from collections import deque
-
 result = 0
-
 def solution(numbers, target):
-  findNum(deque(numbers), 0, target)
+
+  findNum(numbers, 0, 0, target)
 
   return result
 
 
-def findNum(numbers, acc, target):
-  print(acc)
-  if len(numbers) <= 0:
+def findNum(numbers, index, acc, target):
+  global result
+  
+  if len(numbers) == index:
     if acc == target:
-      print('여기', result)
       result += 1
     return
 
-  num = numbers.popleft()
+  num = numbers[index]
 
-  findNum(numbers, acc - num, target)
-  findNum(numbers, acc + num, target)
+  findNum(numbers, index + 1, acc - num, target)
+  findNum(numbers, index + 1, acc + num, target)
 
 
 print(solution([1, 1, 1, 1, 1], 3))
