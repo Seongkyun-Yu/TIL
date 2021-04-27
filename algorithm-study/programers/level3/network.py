@@ -1,7 +1,11 @@
 
 
+
 def solution(n, computers):
-  linked = [0 for i in range(n)]
+  global network
+  global nets
+  network = computers
+  nets = n
   count = 0
 
   for i in range(n):
@@ -10,16 +14,14 @@ def solution(n, computers):
         count += 1
 
   return count
-    
 
 def checkLink(i, j):
-  if linked[i][j] == 1 or linked[i] == 1 or linked[j] == 1:
+  if network[i][j] == 0:
     return False
-  
-  linked[i] = 1
-  linked[j] = 1
 
-  for k in range(len(linked)):
+  network[i][j] = 0
+
+  for k in range(nets):
     checkLink(j, k)
 
   return True
