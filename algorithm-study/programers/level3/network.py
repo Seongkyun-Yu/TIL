@@ -1,6 +1,3 @@
-
-
-
 def solution(n, computers):
   global network
   global nets
