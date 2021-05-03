@@ -10,6 +10,8 @@ function solution(name) {
     const backIndexCount = nowIndex + name.length - i;
     const frontIndexCount = nowIndex < i ? i - nowIndex : nowIndex - i;
 
+    console.log(frontIndexCount, backIndexCount);
+
     answer += Math.min(frontIndexCount, backIndexCount);
     nowIndex = i;
 
@@ -22,4 +24,4 @@ function solution(name) {
   return answer;
 }
 
-console.log(solution('BBBAAAB'));
+console.log(solution('AJAZ'));
