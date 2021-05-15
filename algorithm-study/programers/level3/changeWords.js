@@ -1,20 +1,20 @@
 const results = [];
 
-function findWord(begin, target, words, count) {
+function findWord(begin, target, words, visitedList, count) {
   if (begin === target) {
-    // console.log(begin, count);
-    results.push(count + 1);
+    results.push(count);
+    console.log('결과들', results);
     return;
   }
 
-  // console.log(begin, target, words, count);
-
   for (let i = 0; i < begin.length; i++) {
-    const wordList = words.filter((word) => word[i] === begin[i]);
+    for (let j = 0; j < words[i].length; j++) {
+      // eslint-disable-next-line no-continue
+      if (words[i][j] !== begin[j] || visitedList[i] === 1) continue;
 
-    for (let j = 0; j < wordList.length; j++) {
-      const restWords = words.filter((word) => word !== wordList[j]);
-      findWord(wordList[j], target, restWords, count + 1);
+      visitedList[i] = 1;
+      console.log(words[i], visitedList);
+      findWord(words[i], target, words, visitedList, count + 1);
     }
   }
 }
@@ -22,7 +22,10 @@ function findWord(begin, target, words, count) {
 function solution(begin, target, words) {
   if (!words.includes(target)) return 0;
 
-  findWord(begin, target, words, 1);
+  const visitedList = Array(words.length).fill(0);
+  console.log(visitedList);
+
+  findWord(begin, target, words, visitedList, 1);
 
   return Math.min(...results);
 }
