@@ -16,8 +16,7 @@ function solution(bridge_length, weight, truck_weights) {
       onBirdgeWeight -= popedTruckWeight;
     }
 
-    const truckWeight =
-      onBirdgeWeight + truck_weights[0] <= weight && trucks.shift();
+    const truckWeight = onBirdgeWeight + trucks[0] <= weight && trucks.shift();
 
     if (truckWeight && onBirdgeWeight + truckWeight <= weight) {
       bridgeTrucks.push(truckWeight);
@@ -27,11 +26,7 @@ function solution(bridge_length, weight, truck_weights) {
     }
 
     time++;
-
-    console.log('goalTrucks', goalTrucks, 'bridgeTrucks', bridgeTrucks);
   }
 
   return time;
 }
-
-console.log(solution(2, 10, [7, 4, 5, 6]));
