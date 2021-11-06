@@ -9,7 +9,6 @@
     
     for (let i = 0; i < nums.length; i++) {
         const data = list.get(nums[i]);
-        console.log("data: ", data)
         
         if (data) list.set(nums[i], data + 1);
         else list.set(nums[i], 1);
