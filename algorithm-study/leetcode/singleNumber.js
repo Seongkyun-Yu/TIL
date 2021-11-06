@@ -9,12 +9,15 @@
     
     for (let i = 0; i < nums.length; i++) {
         const data = list.get(nums[i]);
+        console.log("data: ", data)
         
         if (data) list.set(nums[i], data + 1);
         else list.set(nums[i], 1);
     }
     
-    for (key in list) {
-        if (list[key] === 1) return list[key];
+    for (const [key, value] of list) {
+        if (value === 1) return key;
     }
 };
+
+console.log(singleNumber([2,2,1]))
