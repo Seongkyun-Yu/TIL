@@ -7,10 +7,16 @@
     const zero = [];
     const result = [];
     
-    for (let i = 0; i < nums.length; i++) {
-        if (nums[i] === 0) zero.push(nums[i]);
-        else result.push(nums[i]);
+    while (nums.length) {
+        if (nums[0] === 0) zero.push(nums.shift());
+        else result.push(nums.shift());
     }
     
-    return [...result, ...zero];
+    for (let i = 0; i < result.length; i++) {
+        nums.push(result[i]);
+    }
+    
+    for (let i = 0; i < zero.length; i++) {
+        nums.push(zero[i]);
+    }
 };
