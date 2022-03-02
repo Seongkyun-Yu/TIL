@@ -38,7 +38,5 @@
     
     findTarget(root, null, 1);
     
-    console.log(xDepth, yDepth)
-    
     return xDepth === yDepth && xPnode !== yPnode;
 };
