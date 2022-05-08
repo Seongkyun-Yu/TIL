@@ -10,15 +10,15 @@
 
     for (let i = 0; i < secret.length; i++) {
         if (secret[i] === guess[i]) bulls++;
-        else if (secret[i] in hash) hash[secret[i]]++;
-        else hash[secret[i]] = 1;
+        else hash[secret[i]] = hash[secret[i]] + 1 || 1;
     }
 
     for (let i = 0; i < guess.length; i++) {
-        if (secret[i] !== guess[i] && hash[guess[i]]) {
-          cows++;
-          hash[guess[i]]--;
-        }
+        if (secret[i] === guess[i]) continue;
+        if (!hash[guess[i]]) continue;
+        
+        cows++;
+        hash[guess[i]]--;
     }
 
     return bulls + "A" + cows + "B";
