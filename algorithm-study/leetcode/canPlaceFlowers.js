@@ -11,6 +11,7 @@
         if (!flowerbed[i] && !flowerbed[i - 1] && !flowerbed[i + 1]) {
             flowerbed[i] = 1;
             count--;
+            i++;
         }
     }
     
