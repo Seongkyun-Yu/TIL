@@ -11,3 +11,15 @@
         }
     }
 };
+
+var twoSum2 = function(nums, target) {
+    const hash = {};
+    
+    let temp = 0;
+    for(let i = 0; i < nums.length; i++) {
+        temp = target - nums[i];
+        if (hash[temp] !== undefined) return [i, hash[temp]];
+        
+        hash[nums[i]] = i;
+    }
+};
