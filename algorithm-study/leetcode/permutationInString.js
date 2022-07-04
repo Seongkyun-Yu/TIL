@@ -55,21 +55,27 @@
     
     for(let left = 0, right = 0; right < s2.length; right++) {
         s2Map[s2[right]] = s2Map[s2[right]] || 0 + 1;
-        if (s1Map[s2[right]]) matches += 1;
+        if (s1Map[s2[right]] === s2Map[s2[right]]) matches += s2Map[s2[right]];
         
         if (right - left + 1 < s1.length) continue;
-        
-        if (matches === s1.length) return true;
-        
+
         if (s2Map[s2[left]]) {
             s2Map[s2[left]] -= 1;
-            if (s1Map[s2[left]]) matches -= 1;
+            if (s1Map[s2[left]]) matches += 1;
         }
         
         left++;
+
+        console.log("s1Map", s1Map)
+        console.log("s2Map", s2Map)
+        console.log("matches", matches)
+        
+        if (matches === 26) {
+            return true
+        };
     }
 
     return false
 };
 
-console.log(checkInclusion("ab","eidboaoo"))
+console.log(checkInclusion("hello","ooolleoooleh"))
