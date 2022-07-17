@@ -12,11 +12,13 @@
         min = nums[i];
         
         let count = 1;
-        let max = 0;
-        for(let j = i + 1; j < nums.length; j++) {
-            if (nums[j - 1] < nums[j]) count++;
-            console.log(i,j, count)
-            
+        let max = nums[i];
+        for(let j = i; j < nums.length; j++) {
+            if (max < nums[j]) {
+                count++;
+                max = nums[j];
+            }
+            console.log(i, j, count)
         }
         
         longestLen = Math.max(count, longestLen);
@@ -25,4 +27,4 @@
     return longestLen;
 };
 
-console.log(lengthOfLIS([4,10,4,3,8,9]));
+console.log(lengthOfLIS([0,1,0,3,2,3]));
