@@ -21,3 +21,23 @@ var isValid = function (s) {
 
   return stack.length === 0;
 };
+
+var isValid = function(s) {
+  const stack = [];
+  const checkObj = {
+      ')': '(',
+      '}': '{',
+      ']': '[',
+  };
+  
+  for(let i = 0; i < s.length; i++) {
+      if (checkObj[s[i]] && stack[stack.length - 1] === checkObj[s[i]]) {
+          stack.pop();
+          continue;
+      }
+      
+      stack.push(s[i]);
+  }
+  
+  return stack.length === 0;
+};
