@@ -48,3 +48,30 @@ const mergeTwoLists = function (l1, l2) {
 
   return result;
 };
+
+
+var mergeTwoLists2 = function(list1, list2) {
+  let result = new ListNode();
+  let cur = result;
+  
+  let cur1 = list1;
+  let cur2 = list2;
+  while(cur1 || cur2) {
+      if ((cur1 && !cur2)) {
+          cur.next = cur1;
+          cur1 = cur1.next;
+      } else if (!cur1 && cur2) {
+          cur.next = cur2;
+          cur2 = cur2.next;
+      } else if (cur1.val < cur2.val) {
+          cur.next = cur1;
+          cur1 = cur1.next;
+      } else {
+          cur.next = cur2;
+          cur2 = cur2.next;
+      }
+      cur = cur.next;
+  }
+  
+  return result.next;
+};
