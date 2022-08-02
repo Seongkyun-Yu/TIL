@@ -11,7 +11,8 @@ var TimeMap = function() {
  * @return {void}
  */
 TimeMap.prototype.set = function(key, value, timestamp) {
-    this.map[key] = this.map[key] ? [...this.map[key], {timestamp, value}] : [{timestamp, value}];
+    if (this.map[key]) this.map[key].push({timestamp, value});
+    else this.map[key] = [{timestamp, value}];
 };
 
 /** 
