@@ -1,20 +1,23 @@
 /**
- * https://leetcode.com/problems/daily-temperatures/
+ * https://leetcode.com/problems/daily-temperatures/submissions/
  * @param {number[]} temperatures
  * @return {number[]}
  */
  var dailyTemperatures = function(temperatures) {
     const result = new Array(temperatures.length).fill(0);
     const stack = [];
-    const tlen = temperatures.length;
     
-    for(let i = 0; i < temperatures.length; i++) {
-        if (stack.length === 0){
-            stack.push(temperatures[i]);
-            continue;
+    for(let i = 0; i < temperatures.length; i++) {        
+        while(stack[stack.length - 1]?.temp < temperatures[i]) {
+            const { temp, index } = stack.pop();
+            result[index] = i - index;
         }
         
-        if (temperatures[i]) continue;
-        
+        stack.push({
+                temp: temperatures[i], 
+                index: i
+        });
     }
+    
+    return result;
 };
