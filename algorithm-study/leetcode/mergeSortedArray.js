@@ -1,4 +1,5 @@
 /**
+ * https://leetcode.com/problems/merge-sorted-array/
  * @param {number[]} nums1
  * @param {number} m
  * @param {number[]} nums2
@@ -6,20 +7,15 @@
  * @return {void} Do not return anything, modify nums1 in-place instead.
  */
  var merge = function(nums1, m, nums2, n) {
-  let len = nums1.length - 1
-  m--;
-  n--;
-
-  while (n >= 0) {
-    if (nums1[m] > nums2[n]) {
-      nums1[len] = nums1[m]
-      m--;
-    } else {
-      nums1[len] = nums2[n]
-      n--;
-    }
-
-    len--;
+  let i = m - 1, j = n - 1;
+  let end = m + n - 1;
+  while (i >= 0 && j >= 0) {
+      if (nums1[i] < nums2[j])  nums1[end--] = nums2[j--];
+      else  nums1[end--] = nums1[i--];
   }
-  return nums1;
+  while (j >= 0) {
+      nums1[end--] = nums2[j--];
+  }
 };
+
+console.log(merge([1,2,7,0,0,0], 3, [2,5,6], 3))
