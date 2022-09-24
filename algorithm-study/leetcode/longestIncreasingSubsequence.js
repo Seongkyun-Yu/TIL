@@ -4,27 +4,15 @@
  * @return {number}
  */
  var lengthOfLIS = function(nums) {
-    let min = Infinity;
-    let longestLen = -Infinity;
-    
-    for(let i = 0; i < nums.length; i++) {
-        if (min <= nums[i]) continue;
-        min = nums[i];
-        
-        let count = 1;
-        let max = nums[i];
-        for(let j = i; j < nums.length; j++) {
-            if (max < nums[j]) {
-                count++;
-                max = nums[j];
-            }
-            console.log(i, j, count)
+    const dp = new Array(nums.length).fill(0);
+    for(let i = 0; i < nums.length; i++){
+        let max = 1;
+        for(let j = 0; j < i; j++) {
+            if (nums[i] > nums[j])  max = Math.max(max, dp[j] + 1);
         }
-        
-        longestLen = Math.max(count, longestLen);
+        dp[i] = max;
     }
-    
-    return longestLen;
+    return Math.max(...dp);
 };
 
 console.log(lengthOfLIS([0,1,0,3,2,3]));
