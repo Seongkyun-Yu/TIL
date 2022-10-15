@@ -1,4 +1,6 @@
 # https://leetcode.com/problems/kth-largest-element-in-a-stream/
+from heapq import heappush
+
 class KthLargest(object):
     def __init__(self, k, nums):
         """
