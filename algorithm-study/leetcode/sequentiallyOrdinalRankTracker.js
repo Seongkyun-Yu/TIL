@@ -1,41 +1,33 @@
+// https://leetcode.com/problems/sequentially-ordinal-rank-tracker/
+class SORTracker {
+    constructor() {
+        this.count = 1;
+        this.maxPq = new MaxPriorityQueue({ compare: (a, b) => this.compare(a, b) });
+        this.minPq = new MinPriorityQueue({ compare: (a, b) => this.compare(b, a) });
+    }
 
-var SORTracker = function() {
-    this.getCount = 0;
-    this.list = [];
-    this.sorted = false;
-};
+    compare(a, b) {
+        if (a.score === b.score) return a.name.localeCompare(b.name);
 
-/** 
- * @param {string} name 
- * @param {number} score
- * @return {void}
- */
-SORTracker.prototype.add = function(name, score) {
-    this.list.push({name, score});
-    this.sorted = false;
-};
+        return b.score - a.score;
+    }
 
-/**
- * @return {string}
- */
-SORTracker.prototype.get = function() {
-    if (this.sorted) return this.list[this.getCount++].name;
-    
-    this.list.sort((a, b) => {
-        if (a.score !== b.score) return b.score - a.score;
+    add(name, score) {
+        const cur = { name, score };
         
-        if (a.name < b.name) return -1;
-        else if (a.name == b.name) return 0;
-        else return 1;      
-    })
-    this.sorted = true;
-        
-    return this.list[this.getCount++].name;
-};
+        if (this.minPq.size() < this.count) this.minPq.enqueue(cur);
+        else if (this.compare(this.minPq.front(), cur) > 0) {
+            this.maxPq.enqueue(this.minPq.dequeue());
+            this.minPq.enqueue(cur);
+        } else {
+            this.maxPq.enqueue(cur);
+        }
+    }
 
-/** 
- * Your SORTracker object will be instantiated and called as such:
- * var obj = new SORTracker()
- * obj.add(name,score)
- * var param_2 = obj.get()
- */
+    get() {
+        const nthItem = this.minPq.front();
+        this.count += 1;
+        if (this.maxPq.size()) this.minPq.enqueue(this.maxPq.dequeue());
+        return nthItem.name;
+    }
+};
