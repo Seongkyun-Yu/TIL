@@ -1,4 +1,5 @@
 /**
+ * https://leetcode.com/problems/concatenated-words/
  * @param {string[]} words
  * @return {string[]}
  */
@@ -7,12 +8,17 @@
     const cache = {};
     const result = [];
     
+    let minLen = Infinity;
+    for(const word of words) {
+        if (word.length < minLen) minLen = word.length;
+    }
+    
     const check = (word) => {
         if (cache[word] === true || cache[word] === false) {
             return cache[word];
         }
         
-        for(let i = 1; i < word.length; i++) {            
+        for(let i = minLen; i < word.length; i++) {            
             const front = word.slice(0, i);
             const back = word.slice(i);
                         
@@ -32,7 +38,7 @@
         return false;
     }
     
-    for(const word of words) {
+    for(const word of wordsSet) {
         if (check(word)) result.push(word);
     }
     
