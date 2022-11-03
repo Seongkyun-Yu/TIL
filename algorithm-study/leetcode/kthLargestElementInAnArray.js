@@ -4,8 +4,16 @@
  * @param {number} k
  * @return {number}
  */
- var findKthLargest = function(nums, k) {       
-    const sortedNum = nums.sort((a,b) => b - a);
+ var findKthLargest = function(nums, k) {
+    const maxHeap = new MaxPriorityQueue();
+    for(const num of nums) {
+        maxHeap.enqueue(num, num);
+    }
     
-    return sortedNum[k - 1];
+    let result;
+    for(let i = 0; i < k; i++) {
+        result = maxHeap.dequeue().element;
+    }
+    
+    return result;
 };
