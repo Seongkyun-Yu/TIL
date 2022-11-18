@@ -5,47 +5,28 @@
  * @return {number}
  */
  var countSubIslands = function(grid1, grid2) {
-    const dfs = (i, j , map, cache) => {
-        if (!map[i]) return;
-        if (!map[i][j]) return;
+    const dfs = (i, j) => {
+        if (i < 0 || i === grid1.length) return true;
+        if (j < 0 || j === grid1[0].length) return true;
+        if (!grid2[i][j]) return true;
         
-        cache[`${i}-${j}`] = true;
-        map[i][j] = 0;
+        grid2[i][j] = 0;
+       
+        let result = true;
+        if (!grid1[i][j]) result = false;  
         
-        if (map[i - 1] && map[i - 1][j]) dfs(i - 1, j, map, cache);
-        if (map[i + 1] && map[i + 1][j]) dfs(i + 1, j, map, cache);
-        if (map[i][j - 1]) dfs(i, j - 1, map, cache);
-        if (map[i][j + 1]) dfs(i, j + 1, map, cache);
-    }
-    
-    const maps1 = [];
-    const maps2 = [];
-    
-    for(let i = 0; i < grid1.length; i++) {
-        for(let j = 0; j < grid1[i].length; j++) {
-            const cache = {};
-            dfs(i, j, grid1, cache);
-            maps1.push(cache);
-        }
-    }
-    
-    for(let i = 0; i < grid2.length; i++) {
-        for(let j = 0; j < grid2[i].length; j++) {
-            const cache = {};
-            dfs(i, j, grid2, cache);
-            maps2.push(cache);
-        }
+        result = dfs(i - 1, j) && result;
+        result = dfs(i + 1, j) && result;
+        result = dfs(i, j - 1) && result;
+        result = dfs(i, j + 1) && result;
+        
+        return result;
     }
     
     let count = 0;
-    for(const map1 of maps1) {
-        for(let i = 0; i < maps2.length; i++) {
-            const keys = Object.keys(maps2[i]);
-            
-            for(let j = 0; j < keys.length; j++) {
-                if (!map1[keys[j]]) break;
-                if (j === keys.length - 1) count++;
-            }
+    for(let i = 0; i < grid2.length; i++) {
+        for(let j = 0; j < grid2[i].length; j++) {
+            if (grid2[i][j] && dfs(i, j)) count++;
         }
     }
     
