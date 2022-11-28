@@ -9,33 +9,26 @@
  */
  var numOfMinutes = function(n, headID, manager, informTime) {
     const graph = {};
+    const cache = {};
     
     for(let i = 0; i < manager.length; i++) {
-        if (graph[manager[i]]) graph[manager[i]].push(i);
-        else graph[manager[i]] = [i];
+        graph[i] = manager[i];
     }
     
-    let result = 0;
-    let levelLen = 1;
-    let count = 0;
-    const queue = [headID];
-    while(queue.length) {
-        const id = queue.shift();
+    let max = 0;
+    const dfs = (index) => {
+        if (manager[index] === -1) return informTime[index];
+        if (cache[index]) return cache[index];
         
-        if (!graph[id]) continue;
-        console.log(id, graph[id], graph, queue)
-        for(const subID of graph[id]) {
-            queue.push(subID);
-        }
+        cache[index] = informTime[index] + dfs(manager[index]);
+        max = Math.max(max, cache[index]);
         
-        count++;
-        
-        if (levelLen === count) {
-            levelLen = queue.length;
-            count = 0;
-            result++;
-        }
+        return cache[index];
     }
     
-    return result;
+    for(let i = 0; i < n; i++) {
+        dfs(i);
+    }
+    
+    return max;
 };
