@@ -6,17 +6,10 @@
  * @return {number}
  */
 var findMedianSortedArrays = function (nums1, nums2) {
-  let short = nums1;
-  let long = nums2;
+  const short = nums1.length < nums2.length ? nums1 : nums2;
+  const long = nums1.length >= nums2.length ? nums1 : nums2;
   const total = nums1.length + nums2.length;
   const half = Math.floor(total / 2);
-
-  if (long.length < short.length) {
-    short = nums2;
-    long = nums1;
-  }
-
-  console.log({ short, long });
 
   let left = 0;
   let right = short.length - 1;
