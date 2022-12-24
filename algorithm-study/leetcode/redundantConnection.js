@@ -40,3 +40,42 @@ var findRedundantConnection = function (edges) {
       return [edge1, edge2];
   }
 };
+
+/**
+ * @param {number[][]} edges
+ * @return {number[]}
+ */
+var findRedundantConnection = function (edges) {
+  const parent = new Array(edges.length + 1).fill(0).map((_, i) => i);
+  const rank = new Array(edges.length + 1).fill(1);
+
+  const findP = (n) => {
+    p = parent[n];
+    while (p != parent[p]) {
+      parent[p] = parent[parent[p]];
+      p = parent[p];
+    }
+
+    return p;
+  };
+
+  const union = (n1, n2) => {
+    const p1 = findP(n1);
+    const p2 = findP(n2);
+
+    if (p1 === p2) return false;
+    if (rank[p1] > rank[p2]) {
+      parent[p2] = p1;
+      rank[p2] += rank[p1];
+    } else {
+      parent[p1] = p2;
+      rank[p2] += rank[p1];
+    }
+
+    return true;
+  };
+
+  for ([n1, n2] of edges) {
+    if (!union(n1, n2)) return [n1, n2];
+  }
+};
