@@ -1,23 +1,26 @@
 /**
- * https://leetcode.com/problems/unique-paths/ // 미해결
+ * MEDIUM
+ * https://leetcode.com/problems/unique-paths/
  * @param {number} m
  * @param {number} n
  * @return {number}
  */
- var uniquePaths = function(m, n) {
-    let count = 0;
-    
-    const checkPath = (accDown, accRight) => {
-        if(accDown === m && accRight === n) {
-            count++;
-            return;
-        }
-        
-        if (accDown < m) checkPath(accDown + 1, accRight);
-        if (accRight < n) checkPath(accDown, accRight + 1);
+var uniquePaths = function (m, n) {
+  const cache = [];
+  for (let i = 0; i < m; i++) {
+    cache.push([]);
+  }
+
+  for (let i = 0; i < m; i++) {
+    for (let j = 0; j < n; j++) {
+      if (i <= 0 || j <= 0) {
+        cache[i][j] = 1;
+        continue;
+      }
+
+      cache[i][j] = cache[i - 1][j] + cache[i][j - 1];
     }
-    
-    checkPath(1, 1);
-    
-    return count;
+  }
+
+  return cache[m - 1][n - 1];
 };
