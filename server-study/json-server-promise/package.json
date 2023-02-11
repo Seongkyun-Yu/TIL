@@ -16,6 +16,6 @@
     "eslint-plugin-import": "^2.20.2"
   },
   "dependencies": {
-    "json-server": "^0.16.1"
+    "json-server": "^0.17.1"
   }
 }
