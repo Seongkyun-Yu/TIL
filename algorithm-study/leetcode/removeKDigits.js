@@ -9,26 +9,18 @@ var removeKdigits = function (num, k) {
   if (num.length === k) return '0';
 
   let count = k;
-  const stack = [+num[0]];
-  for (let i = 1; i < num.length; i++) {
-    if (!count || +stack[stack.length - 1] === +num[i]) {
-      stack.push(+num[i]);
-      continue;
-    }
-
-    if (+stack[stack.length - 1] < +num[i]) {
+  const stack = [];
+  for (let i = 0; i < num.length; i++) {
+    while (count > 0 && stack.length && stack[stack.length - 1] > +num[i]) {
       count--;
-      continue;
+      stack.pop();
     }
-
-    stack.pop();
     stack.push(+num[i]);
-    count--;
   }
 
   while (stack.length > num.length - k) {
-    stack.shift();
+    stack.pop();
   }
 
-  return +stack.join('') + '';
+  return BigInt(stack.join('')) + '';
 };
