@@ -12,25 +12,29 @@ var fourSum = function (nums, target) {
 
   const visited = {};
   const result = [];
-  const dfs = (idx, acc, list) => {
-    if (list.length > 4) return;
-    if (list.length === 4) {
-      const key = list.join('-');
-      if (visited[key]) return;
-      if (acc === target) result.push([...list]);
-      visited[key] = true;
-      console.log(result);
-      return;
-    }
 
-    for (let i = idx; i < nums.length; i++) {
-      list.push(nums[i]);
-      dfs(i + 1, acc + nums[i], list);
-      list.pop();
-    }
-  };
+  for (let i = 0; i < nums.length; i++) {
+    for (let j = i + 1; j < nums.length; j++) {
+      const twoSum = nums[i] + nums[j];
+      let left = j + 1;
+      let right = nums.length - 1;
 
-  dfs(0, 0, []);
+      while (left < right) {
+        if (twoSum + nums[left] + nums[right] === target) {
+          if (visited[`${nums[i]}-${nums[j]}-${nums[left]}-${nums[right]}`]) {
+            left++;
+            continue;
+          }
+          result.push([nums[i], nums[j], nums[left], nums[right]]);
+          visited[`${nums[i]}-${nums[j]}-${nums[left]}-${nums[right]}`] = true;
+        } else if (twoSum + nums[left] + nums[right] < target) {
+          left++;
+        } else {
+          right--;
+        }
+      }
+    }
+  }
 
   return result;
 };
