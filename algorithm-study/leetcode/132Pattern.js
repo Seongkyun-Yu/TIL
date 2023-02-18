@@ -4,6 +4,10 @@
  * @param {number[]} nums
  * @return {boolean}
  */
+/**
+ * @param {number[]} nums
+ * @return {boolean}
+ */
 var find132pattern = function (nums) {
   if (nums.length < 3) return false;
 
@@ -16,21 +20,18 @@ var find132pattern = function (nums) {
     leftMin.push(min);
   }
 
+  let rightMin = Infinity;
   const rightMax = [];
   for (let i = nums.length - 1; i >= 0; i--) {
-    // if (nums[i] > leftMin[i]) {
-    max = Math.min(max, nums[i]);
-    rightMax.unshift(max);
-    // }
-    // else rightMax.push(Infinity);
-    // max = Math.max(max, nums[i]);
-    // rightMax.unshift(max);
+    if (nums[i] > leftMin[i - 1]) {
+      rightMin = Math.min(rightMin, nums[i]);
+      rightMax.unshift(rightMin);
+    } else if (rightMin !== Infinity) {
+      rightMax.unshift(rightMin);
+    } else rightMax.unshift(Infinity);
   }
 
-  console.log({ leftMin, rightMax });
-
   for (let i = 1; i < nums.length - 1; i++) {
-    console.log(i, leftMin[i - 1], nums[i], rightMax[i + 1]);
     if (
       leftMin[i - 1] < nums[i] &&
       nums[i] > rightMax[i + 1] &&
