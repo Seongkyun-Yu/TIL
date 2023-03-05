@@ -36,3 +36,20 @@ var minDays = function (n) {
     }
   }
 };
+
+var minDays = function(n) {
+  const cache = { 0: 0, 1: 1 }
+
+  const dfs = (n) => {
+      if (cache[n] !== undefined) return cache[n];
+
+      const one = 1 + (n % 2) + dfs(parseInt(n / 2));
+      const two = 1 + (n % 3) + dfs(parseInt(n / 3));
+
+      cache[n] = Math.min(one, two);
+
+      return cache[n];
+  }
+
+  return dfs(n);
+};
