@@ -11,7 +11,7 @@ var shortestBridge = function (grid) {
     [1, 0],
     [-1, 0],
   ];
-  const visit = new Set();
+  const visit = {};
   const queue = [];
 
   const dfs = (r, c) => {
@@ -19,7 +19,7 @@ var shortestBridge = function (grid) {
     if (!grid[r][c]) return;
     if (visit[`${r}-${c}`]) return;
 
-    visit.add([`${r}-${c}`]);
+    visit[`${r}-${c}`] = true;
     queue.push([r, c]);
 
     for (const [dr, dc] of direct) {
@@ -41,7 +41,7 @@ var shortestBridge = function (grid) {
           if (grid[curR][curC]) return result;
 
           queue.push([curR, curC]);
-          visit.add([curR, curC]);
+          visit[`${curR}-${curC}`] = true;
         }
       }
       result++;
@@ -57,13 +57,3 @@ var shortestBridge = function (grid) {
     }
   }
 };
-
-console.log(
-  shortestBridge([
-    [1, 1, 1, 1, 1],
-    [1, 0, 0, 0, 1],
-    [1, 0, 1, 0, 1],
-    [1, 0, 0, 0, 1],
-    [1, 1, 1, 1, 1],
-  ]),
-);
