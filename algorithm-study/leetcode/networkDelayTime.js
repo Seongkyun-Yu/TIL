@@ -15,32 +15,30 @@ var networkDelayTime = function (times, n, k) {
 
   if (!graph[k]) return -1;
 
-  console.log({ graph });
+  let count = 0;
+  let result = 0;
+  const visit = { k: true };
+  const dfs = (node, t) => {
+    if (visit[node]) return;
 
-  let count = 1;
-  let delayTime = 0;
-  const visit = {};
-  const queue = [...graph[k]];
-  while (queue.length) {
-    const len = queue.length;
-    for (let i = 0; i < len; i++) {
-      const [cur, dest, time] = queue.shift();
+    count++;
+    visit[node] = true;
 
-      delayTime += time;
-      count++;
-
-      if (!graph[dest]) {
-        // count++;
-        continue;
-      }
-
-      for (const node of graph[dest]) {
-        queue.push(node);
-      }
+    let maxTime = 0;
+    const children = graph[node];
+    if (!children) return;
+    for (const [_, dest, time] of children) {
+      if (visit[dest]) continue;
+      dfs(dest, time);
+      maxTime = Math.max(maxTime, time);
     }
-  }
 
-  console.log({ count });
+    console.log({ maxTime });
 
-  return count === n ? delayTime : -1;
+    result += maxTime;
+  };
+
+  dfs(k, 0);
+
+  return count === n ? result : -1;
 };
