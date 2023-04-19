@@ -15,5 +15,9 @@ var combinationSum4 = function (nums, target) {
     }
   }
 
+  console.log({ dp });
+
   return dp[target];
 };
+
+console.log(combinationSum4([1, 2, 3], 4));
