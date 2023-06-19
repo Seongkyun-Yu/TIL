@@ -9,12 +9,12 @@ var shipWithinDays = function (weights, days) {
   let min = Math.max(...weights);
   let max = weights.reduce((acc, cur) => acc + cur);
 
-  let result = Infinity;
+  let result = max;
 
-  while (min < max) {
+  while (min <= max) {
     const capacity = Math.floor((min + max) / 2);
 
-    let shipDay = 0;
+    let shipDay = 1;
     let acc = 0;
     for (const weight of weights) {
       acc += weight;
@@ -24,7 +24,7 @@ var shipWithinDays = function (weights, days) {
       }
     }
 
-    if (shipDay < days) {
+    if (shipDay <= days) {
       result = Math.min(result, capacity);
       max = capacity - 1;
     } else {
