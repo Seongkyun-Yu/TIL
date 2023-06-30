@@ -8,26 +8,18 @@ var wiggleSort = function (nums) {
   let changed = true;
   while (changed) {
     let change = false;
-    let isUp = true;
+    let isUp = false;
     for (let i = 0; i < nums.length - 1; i++) {
-      if (isUp) {
-        if (nums[i] > nums[i + 1]) {
-          const temp = nums[i];
-          nums[i] = nums[i + 1];
-          nums[i + 1] = temp;
-          change = true;
-        }
-      } else {
-        if (nums[i] < nums[i + 1]) {
-          const temp = nums[i];
-          nums[i] = nums[i + 1];
-          nums[i + 1] = temp;
-          change = true;
-        }
-      }
-
       isUp = !isUp;
+      if (isUp && nums[i] <= nums[i + 1]) continue;
+      if (!isUp && nums[i] >= nums[i + 1]) continue;
+
+      const temp = nums[i];
+      nums[i] = nums[i + 1];
+      nums[i + 1] = temp;
+      change = true;
     }
+
     changed = change;
   }
 };
