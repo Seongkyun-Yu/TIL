@@ -5,28 +5,29 @@
  * @return {boolean}
  */
 var checkValidString = function (s) {
-  let wildCard = 0;
-  const stack = [];
+  let leftMin = 0;
+  let leftMax = 0;
 
-  for (const c of s) {
+  for (let c of s) {
     if (c === '(') {
-      stack.push('(');
+      leftMin++;
+      leftMax++;
     } else if (c === ')') {
-      if (stack.length) {
-        stack.pop();
-      } else if (wildCard === 0) {
-        return false;
-      } else {
-        wildCard--;
-      }
+      leftMin--;
+      leftMax--;
     } else {
-      wildCard++;
+      leftMin--;
+      leftMax++;
+    }
+
+    if (leftMax < 0) {
+      return false;
+    }
+
+    if (leftMin < 0) {
+      leftMin = 0;
     }
   }
 
-  if (stack.length) {
-    return wildCard >= stack.length;
-  }
-
-  return true;
+  return leftMin === 0;
 };
