@@ -8,11 +8,16 @@
 var hasAllCodes = function (s, k) {
   const cache = new Set();
 
-  const sList = [...s];
+    const sList = [];
+    for(let i = 0; i < k; i++) {
+        sList.push(s[i]);
+    }
 
-  for (let i = 0, j = k; j <= s.length; i++, j++) {
-    cache.add(sList.slice(i, j).join(''));
-  }
+    for(let i = 0, j = k; j <= s.length; i++, j++) {
+        cache.add(sList.join(""));
+        sList.shift();
+        sList.push(s[j]);
+    }
 
-  return cache.size === 2 ** k;
+    return cache.size === 2 ** k
 };
