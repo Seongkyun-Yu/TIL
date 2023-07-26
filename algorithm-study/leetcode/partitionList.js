@@ -13,31 +13,30 @@
  * @return {ListNode}
  */
 var partition = function (head, x) {
-  const less = [];
-  const greater = [];
+  const newHead = new ListNode(0, head);
 
+  const greaterHead = new ListNode(0);
+  let greaterTail = greaterHead;
+
+  let prev = newHead;
   let cur = head;
   while (cur) {
-    if (cur.val < x) less.push(cur);
-    else greater.push(cur);
-    cur = cur.next;
+    if (cur.val >= x) {
+      greaterTail.next = cur;
+      greaterTail = cur;
+
+      const temp = cur.next;
+      cur.next = null;
+
+      prev.next = temp;
+      cur = temp;
+    } else {
+      prev = cur;
+      cur = cur.next;
+    }
   }
 
-  const newHead = new ListNode();
-  cur = newHead;
-  for (let i = 0; i < less.length; i++) {
-    cur.next = less[i];
-    cur = cur.next;
-  }
+  prev.next = greaterHead.next;
 
-  for (let i = 0; i < greater.length; i++) {
-    cur.next = greater[i];
-    cur = cur.next;
-  }
-
-  cur.next = null;
-
-  head = newHead.next;
-
-  return;
+  return newHead.next;
 };
