@@ -19,29 +19,9 @@ var minimumFuelCost = function (roads, seats) {
   }
 
   let accFuel = 0;
-  const dfs = (node, acc, count) => {
-    if (visit[node]) return;
-
-    let alreadySum = false;
-    if (count === seats) {
-      accFuel += acc;
-      count = 0;
-      acc = 1;
-      alreadySum = true;
-    }
-
-    visit[node] = true;
-
-    const list = graph[node];
-    let visitCount = 0;
-    for (const next of list) {
-      if (visit[next]) continue;
-      dfs(next, acc + 1, count + 1);
-      visitCount++;
-    }
-
-    if (!visitCount && !alreadySum) {
-      accFuel += acc;
+  const dfs = (node, parent, person) => {
+    for (next of graph[node]) {
+      if (parent === next) continue;
     }
   };
 
